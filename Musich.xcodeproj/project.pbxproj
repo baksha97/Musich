@@ -10,6 +10,7 @@
 		0593476D1005C4DE1019A417 /* Pods_Musich.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7105FDA48F8B72C42B5A9D5 /* Pods_Musich.framework */; };
 		2E05B5A02038CE3100F76985 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E05B59E2038CE3000F76985 /* icon.png */; };
 		2E05B5A12038CE3100F76985 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E05B59F2038CE3000F76985 /* logo.png */; };
+		2E7186F420393D4A00730E0D /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7186F320393D4A00730E0D /* CreateAccountViewController.swift */; };
 		2E9A68E9202D5B4000783119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A68E8202D5B4000783119 /* AppDelegate.swift */; };
 		2E9A68EB202D5B4000783119 /* MaterialListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A68EA202D5B4000783119 /* MaterialListViewController.swift */; };
 		2E9A68EE202D5B4000783119 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E9A68EC202D5B4000783119 /* Main.storyboard */; };
@@ -24,6 +25,7 @@
 /* Begin PBXFileReference section */
 		2E05B59E2038CE3000F76985 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		2E05B59F2038CE3000F76985 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		2E7186F320393D4A00730E0D /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = Account/CreateAccountViewController.swift; sourceTree = "<group>"; };
 		2E9A68E5202D5B4000783119 /* Musich.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musich.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E9A68E8202D5B4000783119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2E9A68EA202D5B4000783119 /* MaterialListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialListViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				2EA6A1D0202E4EC10086CF99 /* LoginViewController.swift */,
+				2E7186F320393D4A00730E0D /* CreateAccountViewController.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E7186F420393D4A00730E0D /* CreateAccountViewController.swift in Sources */,
 				2EA6A1D1202E4EC10086CF99 /* LoginViewController.swift in Sources */,
 				2E9A68EB202D5B4000783119 /* MaterialListViewController.swift in Sources */,
 				2E9A68F1202D5B4000783119 /* Musich.xcdatamodeld in Sources */,
