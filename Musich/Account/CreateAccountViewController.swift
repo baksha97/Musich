@@ -7,18 +7,36 @@
 //
 
 import UIKit
+import MaterialComponents.MaterialAppBar
+import MaterialComponents.MDCTextField
+import MaterialComponents.MDCTextInputControllerLegacyDefault
 
-class CreateAccountViewController: UIViewController {
-
+class CreateAccountViewController: UIViewController, UITextFieldDelegate{
+    
+    //MARK: Outlets
+    @IBOutlet weak var emailField: MDCTextField!
+    @IBOutlet weak var passwordField: MDCTextField!
+    @IBOutlet weak var confirmPasswordField: MDCTextField!
+    
+    //MARK: UI Elements
+    let appBar = MDCAppBar()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        configureAppBar()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func configureAppBar(){
+        addChildViewController(appBar.headerViewController)
+        appBar.headerViewController.headerView.backgroundColor = UIColor(red: 1.0, green: 0.81, blue: 0.0, alpha: 1.0)
+        appBar.addSubviewsToParent()
+        title = "Create Account"
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Close", style: .plain, target: self, action: #selector(self.backDidTap))
+        appBar.navigationBar.tintColor = UIColor.black
+    }
+    @objc func backDidTap(){
+        self.dismiss(animated: true, completion: nil)
     }
     
 
