@@ -21,6 +21,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var emailField: MDCTextField!
     @IBOutlet weak var passwordField: MDCTextField!
     
+    @IBAction func unwindToLoginViewController(segue: UIStoryboardSegue){}
+    
     
     var emailController: MDCTextInputControllerLegacyDefault?
     var passwordController: MDCTextInputControllerLegacyDefault?
@@ -35,6 +37,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         passwordField.delegate = self
         emailController = MDCTextInputControllerLegacyDefault(textInput: emailField)
         passwordController = MDCTextInputControllerLegacyDefault(textInput: passwordField)
+        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

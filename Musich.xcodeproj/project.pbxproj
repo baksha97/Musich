@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0593476D1005C4DE1019A417 /* Pods_Musich.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7105FDA48F8B72C42B5A9D5 /* Pods_Musich.framework */; };
+		2E04AD502039495900691FA6 /* defaultProfilePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E04AD4F2039495900691FA6 /* defaultProfilePicture.png */; };
+		2E04AD5220394A9E00691FA6 /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E04AD5120394A9E00691FA6 /* CreateProfileViewController.swift */; };
 		2E05B5A02038CE3100F76985 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E05B59E2038CE3000F76985 /* icon.png */; };
 		2E05B5A12038CE3100F76985 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E05B59F2038CE3000F76985 /* logo.png */; };
 		2E7186F420393D4A00730E0D /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7186F320393D4A00730E0D /* CreateAccountViewController.swift */; };
@@ -23,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E04AD4F2039495900691FA6 /* defaultProfilePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultProfilePicture.png; sourceTree = "<group>"; };
+		2E04AD5120394A9E00691FA6 /* CreateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateProfileViewController.swift; path = Account/CreateProfileViewController.swift; sourceTree = "<group>"; };
 		2E05B59E2038CE3000F76985 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		2E05B59F2038CE3000F76985 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		2E7186F320393D4A00730E0D /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = Account/CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -66,6 +70,7 @@
 		2E05B59D2038CE3000F76985 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2E04AD4F2039495900691FA6 /* defaultProfilePicture.png */,
 				2E05B59E2038CE3000F76985 /* icon.png */,
 				2E05B59F2038CE3000F76985 /* logo.png */,
 			);
@@ -78,6 +83,7 @@
 			children = (
 				2EA6A1D0202E4EC10086CF99 /* LoginViewController.swift */,
 				2E7186F320393D4A00730E0D /* CreateAccountViewController.swift */,
+				2E04AD5120394A9E00691FA6 /* CreateProfileViewController.swift */,
 			);
 			name = Account;
 			sourceTree = "<group>";
@@ -196,6 +202,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E04AD502039495900691FA6 /* defaultProfilePicture.png in Resources */,
 				2E05B5A02038CE3100F76985 /* icon.png in Resources */,
 				2E05B5A12038CE3100F76985 /* logo.png in Resources */,
 				2E9A68F6202D5B4000783119 /* LaunchScreen.storyboard in Resources */,
@@ -269,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E04AD5220394A9E00691FA6 /* CreateProfileViewController.swift in Sources */,
 				2E7186F420393D4A00730E0D /* CreateAccountViewController.swift in Sources */,
 				2EA6A1D1202E4EC10086CF99 /* LoginViewController.swift in Sources */,
 				2E9A68EB202D5B4000783119 /* MaterialListViewController.swift in Sources */,
