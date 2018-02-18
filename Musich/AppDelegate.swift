@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import MaterialComponents.MaterialButtons
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +18,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        configureTheme()
         return true
+    }
+    
+    func configureTheme(){
+        let colorScheme = MDCBasicColorScheme(primaryColor: UIColor(red: 1.0, green: 0.81, blue: 0.0, alpha: 1.0),
+                                              primaryLightColor: UIColor(red: 1.0, green: 0.81, blue: 0.0, alpha: 1.0),
+                                              primaryDarkColor: UIColor(red: 1.0, green: 0.81, blue: 0.0, alpha: 1.0))
+        
+        
+        MDCButtonColorThemer.apply(colorScheme, to: MDCButton.appearance())
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

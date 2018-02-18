@@ -7,23 +7,37 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0593476D1005C4DE1019A417 /* Pods_Musich.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7105FDA48F8B72C42B5A9D5 /* Pods_Musich.framework */; };
+		2E05B5A02038CE3100F76985 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E05B59E2038CE3000F76985 /* icon.png */; };
+		2E05B5A12038CE3100F76985 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E05B59F2038CE3000F76985 /* logo.png */; };
 		2E9A68E9202D5B4000783119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A68E8202D5B4000783119 /* AppDelegate.swift */; };
-		2E9A68EB202D5B4000783119 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A68EA202D5B4000783119 /* ViewController.swift */; };
+		2E9A68EB202D5B4000783119 /* MaterialListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A68EA202D5B4000783119 /* MaterialListViewController.swift */; };
 		2E9A68EE202D5B4000783119 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E9A68EC202D5B4000783119 /* Main.storyboard */; };
 		2E9A68F1202D5B4000783119 /* Musich.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A68EF202D5B4000783119 /* Musich.xcdatamodeld */; };
 		2E9A68F3202D5B4000783119 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2E9A68F2202D5B4000783119 /* Assets.xcassets */; };
 		2E9A68F6202D5B4000783119 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2E9A68F4202D5B4000783119 /* LaunchScreen.storyboard */; };
+		2E9A68FF202D708E00783119 /* MDCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A68FE202D708E00783119 /* MDCTextField.swift */; };
+		2EA6A1D1202E4EC10086CF99 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA6A1D0202E4EC10086CF99 /* LoginViewController.swift */; };
+		2EA6A1EA202E6FE60086CF99 /* UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA6A1E9202E6FE60086CF99 /* UIElements.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2E05B59E2038CE3000F76985 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
+		2E05B59F2038CE3000F76985 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		2E9A68E5202D5B4000783119 /* Musich.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musich.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E9A68E8202D5B4000783119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2E9A68EA202D5B4000783119 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2E9A68EA202D5B4000783119 /* MaterialListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialListViewController.swift; sourceTree = "<group>"; };
 		2E9A68ED202D5B4000783119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2E9A68F0202D5B4000783119 /* Musich.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Musich.xcdatamodel; sourceTree = "<group>"; };
 		2E9A68F2202D5B4000783119 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2E9A68F5202D5B4000783119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E9A68F7202D5B4000783119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2E9A68FE202D708E00783119 /* MDCTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCTextField.swift; sourceTree = "<group>"; };
+		2EA6A1D0202E4EC10086CF99 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Account/LoginViewController.swift; sourceTree = "<group>"; };
+		2EA6A1E9202E6FE60086CF99 /* UIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElements.swift; sourceTree = "<group>"; };
+		300D075C3214D11B86F13E0F /* Pods-Musich.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musich.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Musich/Pods-Musich.debug.xcconfig"; sourceTree = "<group>"; };
+		34B448CDEEF720D4C5EEDFD6 /* Pods-Musich.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musich.release.xcconfig"; path = "Pods/Target Support Files/Pods-Musich/Pods-Musich.release.xcconfig"; sourceTree = "<group>"; };
+		B7105FDA48F8B72C42B5A9D5 /* Pods_Musich.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Musich.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +45,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0593476D1005C4DE1019A417 /* Pods_Musich.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08E79348AACEB7D0E856A62C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				300D075C3214D11B86F13E0F /* Pods-Musich.debug.xcconfig */,
+				34B448CDEEF720D4C5EEDFD6 /* Pods-Musich.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		2E05B59D2038CE3000F76985 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				2E05B59E2038CE3000F76985 /* icon.png */,
+				2E05B59F2038CE3000F76985 /* logo.png */,
+			);
+			name = Images;
+			path = Musich/Images;
+			sourceTree = "<group>";
+		};
 		2E9A68DC202D5B4000783119 = {
 			isa = PBXGroup;
 			children = (
 				2E9A68E7202D5B4000783119 /* Musich */,
+				2E05B59D2038CE3000F76985 /* Images */,
 				2E9A68E6202D5B4000783119 /* Products */,
+				08E79348AACEB7D0E856A62C /* Pods */,
+				C3413F6230A84337F282ECDE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,15 +93,34 @@
 		2E9A68E7202D5B4000783119 /* Musich */ = {
 			isa = PBXGroup;
 			children = (
+				2EA6A1D0202E4EC10086CF99 /* LoginViewController.swift */,
 				2E9A68E8202D5B4000783119 /* AppDelegate.swift */,
-				2E9A68EA202D5B4000783119 /* ViewController.swift */,
 				2E9A68EC202D5B4000783119 /* Main.storyboard */,
 				2E9A68F2202D5B4000783119 /* Assets.xcassets */,
 				2E9A68F4202D5B4000783119 /* LaunchScreen.storyboard */,
 				2E9A68F7202D5B4000783119 /* Info.plist */,
 				2E9A68EF202D5B4000783119 /* Musich.xcdatamodeld */,
+				2E9A68FD202D706200783119 /* MusichUI */,
 			);
 			path = Musich;
+			sourceTree = "<group>";
+		};
+		2E9A68FD202D706200783119 /* MusichUI */ = {
+			isa = PBXGroup;
+			children = (
+				2E9A68EA202D5B4000783119 /* MaterialListViewController.swift */,
+				2E9A68FE202D708E00783119 /* MDCTextField.swift */,
+				2EA6A1E9202E6FE60086CF99 /* UIElements.swift */,
+			);
+			path = MusichUI;
+			sourceTree = "<group>";
+		};
+		C3413F6230A84337F282ECDE /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B7105FDA48F8B72C42B5A9D5 /* Pods_Musich.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +130,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2E9A68FA202D5B4000783119 /* Build configuration list for PBXNativeTarget "Musich" */;
 			buildPhases = (
+				DF0E5BEEE641ECF2082571B0 /* [CP] Check Pods Manifest.lock */,
 				2E9A68E1202D5B4000783119 /* Sources */,
 				2E9A68E2202D5B4000783119 /* Frameworks */,
 				2E9A68E3202D5B4000783119 /* Resources */,
+				48A4A49528DEC865B75DF4D1 /* [CP] Embed Pods Frameworks */,
+				536AE0878A3CF2A8788AFCAD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,6 +185,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E05B5A02038CE3100F76985 /* icon.png in Resources */,
+				2E05B5A12038CE3100F76985 /* logo.png in Resources */,
 				2E9A68F6202D5B4000783119 /* LaunchScreen.storyboard in Resources */,
 				2E9A68F3202D5B4000783119 /* Assets.xcassets in Resources */,
 				2E9A68EE202D5B4000783119 /* Main.storyboard in Resources */,
@@ -134,13 +195,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		48A4A49528DEC865B75DF4D1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Musich/Pods-Musich-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
+				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
+				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Musich/Pods-Musich-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		536AE0878A3CF2A8788AFCAD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Musich/Pods-Musich-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DF0E5BEEE641ECF2082571B0 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Musich-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2E9A68E1202D5B4000783119 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2E9A68EB202D5B4000783119 /* ViewController.swift in Sources */,
+				2EA6A1D1202E4EC10086CF99 /* LoginViewController.swift in Sources */,
+				2E9A68EB202D5B4000783119 /* MaterialListViewController.swift in Sources */,
 				2E9A68F1202D5B4000783119 /* Musich.xcdatamodeld in Sources */,
+				2E9A68FF202D708E00783119 /* MDCTextField.swift in Sources */,
+				2EA6A1EA202E6FE60086CF99 /* UIElements.swift in Sources */,
 				2E9A68E9202D5B4000783119 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,14 +398,17 @@
 		};
 		2E9A68FB202D5B4000783119 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 300D075C3214D11B86F13E0F /* Pods-Musich.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7GJNS6L86;
 				INFOPLIST_FILE = Musich/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.baksha97.Musich;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -291,14 +416,17 @@
 		};
 		2E9A68FC202D5B4000783119 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 34B448CDEEF720D4C5EEDFD6 /* Pods-Musich.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P7GJNS6L86;
 				INFOPLIST_FILE = Musich/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.baksha97.Musich;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
