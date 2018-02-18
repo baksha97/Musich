@@ -28,6 +28,7 @@
 		2EB341A6203A1CDD003A2B4E /* settingsIcon_25.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB341A5203A1CDD003A2B4E /* settingsIcon_25.png */; };
 		2EB341AA203A1E90003A2B4E /* messageIcon_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB341A9203A1E90003A2B4E /* messageIcon_30.png */; };
 		2EB341AD203A23C9003A2B4E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB341AC203A23C9003A2B4E /* HomeViewController.swift */; };
+		2EBE94FA203A43FD00AF3DFC /* HomeFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE94F9203A43FD00AF3DFC /* HomeFeedCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,6 +54,7 @@
 		2EB341A5203A1CDD003A2B4E /* settingsIcon_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsIcon_25.png; sourceTree = "<group>"; };
 		2EB341A9203A1E90003A2B4E /* messageIcon_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messageIcon_30.png; sourceTree = "<group>"; };
 		2EB341AC203A23C9003A2B4E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		2EBE94F9203A43FD00AF3DFC /* HomeFeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		300D075C3214D11B86F13E0F /* Pods-Musich.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musich.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Musich/Pods-Musich.debug.xcconfig"; sourceTree = "<group>"; };
 		34B448CDEEF720D4C5EEDFD6 /* Pods-Musich.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musich.release.xcconfig"; path = "Pods/Target Support Files/Pods-Musich/Pods-Musich.release.xcconfig"; sourceTree = "<group>"; };
 		B7105FDA48F8B72C42B5A9D5 /* Pods_Musich.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Musich.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,8 +156,17 @@
 			isa = PBXGroup;
 			children = (
 				2EB341AC203A23C9003A2B4E /* HomeViewController.swift */,
+				2EBE94F0203A376600AF3DFC /* Cells */,
 			);
 			path = TabViews;
+			sourceTree = "<group>";
+		};
+		2EBE94F0203A376600AF3DFC /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				2EBE94F9203A43FD00AF3DFC /* HomeFeedCollectionViewCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		C3413F6230A84337F282ECDE /* Frameworks */ = {
@@ -307,6 +318,7 @@
 			files = (
 				2E04AD5220394A9E00691FA6 /* CreateProfileViewController.swift in Sources */,
 				2E7186F420393D4A00730E0D /* CreateAccountViewController.swift in Sources */,
+				2EBE94FA203A43FD00AF3DFC /* HomeFeedCollectionViewCell.swift in Sources */,
 				2EA6A1D1202E4EC10086CF99 /* LoginViewController.swift in Sources */,
 				2E9A68EB202D5B4000783119 /* MaterialListViewController.swift in Sources */,
 				2E9A68F1202D5B4000783119 /* Musich.xcdatamodeld in Sources */,
