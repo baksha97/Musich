@@ -76,7 +76,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="ff3-bR-ktQ" kind="show" id="15t-j9-qSZ"/>
+                                    <segue destination="wHx-rM-V5G" kind="show" id="9Xx-CE-YhK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -109,6 +109,39 @@
             </objects>
             <point key="canvasLocation" x="40.799999999999997" y="-61.619190404797607"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="yDE-PP-0PL">
+            <objects>
+                <viewController id="wHx-rM-V5G" customClass="SettingsViewController" customModule="Musich" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="O6W-rb-fBf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4Z-N7-g0p" customClass="MDCBottomNavigationBar">
+                                <rect key="frame" x="0.0" y="612" width="375" height="55"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="P2M-Ex-pZZ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="g4Z-N7-g0p" firstAttribute="bottom" secondItem="gGT-rc-8B6" secondAttribute="bottom" id="28e-bE-eWN"/>
+                            <constraint firstItem="g4Z-N7-g0p" firstAttribute="leading" secondItem="gGT-rc-8B6" secondAttribute="leading" id="9eG-ZX-EpI"/>
+                            <constraint firstItem="g4Z-N7-g0p" firstAttribute="leading" secondItem="gGT-rc-8B6" secondAttribute="leading" id="VNK-Ee-aPM"/>
+                            <constraint firstItem="gGT-rc-8B6" firstAttribute="trailing" secondItem="g4Z-N7-g0p" secondAttribute="trailing" id="jPM-B5-he0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gGT-rc-8B6"/>
+                    </view>
+                    <connections>
+                        <outlet property="bottomNavigationBar" destination="g4Z-N7-g0p" id="sJO-mY-QAW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0tE-FB-2bJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="776.79999999999995" y="-61.619190404797607"/>
+        </scene>
         <!--Tab Bar Icon Swift Example-->
         <scene sceneID="2WF-e5-IgN">
             <objects>
@@ -122,7 +155,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cwo-02-UPK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="982" y="-62"/>
+            <point key="canvasLocation" x="-938" y="663"/>
         </scene>
         <!--Text Field Outlined Swift Example-->
         <scene sceneID="vXw-jb-aGb">

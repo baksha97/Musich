@@ -23,6 +23,10 @@
 		2E9A68FF202D708E00783119 /* MDCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A68FE202D708E00783119 /* MDCTextField.swift */; };
 		2EA6A1D1202E4EC10086CF99 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA6A1D0202E4EC10086CF99 /* LoginViewController.swift */; };
 		2EA6A1EA202E6FE60086CF99 /* UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA6A1E9202E6FE60086CF99 /* UIElements.swift */; };
+		2EB3419C203A0422003A2B4E /* TabBarIconSwiftExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB3419B203A0422003A2B4E /* TabBarIconSwiftExample.swift */; };
+		2EB341A4203A1C73003A2B4E /* homeIcon_25.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB341A3203A1C73003A2B4E /* homeIcon_25.png */; };
+		2EB341A6203A1CDD003A2B4E /* settingsIcon_25.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB341A5203A1CDD003A2B4E /* settingsIcon_25.png */; };
+		2EB341AA203A1E90003A2B4E /* messageIcon_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB341A9203A1E90003A2B4E /* messageIcon_30.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +47,10 @@
 		2E9A68FE202D708E00783119 /* MDCTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCTextField.swift; sourceTree = "<group>"; };
 		2EA6A1D0202E4EC10086CF99 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2EA6A1E9202E6FE60086CF99 /* UIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElements.swift; sourceTree = "<group>"; };
+		2EB3419B203A0422003A2B4E /* TabBarIconSwiftExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIconSwiftExample.swift; sourceTree = "<group>"; };
+		2EB341A3203A1C73003A2B4E /* homeIcon_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeIcon_25.png; sourceTree = "<group>"; };
+		2EB341A5203A1CDD003A2B4E /* settingsIcon_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsIcon_25.png; sourceTree = "<group>"; };
+		2EB341A9203A1E90003A2B4E /* messageIcon_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messageIcon_30.png; sourceTree = "<group>"; };
 		300D075C3214D11B86F13E0F /* Pods-Musich.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musich.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Musich/Pods-Musich.debug.xcconfig"; sourceTree = "<group>"; };
 		34B448CDEEF720D4C5EEDFD6 /* Pods-Musich.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musich.release.xcconfig"; path = "Pods/Target Support Files/Pods-Musich/Pods-Musich.release.xcconfig"; sourceTree = "<group>"; };
 		B7105FDA48F8B72C42B5A9D5 /* Pods_Musich.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Musich.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +81,9 @@
 			isa = PBXGroup;
 			children = (
 				2E04AD4F2039495900691FA6 /* defaultProfilePicture.png */,
+				2EB341A9203A1E90003A2B4E /* messageIcon_30.png */,
+				2EB341A5203A1CDD003A2B4E /* settingsIcon_25.png */,
+				2EB341A3203A1C73003A2B4E /* homeIcon_25.png */,
 				2E05B59E2038CE3000F76985 /* icon.png */,
 				2E05B59F2038CE3000F76985 /* logo.png */,
 			);
@@ -131,6 +142,7 @@
 				2E9A68EA202D5B4000783119 /* MaterialListViewController.swift */,
 				2E9A68FE202D708E00783119 /* MDCTextField.swift */,
 				2EA6A1E9202E6FE60086CF99 /* UIElements.swift */,
+				2EB3419B203A0422003A2B4E /* TabBarIconSwiftExample.swift */,
 			);
 			path = MusichUI;
 			sourceTree = "<group>";
@@ -207,10 +219,13 @@
 			files = (
 				2E04AD502039495900691FA6 /* defaultProfilePicture.png in Resources */,
 				2E05B5A02038CE3100F76985 /* icon.png in Resources */,
+				2EB341AA203A1E90003A2B4E /* messageIcon_30.png in Resources */,
 				2E05B5A12038CE3100F76985 /* logo.png in Resources */,
+				2EB341A4203A1C73003A2B4E /* homeIcon_25.png in Resources */,
 				2E9A68F6202D5B4000783119 /* LaunchScreen.storyboard in Resources */,
 				2E9A68F3202D5B4000783119 /* Assets.xcassets in Resources */,
 				2E9A68EE202D5B4000783119 /* Main.storyboard in Resources */,
+				2EB341A6203A1CDD003A2B4E /* settingsIcon_25.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,6 +301,7 @@
 				2E9A68F1202D5B4000783119 /* Musich.xcdatamodeld in Sources */,
 				2E9A68FF202D708E00783119 /* MDCTextField.swift in Sources */,
 				2EA6A1EA202E6FE60086CF99 /* UIElements.swift in Sources */,
+				2EB3419C203A0422003A2B4E /* TabBarIconSwiftExample.swift in Sources */,
 				2E9A68E9202D5B4000783119 /* AppDelegate.swift in Sources */,
 				2E04AD542039522300691FA6 /* SettingsViewController.swift in Sources */,
 			);
