@@ -9,9 +9,12 @@
 import UIKit
 import MaterialComponents
 
-class SettingsViewController: UIViewController, MDCBottomNavigationBarDelegate {
+class BottomNavigationBarViewController: UIViewController, MDCBottomNavigationBarDelegate {
 
     @IBOutlet weak var bottomNavigationBar: MDCBottomNavigationBar!
+    
+    
+    
     //MARK: UI Elements
     
     override func viewDidLoad() {
