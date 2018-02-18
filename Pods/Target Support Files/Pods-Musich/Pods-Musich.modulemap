@@ -1,0 +1,6 @@
+framework module Pods_Musich {
+  umbrella header "Pods-Musich-umbrella.h"
+
+  export *
+  module * { export * }
+}
