@@ -13,6 +13,9 @@ class BottomNavigationBarViewController: UIViewController, MDCBottomNavigationBa
 
     @IBOutlet weak var bottomNavigationBar: MDCBottomNavigationBar!
     
+    @IBOutlet weak var homeView: UIView!
+    @IBOutlet weak var musichView: UIView!
+    @IBOutlet weak var settingsView: UIView!
     
     
     //MARK: UI Elements
@@ -20,6 +23,13 @@ class BottomNavigationBarViewController: UIViewController, MDCBottomNavigationBa
     override func viewDidLoad() {
         super.viewDidLoad()
         configureBottomBar()
+        configureViews()
+    }
+    
+    func configureViews(){
+        homeView.isHidden = false
+        musichView.isHidden = true
+        settingsView.isHidden = true
     }
     
     func configureBottomBar(){
@@ -32,6 +42,7 @@ class BottomNavigationBarViewController: UIViewController, MDCBottomNavigationBa
         bottomNavigationBar.items[0].badgeColor = UIColor.cyan
         //bottomNavigationBar.items[0]//UIColor.white
         bottomNavigationBar.backgroundColor = UIColor(red: 1.0, green: 0.81, blue: 0.0, alpha: 1.0)
+        bottomNavigationBar.selectedItem = bottomNavigationBar.items.first
     }
     
     func bottomNavigationBar(_ bottomNavigationBar: MDCBottomNavigationBar, shouldSelect item: UITabBarItem) -> Bool {
@@ -39,7 +50,24 @@ class BottomNavigationBarViewController: UIViewController, MDCBottomNavigationBa
     }
 
     func bottomNavigationBar(_ bottomNavigationBar: MDCBottomNavigationBar, didSelect item: UITabBarItem) {
-        print(item.title!)
+        if(item.title == "Home"){
+            homeView.isHidden = false
+            musichView.isHidden = true
+            settingsView.isHidden = true
+        }
+        else if(item.title == "Musich"){
+            homeView.isHidden = true
+            musichView.isHidden = false
+            settingsView.isHidden = true
+        }
+        else if(item.title == "Settings"){
+            homeView.isHidden = true
+            musichView.isHidden = true
+            settingsView.isHidden = false
+        }
+        else{
+            print("Something has gone terribly wrong.... \(String(describing: self.title))")
+        }
     }
 
 }
