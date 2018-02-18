@@ -33,7 +33,7 @@
 		2E9A68F5202D5B4000783119 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2E9A68F7202D5B4000783119 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2E9A68FE202D708E00783119 /* MDCTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCTextField.swift; sourceTree = "<group>"; };
-		2EA6A1D0202E4EC10086CF99 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Account/LoginViewController.swift; sourceTree = "<group>"; };
+		2EA6A1D0202E4EC10086CF99 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2EA6A1E9202E6FE60086CF99 /* UIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElements.swift; sourceTree = "<group>"; };
 		300D075C3214D11B86F13E0F /* Pods-Musich.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musich.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Musich/Pods-Musich.debug.xcconfig"; sourceTree = "<group>"; };
 		34B448CDEEF720D4C5EEDFD6 /* Pods-Musich.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musich.release.xcconfig"; path = "Pods/Target Support Files/Pods-Musich/Pods-Musich.release.xcconfig"; sourceTree = "<group>"; };
@@ -71,6 +71,14 @@
 			path = Musich/Images;
 			sourceTree = "<group>";
 		};
+		2E7186F220393D1700730E0D /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				2EA6A1D0202E4EC10086CF99 /* LoginViewController.swift */,
+			);
+			name = Account;
+			sourceTree = "<group>";
+		};
 		2E9A68DC202D5B4000783119 = {
 			isa = PBXGroup;
 			children = (
@@ -93,7 +101,7 @@
 		2E9A68E7202D5B4000783119 /* Musich */ = {
 			isa = PBXGroup;
 			children = (
-				2EA6A1D0202E4EC10086CF99 /* LoginViewController.swift */,
+				2E7186F220393D1700730E0D /* Account */,
 				2E9A68E8202D5B4000783119 /* AppDelegate.swift */,
 				2E9A68EC202D5B4000783119 /* Main.storyboard */,
 				2E9A68F2202D5B4000783119 /* Assets.xcassets */,
