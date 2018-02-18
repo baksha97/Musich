@@ -75,6 +75,9 @@
                                 <state key="normal" title="Login">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <segue destination="ff3-bR-ktQ" kind="show" id="15t-j9-qSZ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -105,6 +108,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w5h-LJ-ku2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="40.799999999999997" y="-61.619190404797607"/>
+        </scene>
+        <!--Tab Bar Icon Swift Example-->
+        <scene sceneID="2WF-e5-IgN">
+            <objects>
+                <viewController id="ff3-bR-ktQ" customClass="TabBarIconSwiftExample" customModule="Musich" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="gIg-UQ-37v">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="WIx-pA-uvu"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cwo-02-UPK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="982" y="-62"/>
         </scene>
         <!--Text Field Outlined Swift Example-->
         <scene sceneID="vXw-jb-aGb">
@@ -153,7 +171,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eRc-e5-uwi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="918" y="-62"/>
+            <point key="canvasLocation" x="-1639" y="663"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="a9N-zI-EW3">

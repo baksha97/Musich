@@ -10,6 +10,7 @@
 		0593476D1005C4DE1019A417 /* Pods_Musich.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B7105FDA48F8B72C42B5A9D5 /* Pods_Musich.framework */; };
 		2E04AD502039495900691FA6 /* defaultProfilePicture.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E04AD4F2039495900691FA6 /* defaultProfilePicture.png */; };
 		2E04AD5220394A9E00691FA6 /* CreateProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E04AD5120394A9E00691FA6 /* CreateProfileViewController.swift */; };
+		2E04AD542039522300691FA6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E04AD532039522300691FA6 /* SettingsViewController.swift */; };
 		2E05B5A02038CE3100F76985 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E05B59E2038CE3000F76985 /* icon.png */; };
 		2E05B5A12038CE3100F76985 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E05B59F2038CE3000F76985 /* logo.png */; };
 		2E7186F420393D4A00730E0D /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7186F320393D4A00730E0D /* CreateAccountViewController.swift */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		2E04AD4F2039495900691FA6 /* defaultProfilePicture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = defaultProfilePicture.png; sourceTree = "<group>"; };
 		2E04AD5120394A9E00691FA6 /* CreateProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateProfileViewController.swift; path = Account/CreateProfileViewController.swift; sourceTree = "<group>"; };
+		2E04AD532039522300691FA6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2E05B59E2038CE3000F76985 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		2E05B59F2038CE3000F76985 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		2E7186F320393D4A00730E0D /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = Account/CreateAccountViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXGroup;
 			children = (
 				2E7186F220393D1700730E0D /* Account */,
+				2E04AD532039522300691FA6 /* SettingsViewController.swift */,
 				2E9A68E8202D5B4000783119 /* AppDelegate.swift */,
 				2E9A68EC202D5B4000783119 /* Main.storyboard */,
 				2E9A68F2202D5B4000783119 /* Assets.xcassets */,
@@ -284,6 +287,7 @@
 				2E9A68FF202D708E00783119 /* MDCTextField.swift in Sources */,
 				2EA6A1EA202E6FE60086CF99 /* UIElements.swift in Sources */,
 				2E9A68E9202D5B4000783119 /* AppDelegate.swift in Sources */,
+				2E04AD542039522300691FA6 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

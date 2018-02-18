@@ -16,6 +16,18 @@ PODS:
   - MaterialComponents/AppBar+Extensions/ColorThemer (44.6.0):
     - MaterialComponents/AppBar
     - MaterialComponents/Themes
+  - MaterialComponents/BottomNavigation (44.6.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - MaterialComponents/BottomNavigation+Extensions (44.6.0):
+    - MaterialComponents/BottomNavigation+Extensions/ColorThemer (= 44.6.0)
+  - MaterialComponents/BottomNavigation+Extensions/ColorThemer (44.6.0):
+    - MaterialComponents/BottomNavigation
+    - MaterialComponents/Themes
   - MaterialComponents/ButtonBar (44.6.0):
     - MaterialComponents/Buttons
     - MDFInternationalization
@@ -99,6 +111,19 @@ PODS:
   - MaterialComponents/ShadowElevations (44.6.0)
   - MaterialComponents/ShadowLayer (44.6.0):
     - MaterialComponents/ShadowElevations
+  - MaterialComponents/Tabs (44.6.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Typography
+    - MDFInternationalization
+  - MaterialComponents/Tabs+Extensions (44.6.0):
+    - MaterialComponents/Tabs+Extensions/ColorThemer (= 44.6.0)
+  - MaterialComponents/Tabs+Extensions/ColorThemer (44.6.0):
+    - MaterialComponents/Tabs
+    - MaterialComponents/Themes
   - MaterialComponents/TextFields (44.6.0):
     - MaterialComponents/AnimationTiming
     - MaterialComponents/Palettes
@@ -118,9 +143,11 @@ PODS:
 
 DEPENDENCIES:
   - MaterialComponents/AppBar+Extensions
+  - MaterialComponents/BottomNavigation+Extensions
   - MaterialComponents/Buttons+Extensions
   - MaterialComponents/Collections
   - MaterialComponents/NavigationBar+Extensions
+  - MaterialComponents/Tabs+Extensions
   - MaterialComponents/TextFields+Extensions
 
 SPEC CHECKSUMS:
@@ -128,6 +155,6 @@ SPEC CHECKSUMS:
   MDFInternationalization: e355b0cebecf53d60233bd267084e49366c82513
   MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
 
-PODFILE CHECKSUM: d37c35259c8eb2781660e3d9fbf67ac20fbc429a
+PODFILE CHECKSUM: d9f33d585fab2670fee155f6dc1cbe4348ecf65e
 
 COCOAPODS: 1.4.0

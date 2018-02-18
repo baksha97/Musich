@@ -13,5 +13,7 @@ target 'Musich' do
     pod 'MaterialComponents/Collections'
     pod 'MaterialComponents/TextFields+Extensions'
     pod 'MaterialComponents/NavigationBar+Extensions'
+    pod 'MaterialComponents/BottomNavigation+Extensions'
+    pod 'MaterialComponents/Tabs+Extensions'
 
 end
