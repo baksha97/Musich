@@ -60,7 +60,7 @@ class PlayerPickerViewController: UIViewController {
         ///TODO: UPDATE WITH SEGUE IDENTIFIERS
         let chatVc = segue.destination as! ChatVC
         chatVc.currentUser = self.user
-        chatVc.channelID = "newChannel_1"
+        chatVc.channelID = songField.text.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "\n", with: "")
         
     }
  

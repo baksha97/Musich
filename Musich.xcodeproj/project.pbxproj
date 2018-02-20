@@ -21,6 +21,10 @@
 		2E09881E203BC2C2009D750E /* VCCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09881D203BC2C2009D750E /* VCCells.swift */; };
 		2E098820203BC2EA009D750E /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09881F203BC2EA009D750E /* ChatVC.swift */; };
 		2E098822203BC392009D750E /* PlayerPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E098821203BC392009D750E /* PlayerPickerViewController.swift */; };
+		2E098824203BD5A9009D750E /* FIRFirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E098823203BD5A9009D750E /* FIRFirebaseService.swift */; };
+		2E09882E203BF6AE009D750E /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09882D203BF6AE009D750E /* FirebaseUser.swift */; };
+		2E098830203BF6C7009D750E /* SnapshotExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09882F203BF6C7009D750E /* SnapshotExtensions.swift */; };
+		2E098832203BF6E3009D750E /* EncodeableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E098831203BF6E3009D750E /* EncodeableExtensions.swift */; };
 		2E7186F420393D4A00730E0D /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7186F320393D4A00730E0D /* CreateAccountViewController.swift */; };
 		2E9A68E9202D5B4000783119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A68E8202D5B4000783119 /* AppDelegate.swift */; };
 		2E9A68EB202D5B4000783119 /* MaterialListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A68EA202D5B4000783119 /* MaterialListViewController.swift */; };
@@ -53,6 +57,10 @@
 		2E09881D203BC2C2009D750E /* VCCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCCells.swift; sourceTree = "<group>"; };
 		2E09881F203BC2EA009D750E /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
 		2E098821203BC392009D750E /* PlayerPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPickerViewController.swift; sourceTree = "<group>"; };
+		2E098823203BD5A9009D750E /* FIRFirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FIRFirebaseService.swift; sourceTree = "<group>"; };
+		2E09882D203BF6AE009D750E /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
+		2E09882F203BF6C7009D750E /* SnapshotExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotExtensions.swift; sourceTree = "<group>"; };
+		2E098831203BF6E3009D750E /* EncodeableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodeableExtensions.swift; sourceTree = "<group>"; };
 		2E7186F320393D4A00730E0D /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = Account/CreateAccountViewController.swift; sourceTree = "<group>"; };
 		2E9A68E5202D5B4000783119 /* Musich.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musich.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E9A68E8202D5B4000783119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +133,10 @@
 			children = (
 				2E098819203BC27F009D750E /* Helper Files.swift */,
 				2E09881A203BC27F009D750E /* BadgeSwift.swift */,
+				2E098823203BD5A9009D750E /* FIRFirebaseService.swift */,
+				2E09882D203BF6AE009D750E /* FirebaseUser.swift */,
+				2E09882F203BF6C7009D750E /* SnapshotExtensions.swift */,
+				2E098831203BF6E3009D750E /* EncodeableExtensions.swift */,
 			);
 			path = "Helper files";
 			sourceTree = "<group>";
@@ -302,21 +314,33 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Musich/Pods-Musich-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -367,8 +391,10 @@
 			files = (
 				2E098820203BC2EA009D750E /* ChatVC.swift in Sources */,
 				2E04AD5220394A9E00691FA6 /* CreateProfileViewController.swift in Sources */,
+				2E098824203BD5A9009D750E /* FIRFirebaseService.swift in Sources */,
 				2E7186F420393D4A00730E0D /* CreateAccountViewController.swift in Sources */,
 				2E09881E203BC2C2009D750E /* VCCells.swift in Sources */,
+				2E098832203BF6E3009D750E /* EncodeableExtensions.swift in Sources */,
 				2EA6A1D1202E4EC10086CF99 /* LoginViewController.swift in Sources */,
 				2E9A68EB202D5B4000783119 /* MaterialListViewController.swift in Sources */,
 				2E9A68F1202D5B4000783119 /* Musich.xcdatamodeld in Sources */,
@@ -381,9 +407,11 @@
 				2E098822203BC392009D750E /* PlayerPickerViewController.swift in Sources */,
 				2E09881C203BC27F009D750E /* BadgeSwift.swift in Sources */,
 				2E098816203BC1E7009D750E /* Message.swift in Sources */,
+				2E09882E203BF6AE009D750E /* FirebaseUser.swift in Sources */,
 				2E9A68E9202D5B4000783119 /* AppDelegate.swift in Sources */,
 				2EBE9505203A65A400AF3DFC /* HomeFeedCollectionViewCell.swift in Sources */,
 				2E04AD542039522300691FA6 /* BottomNavigationBarViewController.swift in Sources */,
+				2E098830203BF6C7009D750E /* SnapshotExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
