@@ -17,9 +17,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
 
+    override init() {
+        super.init()
+        FirebaseApp.configure()
+        // not really needed unless you really need it FIRDatabase.database().persistenceEnabled = true
+    }
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        FirebaseApp.configure()
+        //FirebaseApp.configure()
         configureTheme()
         return true
     }

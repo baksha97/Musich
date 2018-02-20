@@ -14,6 +14,13 @@
 		2E05B5A02038CE3100F76985 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E05B59E2038CE3000F76985 /* icon.png */; };
 		2E05B5A12038CE3100F76985 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E05B59F2038CE3000F76985 /* logo.png */; };
 		2E098812203BB9AF009D750E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E098811203BB9AF009D750E /* GoogleService-Info.plist */; };
+		2E098816203BC1E7009D750E /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E098814203BC1E7009D750E /* Message.swift */; };
+		2E098817203BC1E7009D750E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E098815203BC1E7009D750E /* User.swift */; };
+		2E09881B203BC27F009D750E /* Helper Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E098819203BC27F009D750E /* Helper Files.swift */; };
+		2E09881C203BC27F009D750E /* BadgeSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09881A203BC27F009D750E /* BadgeSwift.swift */; };
+		2E09881E203BC2C2009D750E /* VCCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09881D203BC2C2009D750E /* VCCells.swift */; };
+		2E098820203BC2EA009D750E /* ChatVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09881F203BC2EA009D750E /* ChatVC.swift */; };
+		2E098822203BC392009D750E /* PlayerPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E098821203BC392009D750E /* PlayerPickerViewController.swift */; };
 		2E7186F420393D4A00730E0D /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7186F320393D4A00730E0D /* CreateAccountViewController.swift */; };
 		2E9A68E9202D5B4000783119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A68E8202D5B4000783119 /* AppDelegate.swift */; };
 		2E9A68EB202D5B4000783119 /* MaterialListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A68EA202D5B4000783119 /* MaterialListViewController.swift */; };
@@ -39,6 +46,13 @@
 		2E05B59E2038CE3000F76985 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		2E05B59F2038CE3000F76985 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		2E098811203BB9AF009D750E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2E098814203BC1E7009D750E /* Message.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		2E098815203BC1E7009D750E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		2E098819203BC27F009D750E /* Helper Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Helper Files.swift"; sourceTree = "<group>"; };
+		2E09881A203BC27F009D750E /* BadgeSwift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BadgeSwift.swift; sourceTree = "<group>"; };
+		2E09881D203BC2C2009D750E /* VCCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCCells.swift; sourceTree = "<group>"; };
+		2E09881F203BC2EA009D750E /* ChatVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatVC.swift; sourceTree = "<group>"; };
+		2E098821203BC392009D750E /* PlayerPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerPickerViewController.swift; sourceTree = "<group>"; };
 		2E7186F320393D4A00730E0D /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = Account/CreateAccountViewController.swift; sourceTree = "<group>"; };
 		2E9A68E5202D5B4000783119 /* Musich.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musich.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E9A68E8202D5B4000783119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +111,24 @@
 			path = Musich/Images;
 			sourceTree = "<group>";
 		};
+		2E098813203BC1E7009D750E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2E098814203BC1E7009D750E /* Message.swift */,
+				2E098815203BC1E7009D750E /* User.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2E098818203BC27F009D750E /* Helper files */ = {
+			isa = PBXGroup;
+			children = (
+				2E098819203BC27F009D750E /* Helper Files.swift */,
+				2E09881A203BC27F009D750E /* BadgeSwift.swift */,
+			);
+			path = "Helper files";
+			sourceTree = "<group>";
+		};
 		2E7186F220393D1700730E0D /* Account */ = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +171,8 @@
 				2E098811203BB9AF009D750E /* GoogleService-Info.plist */,
 				2E9A68F7202D5B4000783119 /* Info.plist */,
 				2E9A68EF202D5B4000783119 /* Musich.xcdatamodeld */,
+				2E098813203BC1E7009D750E /* Model */,
+				2E098818203BC27F009D750E /* Helper files */,
 				2E9A68FD202D706200783119 /* MusichUI */,
 			);
 			path = Musich;
@@ -159,6 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				2EB341AC203A23C9003A2B4E /* HomeViewController.swift */,
+				2E09881F203BC2EA009D750E /* ChatVC.swift */,
+				2E098821203BC392009D750E /* PlayerPickerViewController.swift */,
 				2EBE94F0203A376600AF3DFC /* Cells */,
 			);
 			path = TabViews;
@@ -167,6 +203,7 @@
 		2EBE94F0203A376600AF3DFC /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				2E09881D203BC2C2009D750E /* VCCells.swift */,
 				2EBE9504203A65A400AF3DFC /* HomeFeedCollectionViewCell.swift */,
 			);
 			path = Cells;
@@ -328,15 +365,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2E098820203BC2EA009D750E /* ChatVC.swift in Sources */,
 				2E04AD5220394A9E00691FA6 /* CreateProfileViewController.swift in Sources */,
 				2E7186F420393D4A00730E0D /* CreateAccountViewController.swift in Sources */,
+				2E09881E203BC2C2009D750E /* VCCells.swift in Sources */,
 				2EA6A1D1202E4EC10086CF99 /* LoginViewController.swift in Sources */,
 				2E9A68EB202D5B4000783119 /* MaterialListViewController.swift in Sources */,
 				2E9A68F1202D5B4000783119 /* Musich.xcdatamodeld in Sources */,
 				2E9A68FF202D708E00783119 /* MDCTextField.swift in Sources */,
+				2E098817203BC1E7009D750E /* User.swift in Sources */,
 				2EA6A1EA202E6FE60086CF99 /* UIElements.swift in Sources */,
+				2E09881B203BC27F009D750E /* Helper Files.swift in Sources */,
 				2EB341AD203A23C9003A2B4E /* HomeViewController.swift in Sources */,
 				2EB3419C203A0422003A2B4E /* TabBarIconSwiftExample.swift in Sources */,
+				2E098822203BC392009D750E /* PlayerPickerViewController.swift in Sources */,
+				2E09881C203BC27F009D750E /* BadgeSwift.swift in Sources */,
+				2E098816203BC1E7009D750E /* Message.swift in Sources */,
 				2E9A68E9202D5B4000783119 /* AppDelegate.swift in Sources */,
 				2EBE9505203A65A400AF3DFC /* HomeFeedCollectionViewCell.swift in Sources */,
 				2E04AD542039522300691FA6 /* BottomNavigationBarViewController.swift in Sources */,
