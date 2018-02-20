@@ -13,6 +13,7 @@
 		2E04AD542039522300691FA6 /* BottomNavigationBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E04AD532039522300691FA6 /* BottomNavigationBarViewController.swift */; };
 		2E05B5A02038CE3100F76985 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E05B59E2038CE3000F76985 /* icon.png */; };
 		2E05B5A12038CE3100F76985 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2E05B59F2038CE3000F76985 /* logo.png */; };
+		2E098812203BB9AF009D750E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2E098811203BB9AF009D750E /* GoogleService-Info.plist */; };
 		2E7186F420393D4A00730E0D /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7186F320393D4A00730E0D /* CreateAccountViewController.swift */; };
 		2E9A68E9202D5B4000783119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A68E8202D5B4000783119 /* AppDelegate.swift */; };
 		2E9A68EB202D5B4000783119 /* MaterialListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A68EA202D5B4000783119 /* MaterialListViewController.swift */; };
@@ -28,10 +29,6 @@
 		2EB341A6203A1CDD003A2B4E /* settingsIcon_25.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB341A5203A1CDD003A2B4E /* settingsIcon_25.png */; };
 		2EB341AA203A1E90003A2B4E /* messageIcon_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB341A9203A1E90003A2B4E /* messageIcon_30.png */; };
 		2EB341AD203A23C9003A2B4E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB341AC203A23C9003A2B4E /* HomeViewController.swift */; };
-		2EBE94FC203A5B9100AF3DFC /* MusichChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE94FB203A5B9100AF3DFC /* MusichChatViewController.swift */; };
-		2EBE94FF203A63D000AF3DFC /* Helper Files.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE94FE203A63D000AF3DFC /* Helper Files.swift */; };
-		2EBE9501203A645F00AF3DFC /* ViewControllerCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE9500203A645F00AF3DFC /* ViewControllerCells.swift */; };
-		2EBE9503203A64C800AF3DFC /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE9502203A64C800AF3DFC /* ChatViewController.swift */; };
 		2EBE9505203A65A400AF3DFC /* HomeFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE9504203A65A400AF3DFC /* HomeFeedCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -41,6 +38,7 @@
 		2E04AD532039522300691FA6 /* BottomNavigationBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigationBarViewController.swift; sourceTree = "<group>"; };
 		2E05B59E2038CE3000F76985 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		2E05B59F2038CE3000F76985 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		2E098811203BB9AF009D750E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2E7186F320393D4A00730E0D /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = Account/CreateAccountViewController.swift; sourceTree = "<group>"; };
 		2E9A68E5202D5B4000783119 /* Musich.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musich.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E9A68E8202D5B4000783119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -58,10 +56,6 @@
 		2EB341A5203A1CDD003A2B4E /* settingsIcon_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsIcon_25.png; sourceTree = "<group>"; };
 		2EB341A9203A1E90003A2B4E /* messageIcon_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messageIcon_30.png; sourceTree = "<group>"; };
 		2EB341AC203A23C9003A2B4E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		2EBE94FB203A5B9100AF3DFC /* MusichChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusichChatViewController.swift; sourceTree = "<group>"; };
-		2EBE94FE203A63D000AF3DFC /* Helper Files.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Helper Files.swift"; sourceTree = "<group>"; };
-		2EBE9500203A645F00AF3DFC /* ViewControllerCells.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerCells.swift; sourceTree = "<group>"; };
-		2EBE9502203A64C800AF3DFC /* ChatViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		2EBE9504203A65A400AF3DFC /* HomeFeedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFeedCollectionViewCell.swift; sourceTree = "<group>"; };
 		300D075C3214D11B86F13E0F /* Pods-Musich.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musich.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Musich/Pods-Musich.debug.xcconfig"; sourceTree = "<group>"; };
 		34B448CDEEF720D4C5EEDFD6 /* Pods-Musich.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musich.release.xcconfig"; path = "Pods/Target Support Files/Pods-Musich/Pods-Musich.release.xcconfig"; sourceTree = "<group>"; };
@@ -142,9 +136,9 @@
 				2E9A68EC202D5B4000783119 /* Main.storyboard */,
 				2E9A68F2202D5B4000783119 /* Assets.xcassets */,
 				2E9A68F4202D5B4000783119 /* LaunchScreen.storyboard */,
+				2E098811203BB9AF009D750E /* GoogleService-Info.plist */,
 				2E9A68F7202D5B4000783119 /* Info.plist */,
 				2E9A68EF202D5B4000783119 /* Musich.xcdatamodeld */,
-				2EBE94FD203A63D000AF3DFC /* Helper files */,
 				2E9A68FD202D706200783119 /* MusichUI */,
 			);
 			path = Musich;
@@ -165,9 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				2EB341AC203A23C9003A2B4E /* HomeViewController.swift */,
-				2EBE9502203A64C800AF3DFC /* ChatViewController.swift */,
 				2EBE94F0203A376600AF3DFC /* Cells */,
-				2EBE94FB203A5B9100AF3DFC /* MusichChatViewController.swift */,
 			);
 			path = TabViews;
 			sourceTree = "<group>";
@@ -176,17 +168,8 @@
 			isa = PBXGroup;
 			children = (
 				2EBE9504203A65A400AF3DFC /* HomeFeedCollectionViewCell.swift */,
-				2EBE9500203A645F00AF3DFC /* ViewControllerCells.swift */,
 			);
 			path = Cells;
-			sourceTree = "<group>";
-		};
-		2EBE94FD203A63D000AF3DFC /* Helper files */ = {
-			isa = PBXGroup;
-			children = (
-				2EBE94FE203A63D000AF3DFC /* Helper Files.swift */,
-			);
-			path = "Helper files";
 			sourceTree = "<group>";
 		};
 		C3413F6230A84337F282ECDE /* Frameworks */ = {
@@ -267,6 +250,7 @@
 				2E9A68F6202D5B4000783119 /* LaunchScreen.storyboard in Resources */,
 				2E9A68F3202D5B4000783119 /* Assets.xcassets in Resources */,
 				2E9A68EE202D5B4000783119 /* Main.storyboard in Resources */,
+				2E098812203BB9AF009D750E /* GoogleService-Info.plist in Resources */,
 				2EB341A6203A1CDD003A2B4E /* settingsIcon_25.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -281,15 +265,23 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Musich/Pods-Musich-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -336,20 +328,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2EBE94FC203A5B9100AF3DFC /* MusichChatViewController.swift in Sources */,
 				2E04AD5220394A9E00691FA6 /* CreateProfileViewController.swift in Sources */,
 				2E7186F420393D4A00730E0D /* CreateAccountViewController.swift in Sources */,
-				2EBE94FF203A63D000AF3DFC /* Helper Files.swift in Sources */,
 				2EA6A1D1202E4EC10086CF99 /* LoginViewController.swift in Sources */,
 				2E9A68EB202D5B4000783119 /* MaterialListViewController.swift in Sources */,
 				2E9A68F1202D5B4000783119 /* Musich.xcdatamodeld in Sources */,
 				2E9A68FF202D708E00783119 /* MDCTextField.swift in Sources */,
-				2EBE9501203A645F00AF3DFC /* ViewControllerCells.swift in Sources */,
 				2EA6A1EA202E6FE60086CF99 /* UIElements.swift in Sources */,
 				2EB341AD203A23C9003A2B4E /* HomeViewController.swift in Sources */,
 				2EB3419C203A0422003A2B4E /* TabBarIconSwiftExample.swift in Sources */,
 				2E9A68E9202D5B4000783119 /* AppDelegate.swift in Sources */,
-				2EBE9503203A64C800AF3DFC /* ChatViewController.swift in Sources */,
 				2EBE9505203A65A400AF3DFC /* HomeFeedCollectionViewCell.swift in Sources */,
 				2E04AD542039522300691FA6 /* BottomNavigationBarViewController.swift in Sources */,
 			);

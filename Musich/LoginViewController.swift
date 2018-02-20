@@ -15,6 +15,7 @@ import MaterialComponents.MaterialTextFields
 import MaterialComponents.MDCTextField
 import MaterialComponents.MDCTextInputControllerLegacyDefault
 import MaterialComponents.MDCTextInputController
+import Firebase
 
 class LoginViewController: UIViewController, UITextFieldDelegate{
     
@@ -26,10 +27,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     
     var emailController: MDCTextInputControllerLegacyDefault?
     var passwordController: MDCTextInputControllerLegacyDefault?
+    //MARK: Development
+    var fUser = Auth.auth().currentUser
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureFields()
+        loginFunction()
     }
     
     func configureFields(){
@@ -45,23 +49,42 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         return true
     }
     
-    //        view.addSubview(fab)
-    //        fab.translatesAutoresizingMaskIntoConstraints = false
-    //        fab.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16.0).isActive = true
-    //        fab.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -16.0).isActive = true
-    //
-    //        fab.setTitle("login", for: .normal)
-    //        fab.setTitle("", for: .selected)
-    //        fab.addTarget(self, action: #selector(self.fabDidTap), for: .touchUpInside)
-    //    }
-    //
-    //    @objc func fabDidTap(sender: UIButton) {
-    //        sender.isSelected = !sender.isSelected
-    //        self.performSegue(withIdentifier: "loginToView", sender: self)
-    //    }
-    //
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
+    }
+    
+    //DEVELOPMENT LOGIN
+    func loginFunction(){
+        Auth.auth().signIn(withEmail: "baksha97@gmail.com",
+                               password: "123456", completion: { user, error in
+                                
+                                if error != nil { //unsucessful
+                                    let alert = UIAlertController(title: "Login Error...",
+                                                                  message: "Please register for an account!",
+                                                                  preferredStyle: .alert)
+                                    let okAction = UIAlertAction(title: "Okay",
+                                                                 style: .default)
+                                    alert.addAction(okAction)
+                                    self.present(alert, animated: true, completion: nil)
+                                }
+                                else{
+                                    print("logged in successfully!!!")
+//                                    self.dismiss(animated: true, completion: nil)
+//                                    self.performSegue(withIdentifier: "loginToTab", sender: nil)
+                                    self.fUser = Auth.auth().currentUser
+                                    //temp display name update
+                                    let changeRequest = self.fUser?.createProfileChangeRequest()
+                                    changeRequest?.displayName = "user_DisplayName"
+                                    changeRequest?.commitChanges { error in
+                                        if let _ = error {
+                                            // An error happened.
+                                        } else {
+                                            print(self.fUser?.displayName! ?? "DISPLAY NAME IS NIL!")
+                                        }
+                                    }
+                                }
+        })
+        
     }
     
     

@@ -17,6 +17,7 @@ class BottomNavigationBarViewController: UIViewController, MDCBottomNavigationBa
     @IBOutlet weak var musichView: UIView!
     @IBOutlet weak var settingsView: UIView!
     
+    //MARK: DEVELOPMENT
     
     //MARK: UI Elements
     

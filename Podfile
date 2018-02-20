@@ -15,5 +15,11 @@ target 'Musich' do
     pod 'MaterialComponents/NavigationBar+Extensions'
     pod 'MaterialComponents/BottomNavigation+Extensions'
     pod 'MaterialComponents/Tabs+Extensions'
+    pod ‘Firebase’
+    pod ‘Firebase/Core’
+    #pod ‘Firebase/Messaging’
+    pod ‘Firebase/Database’
+    pod ‘Firebase/Auth’
+    pod ‘Firebase/Storage’
 
 end
