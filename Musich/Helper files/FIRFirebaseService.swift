@@ -20,7 +20,7 @@ class FIRFirebaseService{
     }
     
     private func reference(to reference: FIRFirestoreReference) -> CollectionReference{
-        return Firestore.firestore().collection(reference.rawValue)
+        return Firestore.firestore().collection(reference.description)
     }
     
     func create<T: Encodable>(for encodableObject: T, in collectionReference: FIRFirestoreReference){
@@ -32,7 +32,7 @@ class FIRFirebaseService{
         }
     }
     
-    func createWithID<T: Encodable & Identifiable>(for encodableObject: T, in collectionReference: FIRFirestoreReference){
+    func createDocument<T: Encodable & Identifiable>(for encodableObject: T, in collectionReference: FIRFirestoreReference){
         do{
             let json = try encodableObject.toJson()
             guard let id = encodableObject.id else{ throw MyError.encodingError}
@@ -94,8 +94,14 @@ enum FIRRealTimeDatabaseReference: String{
     case temp
 }
 
-enum FIRFirestoreReference: String{
+
+enum FIRFirestoreReference : CustomStringConvertible {
     case users
-    case temp
+    
+    var description : String {
+        switch self {
+        case .users: return "users"
+        }
+    }
 }
 
