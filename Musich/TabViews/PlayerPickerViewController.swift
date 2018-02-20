@@ -13,7 +13,8 @@ import Firebase
 
 class PlayerPickerViewController: UIViewController {
     //MARK: OUTLETS
-    @IBOutlet weak var songLabel: UILabel!
+    
+    @IBOutlet weak var songField: UITextView!
     
     //MARK: Player
     let player = MPMusicPlayerController.systemMusicPlayer
@@ -40,12 +41,14 @@ class PlayerPickerViewController: UIViewController {
     func updateSongLabel(){
         if let mediaItem = self.player.nowPlayingItem {
             let title: String = mediaItem.value(forProperty: MPMediaItemPropertyTitle) as! String
-            //let albumTitle: String = mediaItem.value(forProperty: MPMediaItemPropertyAlbumTitle) as! String
-            // let artist: String = mediaItem.value(forProperty: MPMediaItemPropertyArtist) as! String
+            let albumTitle: String = mediaItem.value(forProperty: MPMediaItemPropertyAlbumTitle) as? String ?? "No album available"
+            let artist: String = mediaItem.value(forProperty: MPMediaItemPropertyArtist) as? String ?? "No artist available"
             
             print("\(title)")//" on \(albumTitle) by \(artist)")
             
-            self.songLabel.text = title;
+            self.songField.text = title;
+            self.songField.text.append("\n \(albumTitle)")
+            self.songField.text.append("\n \(artist)")
         }
     }
 

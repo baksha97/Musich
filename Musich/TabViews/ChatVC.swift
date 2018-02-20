@@ -25,6 +25,7 @@ import UIKit
 import Photos
 import Firebase
 import CoreLocation
+import MaterialComponents.MaterialAppBar
 
 class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate,  UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate {
     
@@ -53,9 +54,24 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
     var channelID: String!
     
     //Firebase Typing Indicator
+    ///test
+    let appBar = MDCAppBar()
     
+    func configureAppBar(){
+        addChildViewController(appBar.headerViewController)
+        appBar.headerViewController.headerView.backgroundColor = UIColor(red: 1.0, green: 0.81, blue: 0.0, alpha: 1.0)
+        appBar.addSubviewsToParent()
+        title = "Musich Home"
+        //navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Me", style: .plain, target: self, action: #selector(self.meDidTap))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(self.backDidTap))
+        
+        appBar.navigationBar.tintColor = UIColor.black
+        
+    }
     
-    
+    @objc func backDidTap(){
+        self.dismiss(animated: true, completion: nil)
+    }
     
     //MARK: Methods
     func customization() {
@@ -336,6 +352,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
         super.viewDidLoad()
         self.customization()
         self.fetchData()
+        self.configureAppBar()
     }
 }
 
