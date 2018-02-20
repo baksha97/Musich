@@ -26,7 +26,17 @@ class FIRFirebaseService{
     func create<T: Encodable>(for encodableObject: T, in collectionReference: FIRFirestoreReference){
         do{
             let json = try encodableObject.toJson()
-            reference(to: .users).addDocument(data: json)
+            reference(to: collectionReference).addDocument(data: json)
+        } catch{
+            print(error)
+        }
+    }
+    
+    func createWithID<T: Encodable & Identifiable>(for encodableObject: T, in collectionReference: FIRFirestoreReference){
+        do{
+            let json = try encodableObject.toJson()
+            guard let id = encodableObject.id else{ throw MyError.encodingError}
+            reference(to: collectionReference).document(id).setData(json)
         } catch{
             print(error)
         }
@@ -49,11 +59,16 @@ class FIRFirebaseService{
         }
     }
     
-    func update<T: Encodable & Identifiable>(for encodeableObject: T, in collectionReference: FIRFirestoreReference){
+    func update<T: Encodable & Identifiable>(for encodableObject: T, in collectionReference: FIRFirestoreReference, merge isMerge: Bool){
         do{
-            let json = try encodeableObject.toJson()
-            guard let id = encodeableObject.id else{ throw MyError.encodingError}
-            reference(to: collectionReference).document(id).setData(json)
+            let json = try encodableObject.toJson()
+            guard let id = encodableObject.id else{ throw MyError.encodingError}
+            if(isMerge){
+                reference(to: collectionReference).document(id).setData(json, options: SetOptions.merge())
+            } else{
+                reference(to: collectionReference).document(id).setData(json)
+            }
+            
         }catch{
             print(error)
         }
@@ -83,5 +98,4 @@ enum FIRFirestoreReference: String{
     case users
     case temp
 }
-
 
