@@ -125,4 +125,3 @@ enum FIRStorageReference : CustomStringConvertible {
         }
     }
 }
-
