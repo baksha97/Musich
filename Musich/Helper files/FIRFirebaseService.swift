@@ -133,11 +133,13 @@ enum FIRRealTimeDatabaseReference: String{
 enum FIRFirestoreReference : CustomStringConvertible {
     case users
     case userProfilePhotoURLs
+    case publicFeedItems
     
     var description : String {
         switch self {
         case .users: return "users"
         case .userProfilePhotoURLs: return "userProfilePhotoURLs"
+        case .publicFeedItems: return "publicFeedItems"
         }
     }
 }

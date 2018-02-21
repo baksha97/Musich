@@ -34,6 +34,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
         configureFields()
         loginFunction()
+//        let f1 = FeedItem(userID: (fUser?.uid)!, userName: "Travis", song: "Riding Shotgun", description: "Kygo", date: Date())
+//        let f2 = FeedItem(userID: (fUser?.uid)!, userName: "Travis", song: "Love Lies", description: "Khalid", date: Date())
+////        let f3 = FeedItem(userID: (fUser?.uid)!, userName: "Travis", song: "Don't Let Me Down", description: "The Chainsmokers", date: Date())
+//        f1.pushFeedItem()
+//        f2.pushFeedItem()
+////        f3.pushFeedItem()
     }
     
     func configureFields(){

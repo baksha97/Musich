@@ -29,6 +29,7 @@ struct FirebaseUser: Codable, Identifiable{
         self.feedItems = feedItems
     }
     
+    
     //you won't be adding feed items, instead you'll be constantly "FIR.updating" the entire profile update
     //    func addFeedItems(feedItems: [FeedItem]){
     //        FIRFirebaseService.shared.update(for: feedItems, in: .feedItems)
@@ -37,14 +38,22 @@ struct FirebaseUser: Codable, Identifiable{
 
 
 struct FeedItem: Codable{
+    var userID: String?
+    var userName: String
     var song: String
     var description: String
     var date: Date
     
-    init(song: String, description: String, date: Date) {
+    init(userID: String, userName: String, song: String, description: String, date: Date) {
+        self.userID = userID
+        self.userName = userName
         self.song = song
         self.description = description
         self.date = date
     }
+    
+    //only to public sector... if you want to add feed items to your own personal feed, we would need to update the FirebaseUser object... so ideally we'd be using a combination of this and the update method when a user listens to a new song.
+    func pushFeedItem(){
+        FIRFirebaseService.shared.create(for: self, in: .publicFeedItems)
+    }
 }
-

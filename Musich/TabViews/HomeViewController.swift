@@ -14,12 +14,23 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     let appBar = MDCAppBar()
     @IBOutlet weak var collectionView: UICollectionView!
     
+    //feed items
+    var feedItems: [FeedItem] = [FeedItem]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.delegate = self
         configureAppBar()
-        // Do any additional setup after loading the view.
+        firebase()
+    }
+    
+    func firebase(){
+        FIRFirebaseService.shared.read(from: .publicFeedItems, returning: FeedItem.self, completion: {(items) in
+            self.feedItems = items
+            print(items.count)
+            print()
+            self.collectionView.reloadData()
+        })
     }
 
 
@@ -48,11 +59,11 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     // MARK: UICollectionViewDataSource
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 5
+        return 1
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return feedItems.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -61,8 +72,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
         if let cell = cell as? HomeFeedCollectionViewCell {
 
-            cell.userLabel.text = "User_temp"
-            cell.listeningToLabel.text = "User_listened_to_this_song"
+            cell.userLabel.text = feedItems[indexPath.row].userName //"User_temp"
+            cell.listeningToLabel.text = feedItems[indexPath.row].song //"User_listened_to_this_song"
             cell.imageView.image = UIImage(named: "settingsIcon_25")
 
         }
