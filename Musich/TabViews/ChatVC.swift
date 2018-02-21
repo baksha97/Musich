@@ -23,6 +23,7 @@
 
 import UIKit
 import Photos
+import MaterialComponents.MaterialButtons
 import Firebase
 import CoreLocation
 
@@ -52,9 +53,23 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
     
     var channelID: String!
     
-    //Firebase Typing Indicator
+    //close button
+    let fab = MDCFloatingButton()
+    func configureFab(){
+        view.addSubview(fab)
+        fab.translatesAutoresizingMaskIntoConstraints = false
+        fab.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16.0).isActive = true
+        fab.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50.0).isActive = true
+        
+        fab.setTitle("Close", for: .normal)
+        fab.addTarget(self, action: #selector(self.fabDidTap), for: .touchUpInside)
+        
+    }
     
-    
+    @objc func fabDidTap(sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        self.dismiss(animated: true, completion: nil)
+    }
     
     
     //MARK: Methods
@@ -339,6 +354,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
         super.viewDidLoad()
         self.customization()
         self.fetchData()
+        self.configureFab()
     }
     
 }

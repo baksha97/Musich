@@ -34,9 +34,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
         configureFields()
         loginFunction()
-        
-        
-        
     }
     
     func configureFields(){
