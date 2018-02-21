@@ -95,7 +95,32 @@ class FIRFirebaseService{
         }
     }
     
+    //Exclusive Unique Methods
+    func createProfilePhotoURL(url: String, user id: String, in collectionReference: FIRFirestoreReference){
+        reference(to: collectionReference).document(id).setData(["profilePhotoURL":url])
+    }
     
+    func getProfilePhoto(for id: String, completion: @escaping(UIImage?, Error?) -> Void){
+        reference(to: .userProfilePhotoURLs).document(id).getDocument{ (doc, error) in
+            if let doc = doc {
+                //its a dict
+                let imageLink = (doc.data()!["profilePhotoURL"] as! String)
+                let imageURL = URL.init(string: imageLink)
+                URLSession.shared.dataTask(with: imageURL!, completionHandler: { (data, response, error) in
+                    if error == nil {
+                        let image = UIImage.init(data: data!)
+                        completion(image, nil)
+                    }else{
+                        completion(nil, error)
+                    }
+                }).resume()
+            } else{
+                print("failure getting profile photo")
+            }
+        }
+    }
+    
+    //Configuration
     func configure(){
         FirebaseApp.configure()
     }
@@ -103,15 +128,16 @@ class FIRFirebaseService{
 
 enum FIRRealTimeDatabaseReference: String{
     case users
-    case temp
 }
 
 enum FIRFirestoreReference : CustomStringConvertible {
     case users
+    case userProfilePhotoURLs
     
     var description : String {
         switch self {
         case .users: return "users"
+        case .userProfilePhotoURLs: return "userProfilePhotoURLs"
         }
     }
 }
@@ -125,3 +151,4 @@ enum FIRStorageReference : CustomStringConvertible {
         }
     }
 }
+

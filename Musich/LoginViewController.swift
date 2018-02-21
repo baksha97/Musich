@@ -34,6 +34,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         super.viewDidLoad()
         configureFields()
         loginFunction()
+        
+        
+        
     }
     
     func configureFields(){
@@ -55,7 +58,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     
     //DEVELOPMENT LOGIN
     func loginFunction(){
-        Auth.auth().signIn(withEmail: "baksha97@gmail.com",
+        Auth.auth().signIn(withEmail: "travis@dev.com",
                                password: "123456", completion: { user, error in
                                 
                                 if error != nil { //unsucessful

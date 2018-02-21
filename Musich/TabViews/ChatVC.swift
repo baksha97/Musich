@@ -25,7 +25,6 @@ import UIKit
 import Photos
 import Firebase
 import CoreLocation
-import MaterialComponents.MaterialAppBar
 
 class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate,  UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate {
     
@@ -48,30 +47,15 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
     var items = [Message]()
     let imagePicker = UIImagePickerController()
     let barHeight: CGFloat = 50
-    var currentUser: User?
+    //var currentUser: User?
     var canSendLocation = true
     
     var channelID: String!
     
     //Firebase Typing Indicator
-    ///test
-    let appBar = MDCAppBar()
     
-    func configureAppBar(){
-        addChildViewController(appBar.headerViewController)
-        appBar.headerViewController.headerView.backgroundColor = UIColor(red: 1.0, green: 0.81, blue: 0.0, alpha: 1.0)
-        appBar.addSubviewsToParent()
-        title = "Musich Home"
-        //navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Me", style: .plain, target: self, action: #selector(self.meDidTap))
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(self.backDidTap))
-        
-        appBar.navigationBar.tintColor = UIColor.black
-        
-    }
     
-    @objc func backDidTap(){
-        self.dismiss(animated: true, completion: nil)
-    }
+    
     
     //MARK: Methods
     func customization() {
@@ -80,7 +64,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.contentInset.bottom = self.barHeight
         self.tableView.scrollIndicatorInsets.bottom = self.barHeight
-        self.navigationItem.title = self.currentUser?.name
+        // self.navigationItem.title = self.currentUser?.name
         self.navigationItem.setHidesBackButton(true, animated: false)
         let icon = UIImage.init(named: "back")?.withRenderingMode(.alwaysOriginal)
         let backButton = UIBarButtonItem.init(image: icon!, style: .plain, target: self, action: #selector(self.dismissSelf))
@@ -100,7 +84,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
                 }
             }
         })
-        Message.markMessagesRead(forUserID: self.currentUser!.id)
+        // Message.markMessagesRead(forUserID: self.currentUser!.id)
     }
     
     //Hides current viewcontroller
@@ -111,7 +95,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
     }
     
     func composeMessage(type: MessageType, content: Any)  {
-        let message = Message.init(type: type, content: content, owner: .sender, timestamp: Int(Date().timeIntervalSince1970), isRead: false)
+        let message = Message.init(type: type, content: content, owner: .sender, timestamp: Int(Date().timeIntervalSince1970), fromID: Auth.auth().currentUser!.uid) //TODO ONLY TEMP TO GET WORKING...
         Message.send(message: message, toChannelID: self.channelID, completion: {(_) in
         })
     }
@@ -158,13 +142,13 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
     }
     
     @IBAction func selectCamera(_ sender: Any) {
-//        self.animateExtraButtons(toHide: true)
-//        let status = AVCaptureDevice.authorizationStatus(for: AVMediaTypeVideo)
-//        if (status == .authorized || status == .notDetermined) {
-//            self.imagePicker.sourceType = .camera
-//            self.imagePicker.allowsEditing = false
-//            self.present(self.imagePicker, animated: true, completion: nil)
-//        }
+        //        self.animateExtraButtons(toHide: true)
+        //        let status = AVCaptureDevice.authorizationStatus(for: AVMediaTypeVideo)
+        //        if (status == .authorized || status == .notDetermined) {
+        //            self.imagePicker.sourceType = .camera
+        //            self.imagePicker.allowsEditing = false
+        //            self.present(self.imagePicker, animated: true, completion: nil)
+        //        }
     }
     
     @IBAction func selectLocation(_ sender: Any) {
@@ -246,7 +230,24 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
         case .sender:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Sender", for: indexPath) as! SenderCell
             cell.clearCellData()
-            cell.profilePic.image = self.currentUser?.profilePic ////MUST EDIT TO GET THE MESSAGE SENDER'S PROFILE PHOTO
+            
+            
+            
+            //cell.profilePic.image = self.dict?[self.items[indexPath.row].fromID!]////////idd
+            //have hash completed -  deleted
+            FIRFirebaseService.shared.getProfilePhoto(for: self.items[indexPath.row].fromID!, completion:{ (image, err) in
+                if err == nil{
+                    DispatchQueue.main.async {
+                        cell.profilePic.image = image
+                    }
+                }
+                else{
+                    print("error catching images")
+                }
+                
+            })
+            
+            
             switch self.items[indexPath.row].type {
             case .text:
                 cell.message.text = self.items[indexPath.row].content as! String
@@ -297,18 +298,6 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
     }
     
     
-    @objc func textFieldDidChange(_ textField: UITextField) {
-//        if (textField.text?.isEmpty)! {
-//            Database.database().reference().child("list").child((Auth.auth().currentUser?.phoneNumber)!).child("typingIndicator").setValue(false)
-//        } else {
-//            Database.database().reference().child("list").child((Auth.auth().currentUser?.phoneNumber)!).child("typingIndicator").setValue(true)
-//        }
-    }
-    func isRecevierTyping(){
-        Database.database().reference().child("list").child((self.currentUser?.number)!).child("typingIndicator").queryOrderedByValue().queryEqual(toValue: true).observe(.value) { (data: DataSnapshot) in
-            print("Typing")
-        }
-    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
@@ -320,18 +309,18 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
         picker.dismiss(animated: true, completion: nil)
     }
     
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        self.locationManager.stopUpdatingLocation()
-        if let lastLocation = locations.last {
-            if self.canSendLocation {
-                let coordinate = String(lastLocation.coordinate.latitude) + ":" + String(lastLocation.coordinate.longitude)
-                let message = Message.init(type: .location, content: coordinate, owner: .sender, timestamp: Int(Date().timeIntervalSince1970), isRead: false)
-                Message.send(message: message, toChannelID: channelID, completion: {(_) in
-                })
-                self.canSendLocation = false
-            }
-        }
-    }
+    //    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+    //        self.locationManager.stopUpdatingLocation()
+    //        if let lastLocation = locations.last {
+    //            if self.canSendLocation {
+    //                let coordinate = String(lastLocation.coordinate.latitude) + ":" + String(lastLocation.coordinate.longitude)
+    //                let message = Message.init(type: .location, content: coordinate, owner: .sender, timestamp: Int(Date().timeIntervalSince1970))
+    //                Message.send(message: message, toChannelID: channelID, completion: {(_) in
+    //                })
+    //                self.canSendLocation = false
+    //            }
+    //        }
+    //    }
     
     //MARK: ViewController lifecycle
     override func viewDidAppear(_ animated: Bool) {
@@ -339,21 +328,19 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
         self.inputBar.backgroundColor = UIColor.clear
         self.view.layoutIfNeeded()
         NotificationCenter.default.addObserver(self, selector: #selector(ChatVC.showKeyboard(notification:)), name: Notification.Name.UIKeyboardWillShow, object: nil)
-        inputTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         NotificationCenter.default.removeObserver(self)
-        Message.markMessagesRead(forUserID: self.currentUser!.id)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.customization()
         self.fetchData()
-        self.configureAppBar()
     }
+    
 }
 
 

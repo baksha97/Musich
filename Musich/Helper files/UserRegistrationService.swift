@@ -19,6 +19,23 @@ class UserRegistrationService{
         return Auth.auth().currentUser!
     }
     
+    //LOGIN
+    func loginUser(withEmail: String, password: String){
+        Auth.auth().signIn(withEmail: withEmail, password: password, completion: { (user, error) in
+            if error == nil {
+                //TODO - CREATE AN ALERT SERVICE FOR THIS
+                //TODO - CONFIGURE USER DEFAULTS PROPERLY
+                // let userInfo = ["email": withEmail, "password": password]
+                //  UserDefaults.standard.set(userInfo, forKey: "userInformation")
+                print("logged in successfully")
+            } else {
+                //TODO - CREATE AN ALERT SERVICE FOR THIS
+                print(error.debugDescription)
+            }
+        })
+    }
+    
+    //REGISTRATION METHODS
     //step one
     func registerUser(email: String, password: String, name: String, displayName: String, pickedImage: UIImage){
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
@@ -32,11 +49,12 @@ class UserRegistrationService{
     
     //step two
     private func uploadProfilePhoto(name: String, displayName: String, pickedImage: UIImage){
-        //func storageSave(for image: pickedImage, in storageReference: ., completion:
         FIRFirebaseService.shared.storageSave(for: pickedImage, with: authCurrentUser().uid, in: .usersProfilePictures, completion:{ (metadata, err) in
             if err == nil{
                 let path = metadata.downloadURL()?.absoluteString
-                //instansiate FirebaseUser object with photo url...
+                //add profilephotourl to a public collection
+                FIRFirebaseService.shared.createProfilePhotoURL(url: path!, user: self.authCurrentUser().uid, in: .userProfilePhotoURLs)
+                //instansiate FirebaseUser object with photo url and push their personal data...
                 self.instansiateFirebaseUser(name: name, displayName: displayName, path: path!)
             }
             else{
@@ -52,4 +70,3 @@ class UserRegistrationService{
     }
     
 }
-

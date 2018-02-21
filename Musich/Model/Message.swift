@@ -29,51 +29,43 @@ class Message {
     
     //MARK: Properties
     
-    var channelName: String = {
-        return "test"
-    }()
     var owner: MessageOwner
     var type: MessageType
     var content: Any
     var timestamp: Int
-    var isRead: Bool
     var image: UIImage?
-    //private var toID: String?
-    private var fromID: String?
-
+    var fromID: String?
+    
     //MARK: Methods
     class func downloadAllMessages(forID channelID: String, completion: @escaping (Message) -> Swift.Void) {
         if let currentUserID = Auth.auth().currentUser?.uid {
-            /*Database.database().reference().child("users").child(currentUserID).child("conversations").child(forUserID).observe(.value, with: { (snapshot) in
-                if snapshot.exists() {
-                    let data = snapshot.value as! [String: String]
-                    let location = data["location"]!*/
-                    Database.database().reference().child("channels").child(channelID).observe(.childAdded, with: { (snap) in
-                        if snap.exists() {
-                            let receivedMessage = snap.value as! [String: Any]
-                            let messageType = receivedMessage["type"] as! String
-                            var type = MessageType.text
-                            switch messageType {
-                                case "photo":
-                                type = .photo
-                                case "location":
-                                type = .location
-                            default: break
-                            }
-                            let content = receivedMessage["content"] as! String
-                            let fromID = receivedMessage["fromID"] as! String
-                            let timestamp = receivedMessage["timestamp"] as! Int
-                            if fromID == currentUserID {
-                                let message = Message.init(type: type, content: content, owner: .receiver, timestamp: timestamp, isRead: true)
-                                completion(message)
-                            } else {
-                                let message = Message.init(type: type, content: content, owner: .sender, timestamp: timestamp, isRead: true)
-                                completion(message)
-                            }
-                        }
-                    })
+            Database.database().reference().child("channels").child(channelID).observe(.childAdded, with: { (snap) in
+                if snap.exists() {
+                    let receivedMessage = snap.value as! [String: Any]
+                    let messageType = receivedMessage["type"] as! String
+                    var type = MessageType.text
+                    switch messageType {
+                    case "photo":
+                        type = .photo
+                    case "location":
+                        type = .location
+                    default: break
+                    }
+                    let content = receivedMessage["content"] as! String
+                    let fromID = receivedMessage["fromID"] as! String
+                    let timestamp = receivedMessage["timestamp"] as! Int
+                    if fromID == currentUserID {
+                        let message = Message.init(type: type, content: content, owner: .receiver, timestamp: timestamp, fromID: fromID)
+                        completion(message)
+                    } else {
+                        //TODO HERE IS WHERE I WOULD CONFIGURE THE PROPER PROFILE PHOTO IMAGE URL/ IMAGE...
+                        let message = Message.init(type: type, content: content, owner: .sender, timestamp: timestamp, fromID: fromID)
+                        completion(message)
+                    }
                 }
+            })
         }
+    }
     
     func downloadImage(indexpathRow: Int, completion: @escaping (Bool, Int) -> Swift.Void)  {
         if self.type == .photo {
@@ -88,55 +80,29 @@ class Message {
         }
     }
     
-    class func markMessagesRead(forUserID: String)  {
-        if let currentUserID = Auth.auth().currentUser?.uid {
-            Database.database().reference().child("users").child(currentUserID).child("conversations").child(forUserID).observeSingleEvent(of: .value, with: { (snapshot) in
-                if snapshot.exists() {
-                    let data = snapshot.value as! [String: String]
-                    let location = data["location"]!
-                    Database.database().reference().child("conversations").child(location).observeSingleEvent(of: .value, with: { (snap) in
-                        if snap.exists() {
-                            for item in snap.children {
-                                let receivedMessage = (item as! DataSnapshot).value as! [String: Any]
-                                let fromID = receivedMessage["fromID"] as! String
-                                if fromID != currentUserID {
-                                    Database.database().reference().child("conversations").child(location).child((item as! DataSnapshot).key).child("isRead").setValue(true)
-                                }
-                            }
-                        }
-                    })
-                }
-            })
-        }
-    }
+    //    class func markMessagesRead(forUserID: String)  {
+    //        if let currentUserID = Auth.auth().currentUser?.uid {
+    //            Database.database().reference().child("users").child(currentUserID).child("conversations").child(forUserID).observeSingleEvent(of: .value, with: { (snapshot) in
+    //                if snapshot.exists() {
+    //                    let data = snapshot.value as! [String: String]
+    //                    let location = data["location"]!
+    //                    Database.database().reference().child("conversations").child(location).observeSingleEvent(of: .value, with: { (snap) in
+    //                        if snap.exists() {
+    //                            for item in snap.children {
+    //                                let receivedMessage = (item as! DataSnapshot).value as! [String: Any]
+    //                                let fromID = receivedMessage["fromID"] as! String
+    //                                if fromID != currentUserID {
+    //                                    Database.database().reference().child("conversations").child(location).child((item as! DataSnapshot).key).child("isRead").setValue(true)
+    //                                }
+    //                            }
+    //                        }
+    //                    })
+    //                }
+    //            })
+    //        }
+    //    }
     
-    class func unReadMessagesCount(forUserID: String , completion: @escaping (Int) -> Swift.Void) {
-        var count : Int = 0
-        if let currentUserID = Auth.auth().currentUser?.uid {
-            Database.database().reference().child("users").child(currentUserID).child("conversations").child(forUserID).observeSingleEvent(of: .value, with: { (snapshot) in
-                if snapshot.exists() {
-                    let data = snapshot.value as! [String: String]
-                    let location = data["location"]!
-                    Database.database().reference().child("conversations").child(location).observeSingleEvent(of: .value, with: { (snap) in
-                        if snap.exists() {
-                            for item in snap.children {
-                                let receivedMessage = (item as! DataSnapshot).value as! [String: Any]
-                                let fromID = receivedMessage["fromID"] as! String
-                                if fromID != currentUserID {
-                                    //Database.database().reference().child("conversations").child(location).child((item as! DataSnapshot).key).child("isRead").setValue(true)
-                                    Database.database().reference().child("conversations").child(location).child((item as! DataSnapshot).key).child("isRead").queryOrderedByValue().queryEqual(toValue: false).observe(.value) { (data: DataSnapshot) in
-                                        count = count + 1
-                                    }
-                                }
-                            }
-                            completion(count)
-                        }
-                    })
-                }
-            })
-        }
-    }
-   
+    
     func downloadLastMessage(forLocation: String, completion: @escaping () -> Swift.Void) {
         if let currentUserID = Auth.auth().currentUser?.uid {
             Database.database().reference().child("conversations").child(forLocation).observe(.value, with: { (snapshot) in
@@ -147,7 +113,6 @@ class Message {
                         self.timestamp = receivedMessage["timestamp"] as! Int
                         let messageType = receivedMessage["type"] as! String
                         let fromID = receivedMessage["fromID"] as! String
-                        self.isRead = receivedMessage["isRead"] as! Bool
                         var type = MessageType.text
                         switch messageType {
                         case "text":
@@ -170,13 +135,13 @@ class Message {
             })
         }
     }
-
+    
     class func send(message: Message, toChannelID: String, completion: @escaping (Bool) -> Swift.Void)  {
         ///TEMP TODO HELP ME IDK HOW
         if let currentUserID = Auth.auth().currentUser?.uid {
             switch message.type {
             case .location:
-                let values = ["type": "location", "content": message.content, "fromID": currentUserID, "toChannelID": toChannelID, "timestamp": message.timestamp, "isRead": false]
+                let values = ["type": "location", "content": message.content, "fromID": currentUserID, "toChannelID": toChannelID, "timestamp": message.timestamp]
                 Message.uploadMessage(withValues: values, toChannelID: toChannelID, completion: { (status) in
                     completion(status)
                 })
@@ -186,16 +151,16 @@ class Message {
                 Storage.storage().reference().child("messagePics").child(child).putData(imageData!, metadata: nil, completion: { (metadata, error) in
                     if error == nil {
                         let path = metadata?.downloadURL()?.absoluteString
-                        let values = ["type": "photo", "content": path!, "fromID": currentUserID, "toChannelID": toChannelID, "timestamp": message.timestamp, "isRead": false] as [String : Any]
+                        let values = ["type": "photo", "content": path!, "fromID": currentUserID, "toChannelID": toChannelID, "timestamp": message.timestamp] as [String : Any]
                         Message.uploadMessage(withValues: values, toChannelID: toChannelID, completion: { (status) in
                             completion(status)
                         })
                     }
                 })
             case .text:
-                ///TEMP TODO HELP ME IDK HOW
+                ///TEMP TODO HELP ME IDK HOW TO SHOW PIC AND NOT APPEND NAME
                 let messageWithName = "\(String(describing: Auth.auth().currentUser!.email!)) - \(message.content as! String)"
-                let values = ["type": "text", "content": messageWithName, "fromID": currentUserID, "toChannelID": toChannelID, "timestamp": message.timestamp, "isRead": false] as [String : Any] //as [String ANY] ?? idk if delete
+                let values = ["type": "text", "content": messageWithName, "fromID": currentUserID, "toChannelID": toChannelID, "timestamp": message.timestamp] as [String : Any] //as [String ANY] ?? idk if delete
                 Message.uploadMessage(withValues: values, toChannelID: toChannelID, completion: { (status) in
                     completion(status)
                 })
@@ -203,39 +168,26 @@ class Message {
         }
     }
     ///first
-    class func uploadMessage(withValues: [String: Any], toChannelID: String, completion: @escaping (Bool) -> Swift.Void) {
+    class func uploadMessage(withValues: [String: Any], toChannelID: String, completion: @escaping (Bool) -> Void) {
         if let currentUserID = Auth.auth().currentUser?.uid {
-//            Database.database().reference().child("users").child(currentUserID).child("conversations").child(toID).observeSingleEvent(of: .value, with: { (snapshot) in
-//                if snapshot.exists() {
-                   // let data = snapshot.value as! [String: String]
-                   // let location = data["location"]!
-                    ///^^^That should be deleted eventually.......
-                    print(currentUserID)
-                    Database.database().reference().child("channels").child(toChannelID).childByAutoId().setValue(withValues, withCompletionBlock: { (error, _) in
-                        if error == nil {
-                            completion(true)
-                        } else {
-                            completion(false)
-                        }
-                    })
-//                } else {
-//                    Database.database().reference().child("channels").child("TESTCHANNEL").childByAutoId().setValue(withValues, withCompletionBlock: { (error, reference) in
-//                        let data = ["location": reference.parent!.key]
-//                        Database.database().reference().child("users").child(currentUserID).child("conversations").child(toID).updateChildValues(data)
-//                        Database.database().reference().child("users").child(toID).child("conversations").child(currentUserID).updateChildValues(data)
-//                        completion(true)
-//                    })
-//                }
-            }//)
-        //}
+            print(currentUserID)
+            Database.database().reference().child("channels").child(toChannelID).childByAutoId().setValue(withValues, withCompletionBlock: { (error, _) in
+                if error == nil {
+                    completion(true)
+                } else {
+                    completion(false)
+                }
+            })
+        }
     }
     
     //MARK: Inits
-    init(type: MessageType, content: Any, owner: MessageOwner, timestamp: Int, isRead: Bool) {
+    init(type: MessageType, content: Any, owner: MessageOwner, timestamp: Int, fromID: String) {
         self.type = type
         self.content = content
         self.owner = owner
         self.timestamp = timestamp
-        self.isRead = isRead
+        self.fromID = fromID
     }
 }
+

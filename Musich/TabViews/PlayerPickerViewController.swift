@@ -26,7 +26,7 @@ class PlayerPickerViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         updateSongLabel()
-        handleUser()
+        //handleUser()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -59,7 +59,7 @@ class PlayerPickerViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         ///TODO: UPDATE WITH SEGUE IDENTIFIERS
         let chatVc = segue.destination as! ChatVC
-        chatVc.currentUser = self.user
+        //chatVc.currentUser = self.user
         chatVc.channelID = songField.text.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "\n", with: "")
         
     }
