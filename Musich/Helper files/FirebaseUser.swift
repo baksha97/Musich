@@ -15,14 +15,16 @@ struct FirebaseUser: Codable, Identifiable{
     var name: String
     var displayName: String
     var email: String
+    var accountCreatedOn: Date
     var profilePictureURL: String
     var feedItems: [FeedItem]?
     
-    init(id: String, name: String, displayName: String, email: String, profilePictureURL: String, feedItems: [FeedItem]? ){
+    init(id: String, name: String, displayName: String, email: String, accountCreatedOn: Date, profilePictureURL: String, feedItems: [FeedItem]? ){
         self.id = id
         self.name = name
         self.displayName = displayName
         self.email = email
+        self.accountCreatedOn = accountCreatedOn
         self.profilePictureURL = profilePictureURL
         self.feedItems = feedItems
     }
@@ -45,4 +47,3 @@ struct FeedItem: Codable{
         self.date = date
     }
 }
-

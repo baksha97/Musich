@@ -25,6 +25,7 @@
 		2E09882E203BF6AE009D750E /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09882D203BF6AE009D750E /* FirebaseUser.swift */; };
 		2E098830203BF6C7009D750E /* SnapshotExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09882F203BF6C7009D750E /* SnapshotExtensions.swift */; };
 		2E098832203BF6E3009D750E /* EncodeableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E098831203BF6E3009D750E /* EncodeableExtensions.swift */; };
+		2E4B6B96203D583200350DC8 /* UserRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4B6B95203D583200350DC8 /* UserRegistrationService.swift */; };
 		2E7186F420393D4A00730E0D /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7186F320393D4A00730E0D /* CreateAccountViewController.swift */; };
 		2E9A68E9202D5B4000783119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A68E8202D5B4000783119 /* AppDelegate.swift */; };
 		2E9A68EB202D5B4000783119 /* MaterialListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A68EA202D5B4000783119 /* MaterialListViewController.swift */; };
@@ -61,6 +62,7 @@
 		2E09882D203BF6AE009D750E /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
 		2E09882F203BF6C7009D750E /* SnapshotExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotExtensions.swift; sourceTree = "<group>"; };
 		2E098831203BF6E3009D750E /* EncodeableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodeableExtensions.swift; sourceTree = "<group>"; };
+		2E4B6B95203D583200350DC8 /* UserRegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationService.swift; sourceTree = "<group>"; };
 		2E7186F320393D4A00730E0D /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = Account/CreateAccountViewController.swift; sourceTree = "<group>"; };
 		2E9A68E5202D5B4000783119 /* Musich.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musich.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E9A68E8202D5B4000783119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -133,6 +135,7 @@
 			children = (
 				2E098819203BC27F009D750E /* Helper Files.swift */,
 				2E09881A203BC27F009D750E /* BadgeSwift.swift */,
+				2E4B6B95203D583200350DC8 /* UserRegistrationService.swift */,
 				2E098823203BD5A9009D750E /* FIRFirebaseService.swift */,
 				2E09882D203BF6AE009D750E /* FirebaseUser.swift */,
 				2E09882F203BF6C7009D750E /* SnapshotExtensions.swift */,
@@ -392,6 +395,7 @@
 				2E098820203BC2EA009D750E /* ChatVC.swift in Sources */,
 				2E04AD5220394A9E00691FA6 /* CreateProfileViewController.swift in Sources */,
 				2E098824203BD5A9009D750E /* FIRFirebaseService.swift in Sources */,
+				2E4B6B96203D583200350DC8 /* UserRegistrationService.swift in Sources */,
 				2E7186F420393D4A00730E0D /* CreateAccountViewController.swift in Sources */,
 				2E09881E203BC2C2009D750E /* VCCells.swift in Sources */,
 				2E098832203BF6E3009D750E /* EncodeableExtensions.swift in Sources */,

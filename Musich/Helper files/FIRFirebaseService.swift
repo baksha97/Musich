@@ -15,12 +15,17 @@ class FIRFirebaseService{
     private init(){}
     static let shared = FIRFirebaseService()
     
+    
     private func reference(to reference: FIRRealTimeDatabaseReference) -> DatabaseReference{
         return Database.database().reference().child(reference.rawValue)
     }
     
     private func reference(to reference: FIRFirestoreReference) -> CollectionReference{
         return Firestore.firestore().collection(reference.description)
+    }
+    
+    private func reference(to reference: FIRStorageReference) -> StorageReference{
+        return Storage.storage().reference().child(reference.description)///TODO ?
     }
     
     func create<T: Encodable>(for encodableObject: T, in collectionReference: FIRFirestoreReference){
@@ -40,6 +45,13 @@ class FIRFirebaseService{
         } catch{
             print(error)
         }
+    }
+    
+    func storageSave(for image: UIImage, with id: String, in storageReference: FIRStorageReference, completion: @escaping(StorageMetadata, Error?) -> Void){
+        let imageData = UIImageJPEGRepresentation(image, 0.1)
+        reference(to: storageReference).child(id).putData(imageData!, metadata: nil, completion: { (metadata, err) in
+            completion(metadata!,err)
+        })
     }
     
     func read<T: Decodable>(from collectionReference: FIRFirestoreReference, returning objectType: T.Type, completion: @escaping([T]) -> Void){
@@ -94,13 +106,22 @@ enum FIRRealTimeDatabaseReference: String{
     case temp
 }
 
-
 enum FIRFirestoreReference : CustomStringConvertible {
     case users
     
     var description : String {
         switch self {
         case .users: return "users"
+        }
+    }
+}
+
+enum FIRStorageReference : CustomStringConvertible {
+    case usersProfilePictures
+    
+    var description : String {
+        switch self {
+        case .usersProfilePictures: return "usersProfilePictures"
         }
     }
 }
