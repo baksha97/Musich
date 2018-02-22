@@ -38,9 +38,10 @@ class SettingsViewController: UIViewController {
        // view.addSubview(tabBar)
         setImage()
     }
-
+    
     func setImage(){
-        FIRFirebaseService.shared.setImageView(view: self.imageView, with: (ProfileServices.shared.currentFirebaseUser?.profilePictureURL)!)
+        FIRFirebaseService.shared.setupProfileImageView(view: imageView)
     }
+
 
 }

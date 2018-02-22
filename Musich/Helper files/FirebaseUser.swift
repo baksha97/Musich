@@ -41,14 +41,16 @@ struct FeedItem: Codable{
     var userID: String?
     var userName: String
     var song: String
-    var description: String
+    var artist: String
+    var album: String
     var date: Date
     
-    init(userID: String, userName: String, song: String, description: String, date: Date) {
+    init(userID: String, userName: String, song: String, artist: String, album: String, date: Date) {
         self.userID = userID
         self.userName = userName
         self.song = song
-        self.description = description
+        self.artist = artist
+        self.album = album
         self.date = date
     }
     

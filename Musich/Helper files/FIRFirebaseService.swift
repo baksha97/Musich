@@ -152,6 +152,19 @@ class FIRFirebaseService{
         imageView.sd_setImage(with: reference(to: .usersProfilePictures).child(id), placeholderImage: UIImage(named:"loading"))
     }
     
+    //temp todo - find ALT for profile pic on pro page.
+    func setupProfileImageView(view imageView: UIImageView){
+        getProfilePhoto(for: (ProfileServices.shared.currentFirebaseUser?.id!)!, completion: {(image, _) in
+            if image != nil {
+                DispatchQueue.main.async(){
+                    imageView.image = image
+                }
+            }
+            else{
+                print("error getting profile pic")
+            }
+        })
+    }
     //Configuration
     func configure(){
         FirebaseApp.configure()

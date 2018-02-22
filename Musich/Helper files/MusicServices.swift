@@ -11,6 +11,7 @@ import Foundation
 import UIKit
 import AVKit
 import AVFoundation
+import MaterialComponents.MaterialButtons
 import MediaPlayer
 
 class MusicServices{
@@ -28,8 +29,10 @@ class MusicServices{
     private var artist: String?
     private var albumTitle: String?
     
-    private var observer: UIViewController?
+    private var appleMusicButton: MDCFlatButton?
     private var chatObserver: UIViewController?
+    
+    var channelID: String?
     
     func start(){}
     
@@ -38,12 +41,18 @@ class MusicServices{
             currentTitle = mediaItem.value(forProperty: MPMediaItemPropertyTitle) as? String
             artist = mediaItem.value(forProperty: MPMediaItemPropertyArtist) as? String ?? ""
             albumTitle = mediaItem.value(forProperty: MPMediaItemPropertyAlbumTitle) as? String ?? ""
-            
+            setChannelID()
            publishItem()
         }else{
            print("Song Information Empty - MUSICSERVICES")
         }
         reloadObservers()
+    }
+    
+    private func setChannelID(){
+        var id = "\(currentTitle!)\(artist!)\(albumTitle!)"
+        id = id.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: ".", with: "")
+        channelID = id
     }
     
     func getSongInformation() -> (title: String, artist: String, album: String)?{
@@ -57,9 +66,9 @@ class MusicServices{
     //MARK: Feed Item configurations
     private func publishItem(){
         var user = ProfileServices.shared.currentFirebaseUser!
-        let feedItem = FeedItem(userID: user.id!, userName: user.name, song: self.currentTitle!,
-                                description: "by: \(self.artist ?? "*Artist Unavailable*") in \(self.albumTitle ?? "*Album Unavailable*")",
-            date: Date())
+        let feedItem = FeedItem(userID: user.id!, userName: user.name,
+                                song: self.currentTitle!, artist: "\(self.artist ?? "*Artist Unavailable*")",
+                                album: "\(self.albumTitle ?? "*Album Unavailable*")", date: Date())
         feedItem.publishPublicly()
         user.feedItems?.append(feedItem)
         ProfileServices.shared.updateCurrentUser()
@@ -70,13 +79,13 @@ class MusicServices{
         self.chatObserver = chatObserver
     }
     
-    func setObserver(with observer: UIViewController){
-        self.observer = observer
+    func setAppleMusicButton(with button: MDCFlatButton){ // want to specifically use this type of button
+        self.appleMusicButton = button
     }
     private func reloadObservers(){
-        //TODO FIND BETTER WAYS TO REFRESH MAIN VIEW. 
-        self.observer?.viewWillDisappear(true)
-        self.observer?.viewDidLoad()
+        //
+        let buttonText = "Apple Music: \(currentTitle ?? "nil?") by \(artist ?? "") in \(albumTitle ?? "")"
+        self.appleMusicButton?.setTitle(buttonText, for: .normal)//currentTitle = channelID
         self.chatObserver?.dismiss(animated: true, completion: nil)
         print("RELOADED OBSERVERS")
     }

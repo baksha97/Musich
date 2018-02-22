@@ -252,6 +252,7 @@
                         <viewLayoutGuide key="safeArea" id="Vh5-y9-axd"/>
                     </view>
                     <connections>
+                        <outlet property="appleMusicButton" destination="Mkk-s3-yCe" id="CCb-24-KCb"/>
                         <outlet property="songField" destination="cFd-QU-ywS" id="p0z-VT-43f"/>
                     </connections>
                 </viewController>
@@ -861,7 +862,7 @@
         <!--Settings View Controller-->
         <scene sceneID="cMr-fF-Tac">
             <objects>
-                <viewController id="Pwz-Pj-wri" customClass="SettingsViewController" customModule="MusichDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Pwz-Pj-wri" customClass="SettingsViewController" customModule="Musich" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N9w-ot-Tfj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="612"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -918,9 +919,9 @@
         <!--Settings Collection View-->
         <scene sceneID="jyQ-0r-0im">
             <objects>
-                <collectionViewController id="iNh-Ii-2hd" customClass="SettingsCollectionView" customModule="MusichDemo" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="iNh-Ii-2hd" customClass="SettingsCollectionView" customModule="Musich" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="a1H-5S-8jU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="442"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="387"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZeZ-Z5-VSl">

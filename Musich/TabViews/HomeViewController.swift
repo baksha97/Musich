@@ -73,7 +73,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         if let cell = cell as? HomeFeedCollectionViewCell {
 
             cell.userLabel.text = feedItems[indexPath.row].userName //"User_temp"
-            cell.listeningToLabel.text = "\(feedItems[indexPath.row].song), by: \(feedItems[indexPath.row].description)" //"User_listened_to_this_song"
+            cell.listeningToLabel.text = "\(feedItems[indexPath.row].song), by: \(feedItems[indexPath.row].artist) in \(feedItems[indexPath.row].album)" //"User_listened_to_this_song"
             FIRFirebaseService.shared.setImageView(view: cell.imageView, with: feedItems[indexPath.row].userID!)
             
             cell.dateLabel.text = formatter.string(from: feedItems[indexPath.row].date)
