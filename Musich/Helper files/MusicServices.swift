@@ -29,10 +29,11 @@ class MusicServices{
     private var albumTitle: String?
     
     private var observer: UIViewController?
+    private var chatObserver: UIViewController?
     
     func start(){}
     
-    @objc func setNowPlayingInformation(){ //-> (title: String, artist: String, album: String)?{
+    @objc private func setNowPlayingInformation(){ //-> (title: String, artist: String, album: String)?{
         if let mediaItem = self.player.nowPlayingItem {
             currentTitle = mediaItem.value(forProperty: MPMediaItemPropertyTitle) as? String
             artist = mediaItem.value(forProperty: MPMediaItemPropertyArtist) as? String ?? ""
@@ -41,7 +42,7 @@ class MusicServices{
         }else{
            print("Song Information Empty - MUSICSERVICES")
         }
-        reloadObserver()
+        reloadObservers()
     }
     
     func getSongInformation() -> (title: String, artist: String, album: String)?{
@@ -53,13 +54,18 @@ class MusicServices{
         }
     }
     
+    func setChatObserver(with chatObserver: UIViewController){
+        self.chatObserver = chatObserver
+    }
+    
     func setObserver(with observer: UIViewController){
         self.observer = observer
     }
-    private func reloadObserver(){
+    private func reloadObservers(){
         self.observer?.viewWillDisappear(true)
         self.observer?.viewDidLoad()
-        print("RELOADED OBSERVER")
+        self.chatObserver?.dismiss(animated: true, completion: nil)
+        print("RELOADED OBSERVERS")
     }
     
     deinit {

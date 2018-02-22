@@ -51,7 +51,7 @@ class PlayerPickerViewController: UIViewController {
         ///TODO: UPDATE WITH SEGUE IDENTIFIERS
         let chatVc = segue.destination as! ChatVC
         //TODO Enter only when there is a song item playing
-        chatVc.channelID = songField.text.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "\n", with: "")
+        chatVc.channelID = "test"//songField.text.replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "\n", with: "")
     }
  
 

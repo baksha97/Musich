@@ -322,6 +322,11 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
     //    }
     
     //MARK: ViewController lifecycle
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        MusicServices.shared.setChatObserver(with: self)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         self.inputBar.backgroundColor = UIColor.clear
