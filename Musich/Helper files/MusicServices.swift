@@ -8,6 +8,7 @@
 //
 
 import Foundation
+import UIKit
 import AVKit
 import AVFoundation
 import MediaPlayer
@@ -20,28 +21,45 @@ class MusicServices{
     }
     
     static let shared = MusicServices()
-    
     private lazy var player = MPMusicPlayerController.systemMusicPlayer
     
-    var currentTitle: String?
-    var artist: String?
-    var albumTitle: String?
+    
+    private var currentTitle: String?
+    private var artist: String?
+    private var albumTitle: String?
+    
+    private var observer: UIViewController?
     
     func start(){}
     
     @objc func setNowPlayingInformation(){ //-> (title: String, artist: String, album: String)?{
         if let mediaItem = self.player.nowPlayingItem {
-            currentTitle = (mediaItem.value(forProperty: MPMediaItemPropertyTitle) as! String)
+            currentTitle = mediaItem.value(forProperty: MPMediaItemPropertyTitle) as? String
             artist = mediaItem.value(forProperty: MPMediaItemPropertyArtist) as? String ?? ""
             albumTitle = mediaItem.value(forProperty: MPMediaItemPropertyAlbumTitle) as? String ?? ""
            // return (title, albumTitle, artist)
+        }else{
+           print("Song Information Empty - MUSICSERVICES")
         }
-        print("Song Information Empty - MUSICSERVICES")
+        reloadObserver()
     }
     
+    func getSongInformation() -> (title: String, artist: String, album: String)?{
+        if(self.player.nowPlayingItem != nil){
+            return (title: currentTitle!, artist: artist!, album: albumTitle!)
+        }
+        else{
+            return nil
+        }
+    }
     
-    func observeChange(completion: @escaping(Bool) -> Void){
-        completion(true)
+    func setObserver(with observer: UIViewController){
+        self.observer = observer
+    }
+    private func reloadObserver(){
+        self.observer?.viewWillDisappear(true)
+        self.observer?.viewDidLoad()
+        print("RELOADED OBSERVER")
     }
     
     deinit {
