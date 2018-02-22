@@ -19,7 +19,7 @@ class PlayerPickerViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        MusicServices.shared.setAppleMusicButton(with: appleMusicButton)
+        MusicServices.shared.setAppleMusicTextView(with: songField)
     }
     
     override func viewDidLoad() {

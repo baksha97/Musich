@@ -21,7 +21,7 @@ class MusicServices{
     private init(){
         NotificationCenter.default.addObserver(self, selector: #selector(setNowPlayingInformation), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil)
         player.beginGeneratingPlaybackNotifications()
-        initalStartCheck()
+        //initalStartCheck()
     }
     
     static let shared = MusicServices()
@@ -32,7 +32,7 @@ class MusicServices{
     private var artist: String?
     private var albumTitle: String?
     
-    private var appleMusicButton: MDCFlatButton?
+    private var appleMusicTextView: UITextView?
     private var chatObserver: UIViewController?
     
     var channelID: String?
@@ -85,13 +85,14 @@ class MusicServices{
         self.chatObserver = chatObserver
     }
     
-    func setAppleMusicButton(with button: MDCFlatButton){ // want to specifically use this type of button
-        self.appleMusicButton = button
+    func setAppleMusicTextView(with view: UITextView){ // want to specifically use this type of button
+        self.appleMusicTextView = view
     }
     private func reloadObservers(){
         //
-        let buttonText = "Apple Music: \(currentTitle ?? "") by \(artist ?? "") in \(albumTitle ?? "")"
-        self.appleMusicButton?.setTitle(buttonText, for: .normal)//currentTitle = channelID
+        let text = "Apple Music: \(currentTitle ?? "") by \(artist ?? "") in \(albumTitle ?? "")"
+        self.appleMusicTextView?.text = text
+        //self.appleMusicButton?.setTitle(buttonText, for: .normal)//currentTitle = channelID
         self.chatObserver?.dismiss(animated: true, completion: nil)
         print("RELOADED OBSERVERS")
     }

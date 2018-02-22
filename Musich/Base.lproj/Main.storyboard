@@ -204,51 +204,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="612"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5s3-Sx-iPO" customClass="MDCFlatButton">
-                                <rect key="frame" x="16" y="357" width="343" height="200"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5s3-Sx-iPO" customClass="MDCFlatButton">
+                                <rect key="frame" x="16" y="375" width="343" height="182"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Spotify"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Not supported yet." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kya-Ds-44q">
-                                <rect key="frame" x="115" y="471" width="145" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.78282869170984459" green="0.1213103619492525" blue="0.19264830514749937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Your song information..." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFd-QU-ywS">
-                                <rect key="frame" x="16" y="20" width="343" height="122"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Your song information..." textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cFd-QU-ywS">
+                                <rect key="frame" x="16" y="245" width="343" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="122" id="tnn-CS-eRv"/>
-                                </constraints>
-                                <color key="textColor" red="1" green="0.9685381008104379" blue="0.17986414733764755" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" red="1" green="0.89226340049999997" blue="0.1744362965" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mkk-s3-yCe" customClass="MDCFlatButton">
-                                <rect key="frame" x="16" y="150" width="343" height="199"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="199" id="hbJ-U2-wqx"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mkk-s3-yCe" customClass="MDCFlatButton">
+                                <rect key="frame" x="16" y="20" width="343" height="217"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Apple Music"/>
                                 <connections>
                                     <action selector="appleMusicDidTap:" destination="vdT-6L-RHn" eventType="touchUpInside" id="Zkk-oS-mKo"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Not supported yet." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kya-Ds-44q">
+                                <rect key="frame" x="115" y="479" width="145" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.78282869170984459" green="0.1213103619492525" blue="0.19264830514749937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <constraints>
-                            <constraint firstItem="cFd-QU-ywS" firstAttribute="leading" secondItem="MwX-D0-7mP" secondAttribute="leadingMargin" id="3rx-gd-uhY"/>
-                            <constraint firstItem="Vh5-y9-axd" firstAttribute="bottom" secondItem="5s3-Sx-iPO" secondAttribute="bottom" constant="55" id="LaP-it-ZCQ"/>
-                            <constraint firstItem="Vh5-y9-axd" firstAttribute="bottom" secondItem="kya-Ds-44q" secondAttribute="bottom" constant="120" id="LfX-vx-9Oj"/>
-                            <constraint firstItem="Mkk-s3-yCe" firstAttribute="top" secondItem="cFd-QU-ywS" secondAttribute="bottom" constant="8" symbolic="YES" id="NHH-oH-3nW"/>
-                            <constraint firstItem="5s3-Sx-iPO" firstAttribute="centerX" secondItem="kya-Ds-44q" secondAttribute="centerX" id="NyR-xx-thM"/>
-                            <constraint firstItem="cFd-QU-ywS" firstAttribute="top" secondItem="Vh5-y9-axd" secondAttribute="top" id="WkX-7y-2BJ"/>
-                            <constraint firstItem="5s3-Sx-iPO" firstAttribute="top" secondItem="Mkk-s3-yCe" secondAttribute="bottom" constant="8" symbolic="YES" id="Y1Z-b0-IXh"/>
-                            <constraint firstItem="cFd-QU-ywS" firstAttribute="leading" secondItem="Mkk-s3-yCe" secondAttribute="leading" id="c4a-pt-YqT"/>
-                            <constraint firstItem="cFd-QU-ywS" firstAttribute="trailing" secondItem="MwX-D0-7mP" secondAttribute="trailingMargin" id="egC-UZ-GZN"/>
-                            <constraint firstItem="cFd-QU-ywS" firstAttribute="trailing" secondItem="Mkk-s3-yCe" secondAttribute="trailing" id="itg-cR-hGl"/>
-                            <constraint firstItem="Mkk-s3-yCe" firstAttribute="leading" secondItem="5s3-Sx-iPO" secondAttribute="leading" id="tF7-t0-6p3"/>
-                            <constraint firstItem="Mkk-s3-yCe" firstAttribute="trailing" secondItem="5s3-Sx-iPO" secondAttribute="trailing" id="zPj-RA-GrU"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Vh5-y9-axd"/>
                     </view>
                     <connections>
