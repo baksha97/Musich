@@ -33,7 +33,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         configureFields()
-        loginFunction()
+        UserRegistrationService.shared.loginUser(withEmail: "tester4@dev.com", password: "123456")
+        //loginFunction()
 //        let f1 = FeedItem(userID: (fUser?.uid)!, userName: "Travis", song: "Riding Shotgun", description: "Kygo", date: Date())
 //        let f2 = FeedItem(userID: (fUser?.uid)!, userName: "Travis", song: "Love Lies", description: "Khalid", date: Date())
 ////        let f3 = FeedItem(userID: (fUser?.uid)!, userName: "Travis", song: "Don't Let Me Down", description: "The Chainsmokers", date: Date())
@@ -60,24 +61,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     }
     
     //DEVELOPMENT LOGIN
-    func loginFunction(){
-        Auth.auth().signIn(withEmail: "travis@dev.com",
-                               password: "123456", completion: { user, error in
-                                
-                                if error != nil { //unsucessful
-                                    let alert = UIAlertController(title: "Login Error...",
-                                                                  message: "Please register for an account!",
-                                                                  preferredStyle: .alert)
-                                    let okAction = UIAlertAction(title: "Okay",
-                                                                 style: .default)
-                                    alert.addAction(okAction)
-                                    self.present(alert, animated: true, completion: nil)
-                                }
-                                else{
-                                    print("logged in successfully!!!")
-                                    }
-                                })
-    }
+//    func loginFunction(){
+//        Auth.auth().signIn(withEmail: "travis@dev.com",
+//                               password: "123456", completion: { user, error in
+//
+//                                if error != nil { //unsucessful
+//                                    let alert = UIAlertController(title: "Login Error...",
+//                                                                  message: "Please register for an account!",
+//                                                                  preferredStyle: .alert)
+//                                    let okAction = UIAlertAction(title: "Okay",
+//                                                                 style: .default)
+//                                    alert.addAction(okAction)
+//                                    self.present(alert, animated: true, completion: nil)
+//                                }
+//                                else{
+//                                    print("logged in successfully!!!")
+//                                    }
+//                                })
+//    }
 }
 
 

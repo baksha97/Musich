@@ -28,6 +28,14 @@ class UserRegistrationService{
                 // let userInfo = ["email": withEmail, "password": password]
                 //  UserDefaults.standard.set(userInfo, forKey: "userInformation")
                 print("logged in successfully")
+                FIRFirebaseService.shared.observeCurrentUser(completion: {(error) in
+                    if error == nil{
+                        print("observing user")
+                    }
+                    else{
+                        print("observing failed")
+                    }
+                })
             } else {
                 //TODO - CREATE AN ALERT SERVICE FOR THIS
                 print(error.debugDescription)

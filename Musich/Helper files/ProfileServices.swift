@@ -75,6 +75,13 @@ class ProfileServices{
         FIRFirebaseService.shared.update(for: user, in: .users, merge: true)
     }
     
+    func observeCurrentUser(){
+        FIRFirebaseService.shared.observeCurrentUser(completion: {(error) in
+            print(error.debugDescription)
+            print("observed current user")
+        })
+    }
+    
     private func configureDateFormatter(){
         self.formatter.dateStyle = .medium
         self.formatter.timeStyle = .none

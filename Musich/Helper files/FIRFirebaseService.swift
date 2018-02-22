@@ -84,21 +84,6 @@ class FIRFirebaseService{
         })
     }
     
-    func observeCurrentUser(completion: @escaping(Error?) -> Void){
-        ///PULLING AUTH CURRENT USER
-        reference(to: .users).document((Auth.auth().currentUser?.uid)!).addSnapshotListener{ (document, error) in
-            guard let document = document else {return}
-            do{
-                let user = try document.decode(as: FirebaseUser.self)
-                ProfileServices.shared.setCurrentUser(user: user)
-                completion(error)
-            } catch{
-                print("error observing user")
-                completion(error)
-            }
-        }
-    }
-    
     func update<T: Encodable & Identifiable>(for encodableObject: T, in collectionReference: FIRFirestoreReference, merge isMerge: Bool){
         do{
             let json = try encodableObject.toJson()
@@ -124,6 +109,22 @@ class FIRFirebaseService{
     }
     
     //Exclusive Unique Methods
+    
+    func observeCurrentUser(completion: @escaping(Error?) -> Void){
+        ///PULLING AUTH CURRENT USER
+        reference(to: .users).document((Auth.auth().currentUser?.uid)!).addSnapshotListener{ (document, error) in
+            guard let document = document else {return}
+            do{
+                let user = try document.decode(as: FirebaseUser.self)
+                ProfileServices.shared.setCurrentUser(user: user)
+                completion(error)
+            } catch{
+                print("error observing user")
+                completion(error)
+            }
+        }
+    }
+    
     func createProfilePhotoURL(url: String, user id: String, in collectionReference: FIRFirestoreReference){
         reference(to: collectionReference).document(id).setData(["profilePhotoURL":url])
     }
