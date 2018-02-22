@@ -60,6 +60,10 @@ class ProfileServices{
         }
     }
     
+    func updateCurrentUser(){
+        FIRFirebaseService.shared.update(for: currentFirebaseUser!, in: .users, merge: true)
+    }
+    
     
     private func configureDateFormatter(){
         self.formatter.dateStyle = .medium

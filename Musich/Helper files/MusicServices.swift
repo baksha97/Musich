@@ -38,7 +38,8 @@ class MusicServices{
             currentTitle = mediaItem.value(forProperty: MPMediaItemPropertyTitle) as? String
             artist = mediaItem.value(forProperty: MPMediaItemPropertyArtist) as? String ?? ""
             albumTitle = mediaItem.value(forProperty: MPMediaItemPropertyAlbumTitle) as? String ?? ""
-           // return (title, albumTitle, artist)
+            
+           publishItem()
         }else{
            print("Song Information Empty - MUSICSERVICES")
         }
@@ -53,7 +54,18 @@ class MusicServices{
             return nil
         }
     }
-    
+    //MARK: Feed Item configurations
+    private func publishItem(){
+        var user = ProfileServices.shared.currentFirebaseUser!
+        let feedItem = FeedItem(userID: user.id!, userName: user.name, song: self.currentTitle!,
+                                description: "by: \(self.artist ?? "*Artist Unavailable*") in \(self.albumTitle ?? "*Album Unavailable*")",
+            date: Date())
+        feedItem.publishPublicly()
+        user.feedItems?.append(feedItem)
+        ProfileServices.shared.updateCurrentUser()
+    }
+
+    //MARK: Observer Configurations.
     func setChatObserver(with chatObserver: UIViewController){
         self.chatObserver = chatObserver
     }
@@ -62,6 +74,7 @@ class MusicServices{
         self.observer = observer
     }
     private func reloadObservers(){
+        //TODO FIND BETTER WAYS TO REFRESH MAIN VIEW. 
         self.observer?.viewWillDisappear(true)
         self.observer?.viewDidLoad()
         self.chatObserver?.dismiss(animated: true, completion: nil)
