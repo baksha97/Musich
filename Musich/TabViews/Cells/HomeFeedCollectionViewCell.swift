@@ -14,5 +14,7 @@ class HomeFeedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var listeningToLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
+    
     
 }

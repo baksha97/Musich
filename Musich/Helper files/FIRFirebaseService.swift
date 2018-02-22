@@ -122,7 +122,7 @@ class FIRFirebaseService{
     }
     
     func setImageView(view imageView: UIImageView, with id: String){
-        imageView.sd_setImage(with: reference(to: .usersProfilePictures).child(id), placeholderImage: nil)  
+        imageView.sd_setImage(with: reference(to: .usersProfilePictures).child(id), placeholderImage: UIImage(named:"loading"))
     }
     
     //Configuration

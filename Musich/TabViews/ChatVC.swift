@@ -246,37 +246,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
         case .sender:
             let cell = tableView.dequeueReusableCell(withIdentifier: "Sender", for: indexPath) as! SenderCell
             cell.clearCellData()
-            
-            
-       //     You can use the Firebase: FirebaseStorageUI that you import like this
-            
-//            import FirebaseStorageUI
-//            and user like this:
-//
-//            let urlToData = "gs://mybundefirebase.appspot.com" + "/" + folderOfImage + "/" + imageNameOnStorage
-//
-//            let reference = FIRStorage.storage().reference(forURL: urlToData) //ctreates reference to image in storage
-//
-//            let placeholderImage = #imageLiteral(resourceName: "placeholder") //placeholder if wanted
-//
-//            imageView.sd_setImage(with: reference, placeholderImage: placeholderImage)
-            
-            //cell.profilePic.image = self.dict?[self.items[indexPath.row].fromID!]////////idd
-            //have hash completed -  deleted
-//            FIRFirebaseService.shared.getProfilePhoto(for: self.items[indexPath.row].fromID!, completion:{ (image, err) in
-//                if err == nil{
-//                    DispatchQueue.main.async {
-//                        //cell.profilePic.sd_setIma
-//                        cell.profilePic.image = image
-//                    }
-//                }
-//                else{
-//                    print("error catching images")
-//                }
-//
-//            })
             FIRFirebaseService.shared.setImageView(view: cell.profilePic, with: self.items[indexPath.row].fromID!)
-            
             switch self.items[indexPath.row].type {
             case .text:
                 cell.message.text = self.items[indexPath.row].content as! String

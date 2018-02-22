@@ -502,9 +502,17 @@
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gN1-9Y-oke">
+                                            <rect key="frame" x="54" y="24" width="300" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
                                 <connections>
+                                    <outlet property="dateLabel" destination="gN1-9Y-oke" id="Grj-1R-JwB"/>
                                     <outlet property="imageView" destination="mAB-y5-XuH" id="fWx-q9-z8q"/>
                                     <outlet property="listeningToLabel" destination="oNF-8d-Z1U" id="3pV-Gh-1rM"/>
                                     <outlet property="userLabel" destination="tU2-Z8-EY3" id="Kc4-I5-7MX"/>
