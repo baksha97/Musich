@@ -16,6 +16,7 @@ import MediaPlayer
 
 class MusicServices{
     
+    //TODO ADD CONFIGURATION FOR WHEN APP STARTS AND SONG IS ALREADY PLAYING
     private init(){
         NotificationCenter.default.addObserver(self, selector: #selector(setNowPlayingInformation), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil)
         player.beginGeneratingPlaybackNotifications()

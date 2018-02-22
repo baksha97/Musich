@@ -61,7 +61,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     
     //DEVELOPMENT LOGIN
     func loginFunction(){
-        Auth.auth().signIn(withEmail: "tester4@dev.com",
+        Auth.auth().signIn(withEmail: "travis@dev.com",
                                password: "123456", completion: { user, error in
                                 
                                 if error != nil { //unsucessful
