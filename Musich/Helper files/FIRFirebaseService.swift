@@ -8,6 +8,7 @@
 
 import Foundation
 import Firebase
+import FirebaseStorageUI
 import FirebaseFirestore
 
 class FIRFirebaseService{
@@ -118,6 +119,10 @@ class FIRFirebaseService{
                 print("failure getting profile photo")
             }
         }
+    }
+    
+    func setImageView(view imageView: UIImageView, with id: String){
+        imageView.sd_setImage(with: reference(to: .usersProfilePictures).child(id), placeholderImage: nil)  
     }
     
     //Configuration
