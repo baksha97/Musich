@@ -13,26 +13,25 @@ protocol Identifiable{
 protocol Dated {
     var date: Date {get set}
 }
-struct FirebaseUser: Codable, Identifiable{
+
+struct FirebaseUser: Codable, Identifiable, Dated{
     var id: String?
     var name: String
     var displayName: String
     var email: String
-    var accountCreatedOn: Date
+    var date: Date
     var profilePictureURL: String
     var feedItems: [FeedItem]?
     
-    init(id: String, name: String, displayName: String, email: String, accountCreatedOn: Date, profilePictureURL: String, feedItems: [FeedItem]? ){
+    init(id: String, name: String, displayName: String, email: String, date: Date, profilePictureURL: String, feedItems: [FeedItem]? ){
         self.id = id
         self.name = name
         self.displayName = displayName
         self.email = email
-        self.accountCreatedOn = accountCreatedOn
+        self.date = date
         self.profilePictureURL = profilePictureURL
         self.feedItems = feedItems
     }
-    
-    //TODO CHANGE CREATED ON TO "CREATED"
 }
 
 

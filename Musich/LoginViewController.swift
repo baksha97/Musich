@@ -33,7 +33,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     override func viewDidLoad() {
         super.viewDidLoad()
         configureFields()
-        UserRegistrationService.shared.loginUser(withEmail: "tester4@dev.com", password: "123456")
+        UserRegistrationService.shared.loginUser(withEmail: "travis@dev.com", password: "123456")
         //loginFunction()
 //        let f1 = FeedItem(userID: (fUser?.uid)!, userName: "Travis", song: "Riding Shotgun", description: "Kygo", date: Date())
 //        let f2 = FeedItem(userID: (fUser?.uid)!, userName: "Travis", song: "Love Lies", description: "Khalid", date: Date())

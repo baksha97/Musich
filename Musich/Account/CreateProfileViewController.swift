@@ -11,24 +11,38 @@ import MaterialComponents.MaterialAppBar
 import MaterialComponents.MDCTextField
 import MaterialComponents.MDCTextInputControllerLegacyDefault
 
-class CreateProfileViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class CreateProfileViewController: UIViewController,UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
     //MARK: Constant
     let unwindToLoginSegue = "unwindToLoginSegue"
     //MARK: Outlets
     @IBOutlet weak var displayNameField: MDCTextField!
     @IBOutlet weak var profilePictureImageView: UIImageView!
+    @IBOutlet weak var nameTextField: MDCTextField!
+    
+    var userEmail: String?
+    var password: String?
+    
     
     //MARK: UI Elements
     let appBar = MDCAppBar()
     var displayNameController: MDCTextInputControllerLegacyDefault?
-    let imagePicker = UIImagePickerController()
+    var nameController: MDCTextInputControllerLegacyDefault?
     
+    let imagePicker = UIImagePickerController()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureAppBar()
+        configureFields()
         imagePicker.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    func configureFields(){
+        displayNameField.delegate = self
+        nameTextField.delegate = self
+        displayNameController = MDCTextInputControllerLegacyDefault(textInput: displayNameField)
+        nameController = MDCTextInputControllerLegacyDefault(textInput: nameTextField)
     }
 
     func configureAppBar(){
@@ -44,7 +58,10 @@ class CreateProfileViewController: UIViewController,UIImagePickerControllerDeleg
 
     @objc func doneDidTap(){
         //TODO:
-        performSegue(withIdentifier: unwindToLoginSegue, sender: self)
+        if(displayNameField.text != "" && nameTextField.text != ""){
+            UserRegistrationService.shared.registerUser(email: self.userEmail!, password: self.password!, name: nameTextField.text!, displayName: displayNameField.text!, pickedImage: profilePictureImageView.image!)
+            performSegue(withIdentifier: unwindToLoginSegue, sender: self)
+        }
     }
     
     @IBAction func choosePhotoDidTap(_ sender: Any) {

@@ -29,7 +29,6 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         configureAppBar()
         configureFields()
     }
@@ -47,7 +46,7 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate{
     }
     
     @objc func nextDidTap(){
-        if(passwordField.text == confirmPasswordField.text){
+        if(passwordField.text! == confirmPasswordField.text! && passwordField.text!.count >= 6 && emailField.text != ""){
             print("good");
             confirmPasswordController?.setErrorText(nil, errorAccessibilityValue: nil)
             performSegue(withIdentifier: createProfileSegue, sender: self)
@@ -69,14 +68,20 @@ class CreateAccountViewController: UIViewController, UITextFieldDelegate{
         confirmPasswordController = MDCTextInputControllerLegacyDefault(textInput: confirmPasswordField)
     }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if(segue.identifier == createProfileSegue){
+            if let profileVC = segue.destination as? CreateProfileViewController {
+                profileVC.userEmail = self.emailField.text
+                profileVC.password = self.passwordField.text
+            }
+        }
     }
-    */
+ 
 
 }

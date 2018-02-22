@@ -71,8 +71,8 @@ class FIRFirebaseService{
         }
     }
     
-    func readDatedObjects<T: Decodable & Dated>(from collectionReference: FIRFirestoreReference, returning objectType: T.Type, completion: @escaping([T]) -> Void){
-        reference(to: collectionReference).order(by: "date").addSnapshotListener { (snapshot, _) in
+    func readDatedObjects<T: Decodable & Dated>(from collectionReference: FIRFirestoreReference, order decending: Bool, returning objectType: T.Type, completion: @escaping([T]) -> Void){
+        reference(to: collectionReference).order(by: "date", descending: decending).addSnapshotListener { (snapshot, _) in
             guard let snapshot = snapshot else {return}
             do{
                 var objects = [T]()

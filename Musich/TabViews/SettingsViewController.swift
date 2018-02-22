@@ -12,7 +12,7 @@ import MaterialComponents.MaterialNavigationBar
 
 class SettingsViewController: UIViewController {
 
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var imageView: RoundedImageView!
     
     @IBOutlet weak var tabBar: MDCTabBar!
     

@@ -12,10 +12,6 @@ class ProfileServices{
     
     private init(){
         configureDateFormatter()
-//        FIRFirebaseService.shared.observeCurrentUser(completion: {(error) in
-//            print(error.debugDescription)
-//            print("observed current user")
-//        })
     }
     
     static let shared = ProfileServices()
@@ -52,7 +48,7 @@ class ProfileServices{
         }
         else if(data == "Created on:"){
             configureDateFormatter()
-            return formatter.string(from: currentFirebaseUser!.accountCreatedOn)
+            return formatter.string(from: currentFirebaseUser!.date)
         }
         else{
             print("error getting value for cell data")

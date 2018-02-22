@@ -73,7 +73,7 @@ class UserRegistrationService{
     
     //step three - completed
     private func instansiateFirebaseUser(name: String, displayName: String, path: String){
-        let user: FirebaseUser = FirebaseUser(id: authCurrentUser().uid, name: name, displayName: displayName, email: authCurrentUser().email!, accountCreatedOn: Date(), profilePictureURL: path, feedItems: nil)
+        let user: FirebaseUser = FirebaseUser(id: authCurrentUser().uid, name: name, displayName: displayName, email: authCurrentUser().email!, date: Date(), profilePictureURL: path, feedItems: nil)
         FIRFirebaseService.shared.createDocument(for: user, in: .users)
     }
     
