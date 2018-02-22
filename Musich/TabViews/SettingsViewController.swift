@@ -23,7 +23,7 @@ class SettingsViewController: UIViewController {
        // imageView.contentMode = .scaleAspectFill
         //imageView.contentMode = .scaleAspectFit
         print((ProfileServices.shared.currentFirebaseUser!.profilePictureURL))
-        FIRFirebaseService.shared.setImageView(view: self.imageView, with: (ProfileServices.shared.currentFirebaseUser!.profilePictureURL))
+        FIRFirebaseService.shared.setImageView(view: self.imageView, with: (ProfileServices.shared.currentFirebaseUser!.profilePictureURL)) //not working
         
         
         //let tabBar = MDCTabBar(frame: view.bounds)

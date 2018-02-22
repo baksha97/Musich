@@ -23,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        //FirebaseApp.configure()
+        MusicServices.shared.start()
+        //TODO: ADD LOADING SCREEN FOR ONCE THIS HAS COMPLETED ONCE
         FIRFirebaseService.shared.observeCurrentUser(completion: {(error) in
             print(error.debugDescription)
             print("observed current user")

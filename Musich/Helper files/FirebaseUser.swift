@@ -53,7 +53,7 @@ struct FeedItem: Codable{
     }
     
     //only to public sector... if you want to add feed items to your own personal feed, we would need to update the FirebaseUser object... so ideally we'd be using a combination of this and the update method when a user listens to a new song.
-    func pushFeedItem(){
+    func publishPublicly(){
         FIRFirebaseService.shared.create(for: self, in: .publicFeedItems)
     }
 }
