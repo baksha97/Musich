@@ -10,6 +10,9 @@ import Foundation
 protocol Identifiable{
     var id: String? { get set }
 }
+protocol Dated {
+    var date: Date {get set}
+}
 struct FirebaseUser: Codable, Identifiable{
     var id: String?
     var name: String
@@ -29,15 +32,11 @@ struct FirebaseUser: Codable, Identifiable{
         self.feedItems = feedItems
     }
     
-    
-    //you won't be adding feed items, instead you'll be constantly "FIR.updating" the entire profile update
-    //    func addFeedItems(feedItems: [FeedItem]){
-    //        FIRFirebaseService.shared.update(for: feedItems, in: .feedItems)
-    //    }
+    //TODO CHANGE CREATED ON TO "CREATED"
 }
 
 
-struct FeedItem: Codable{
+struct FeedItem: Codable, Dated{
     var userID: String?
     var userName: String
     var song: String

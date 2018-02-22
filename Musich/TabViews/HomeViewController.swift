@@ -25,7 +25,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     private func addFeedItems(){
-        FIRFirebaseService.shared.read(from: .publicFeedItems, returning: FeedItem.self, completion: {(items) in
+        FIRFirebaseService.shared.readDatedObjects(from: .publicFeedItems, returning: FeedItem.self, completion: {(items) in
             self.feedItems = items
             print(items.count)
             print()
