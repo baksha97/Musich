@@ -16,11 +16,12 @@ import MediaPlayer
 
 class MusicServices{
     
-    //TODO ADD CONFIGURATION FOR WHEN APP STARTS AND SONG IS ALREADY PLAYING FOR BUTTON, CHANNEL IS WORKING
-    //TODO MAKE NSMUSIC REQUEST BEFORE LOGIN OR ELSE APP BUTTON WONT WORK INITALLY.
+    //TODO MAKE NSMUSIC REQUEST BEFORE LOGIN OR ELSE APP BUTTON WONT WORK INITALLY ON FIRST RUN
+    //TODO ADD -IF PAUSED, NO CURRENT SONG! Song should be playing to be able to enter a chat.
     private init(){
         NotificationCenter.default.addObserver(self, selector: #selector(setNowPlayingInformation), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil)
         player.beginGeneratingPlaybackNotifications()
+        initalStartCheck()
     }
     
     static let shared = MusicServices()
@@ -44,11 +45,23 @@ class MusicServices{
             artist = mediaItem.value(forProperty: MPMediaItemPropertyArtist) as? String ?? ""
             albumTitle = mediaItem.value(forProperty: MPMediaItemPropertyAlbumTitle) as? String ?? ""
             setChannelID()
-           publishItem()
+            publishItem()
         }else{
-           print("Song Information Empty - MUSICSERVICES")
+           print("Song Information Empty - setNowPlaying.MusicServices")
         }
         reloadObservers()
+    }
+    
+    func initalStartCheck(){
+        if let mediaItem = self.player.nowPlayingItem {
+            currentTitle = mediaItem.value(forProperty: MPMediaItemPropertyTitle) as? String
+            artist = mediaItem.value(forProperty: MPMediaItemPropertyArtist) as? String ?? ""
+            albumTitle = mediaItem.value(forProperty: MPMediaItemPropertyAlbumTitle) as? String ?? ""
+            setChannelID()
+            publishItem()
+        }else{
+            print("Song Information Empty - initalStartCheck.MusicServices")
+        }
     }
     
     private func setChannelID(){
@@ -57,23 +70,14 @@ class MusicServices{
         channelID = id
     }
     
-    func getSongInformation() -> (title: String, artist: String, album: String)?{
-        if(self.player.nowPlayingItem != nil){
-            return (title: currentTitle!, artist: artist!, album: albumTitle!)
-        }
-        else{
-            return nil
-        }
-    }
     //MARK: Feed Item configurations
     private func publishItem(){
-        var user = ProfileServices.shared.currentFirebaseUser!
+        let user = ProfileServices.shared.currentFirebaseUser!
         let feedItem = FeedItem(userID: user.id!, userName: user.name,
                                 song: self.currentTitle!, artist: "\(self.artist ?? "*Artist Unavailable*")",
                                 album: "\(self.albumTitle ?? "*Album Unavailable*")", date: Date())
         feedItem.publishPublicly()
-        user.feedItems?.append(feedItem)
-        ProfileServices.shared.updateCurrentUser()
+        ProfileServices.shared.addFeedItem(feedItem: feedItem)
     }
 
     //MARK: Observer Configurations.

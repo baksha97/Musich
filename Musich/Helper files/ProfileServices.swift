@@ -60,10 +60,20 @@ class ProfileServices{
         }
     }
     
-    func updateCurrentUser(){
-        FIRFirebaseService.shared.update(for: currentFirebaseUser!, in: .users, merge: true)
+    func addFeedItem(feedItem: FeedItem){
+        print("publishing...")
+        var user = currentFirebaseUser!
+        if(user.feedItems == nil){
+            user.feedItems = [FeedItem]()
+            user.feedItems?.append(feedItem)
+            print("publishing - nil append")
+        }else{
+            user.feedItems!.append(feedItem)
+            print("publishing - append")
+        }
+        print("updating w publish")
+        FIRFirebaseService.shared.update(for: user, in: .users, merge: true)
     }
-    
     
     private func configureDateFormatter(){
         self.formatter.dateStyle = .medium

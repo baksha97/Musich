@@ -25,7 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         MusicServices.shared.start()
         //TODO: ADD LOADING SCREEN FOR ONCE THIS HAS COMPLETED ONCE
-        FIRFirebaseService.shared.observeCurrentUser(completion: {(error) in //this needs to be added to userregistration services under a login method with loading...
+        //this needs to be added to userregistration services under a login method with loading...
+        FIRFirebaseService.shared.observeCurrentUser(completion: {(error) in
             print(error.debugDescription)
             print("observed current user")
         })
@@ -34,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func configureTheme(){
+    func configureTheme(){ //todo needs its own service. 
         let colorScheme = MDCBasicColorScheme(primaryColor: UIColor(red: 1.0, green: 0.81, blue: 0.0, alpha: 1.0),
                                               primaryLightColor: UIColor(red: 1.0, green: 0.81, blue: 0.0, alpha: 1.0),
                                               primaryDarkColor: UIColor(red: 1.0, green: 0.81, blue: 0.0, alpha: 1.0))
