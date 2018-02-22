@@ -16,7 +16,8 @@ import MediaPlayer
 
 class MusicServices{
     
-    //TODO ADD CONFIGURATION FOR WHEN APP STARTS AND SONG IS ALREADY PLAYING
+    //TODO ADD CONFIGURATION FOR WHEN APP STARTS AND SONG IS ALREADY PLAYING FOR BUTTON, CHANNEL IS WORKING
+    //TODO MAKE NSMUSIC REQUEST BEFORE LOGIN OR ELSE APP BUTTON WONT WORK INITALLY.
     private init(){
         NotificationCenter.default.addObserver(self, selector: #selector(setNowPlayingInformation), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil)
         player.beginGeneratingPlaybackNotifications()
@@ -85,7 +86,7 @@ class MusicServices{
     }
     private func reloadObservers(){
         //
-        let buttonText = "Apple Music: \(currentTitle ?? "nil?") by \(artist ?? "") in \(albumTitle ?? "")"
+        let buttonText = "Apple Music: \(currentTitle ?? "") by \(artist ?? "") in \(albumTitle ?? "")"
         self.appleMusicButton?.setTitle(buttonText, for: .normal)//currentTitle = channelID
         self.chatObserver?.dismiss(animated: true, completion: nil)
         print("RELOADED OBSERVERS")

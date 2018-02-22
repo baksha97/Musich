@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         MusicServices.shared.start()
         //TODO: ADD LOADING SCREEN FOR ONCE THIS HAS COMPLETED ONCE
-        FIRFirebaseService.shared.observeCurrentUser(completion: {(error) in
+        FIRFirebaseService.shared.observeCurrentUser(completion: {(error) in //this needs to be added to userregistration services under a login method with loading...
             print(error.debugDescription)
             print("observed current user")
         })
