@@ -58,7 +58,6 @@ class FIRFirebaseService{
     func read<T: Decodable>(from collectionReference: FIRFirestoreReference, returning objectType: T.Type, completion: @escaping([T]) -> Void){
         reference(to: collectionReference).addSnapshotListener { (snapshot, _) in
             guard let snapshot = snapshot else {return}
-            
             do{
                 var objects = [T]()
                 for document in snapshot.documents{
@@ -68,6 +67,34 @@ class FIRFirebaseService{
                 completion(objects)
             } catch{
                 print(error)
+            }
+        }
+    }
+    
+    func retrieveDocument<T: Decodable>(from collectionReference: FIRFirestoreReference, with id: String, returning objectType: T.Type, completion: @escaping(T) -> Void){
+        reference(to: collectionReference).document(id).getDocument(completion: { (document, error) in
+            guard let document = document else {return}
+            do{
+                var object: T
+                object = try document.decode(as: objectType.self)
+                completion(object)
+            } catch{
+                print(error)
+            }
+        })
+    }
+    
+    func observeCurrentUser(completion: @escaping(Error?) -> Void){
+        ///PULLING AUTH CURRENT USER
+        reference(to: .users).document((Auth.auth().currentUser?.uid)!).addSnapshotListener{ (document, error) in
+            guard let document = document else {return}
+            do{
+                let user = try document.decode(as: FirebaseUser.self)
+                ProfileServices.shared.setCurrentUser(user: user)
+                completion(error)
+            } catch{
+                print("error observing user")
+                completion(error)
             }
         }
     }

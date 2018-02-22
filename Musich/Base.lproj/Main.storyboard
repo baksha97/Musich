@@ -150,7 +150,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iAt-uk-6vA">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="612"/>
                                 <connections>
-                                    <segue destination="Oxw-H1-Tej" kind="embed" id="Y0Q-PR-L3i"/>
+                                    <segue destination="Pwz-Pj-wri" kind="embed" id="QXX-Kb-RlI"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -446,21 +446,6 @@
                 <exit id="GhC-xi-RY6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="776.79999999999995" y="662.51874062968523"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="X9Q-H5-RCZ">
-            <objects>
-                <viewController id="Oxw-H1-Tej" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="UFD-k3-wFC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="612"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="0.9402544487832285" blue="0.58580325579027281" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="APz-JF-mL8"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7ab-fu-qz7" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1627" y="594"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="SCu-7P-z1C">
@@ -872,6 +857,97 @@
                 </view>
             </objects>
             <point key="canvasLocation" x="3268" y="-34"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="cMr-fF-Tac">
+            <objects>
+                <viewController id="Pwz-Pj-wri" customClass="SettingsViewController" customModule="MusichDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="N9w-ot-Tfj">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="612"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IE6-QO-ybT">
+                                <rect key="frame" x="0.0" y="225" width="375" height="442"/>
+                                <connections>
+                                    <segue destination="iNh-Ii-2hd" kind="embed" id="Qrb-Uh-4Ne"/>
+                                </connections>
+                            </containerView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pp3-9P-Yp6">
+                                <rect key="frame" x="202" y="20" width="157" height="138"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="drM-56-A36">
+                                <rect key="frame" x="16" y="20" width="157" height="138"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="138" id="2Bj-Cf-TeE"/>
+                                    <constraint firstAttribute="width" constant="157" id="CU6-p7-St8"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1a1-ED-AdA" customClass="MDCTabBar">
+                                <rect key="frame" x="0.0" y="166" width="375" height="51"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Pp3-9P-Yp6" firstAttribute="leading" secondItem="drM-56-A36" secondAttribute="trailing" constant="29" id="3fX-kY-Sv1"/>
+                            <constraint firstItem="IE6-QO-ybT" firstAttribute="bottom" secondItem="2Ck-5X-D5J" secondAttribute="bottom" id="3lv-o8-XZF"/>
+                            <constraint firstItem="Pp3-9P-Yp6" firstAttribute="trailing" secondItem="N9w-ot-Tfj" secondAttribute="trailingMargin" id="3w9-6d-gZ6"/>
+                            <constraint firstItem="1a1-ED-AdA" firstAttribute="trailing" secondItem="IE6-QO-ybT" secondAttribute="trailing" id="6ZF-7G-rnN"/>
+                            <constraint firstItem="drM-56-A36" firstAttribute="top" secondItem="2Ck-5X-D5J" secondAttribute="top" id="HEc-vB-iWZ"/>
+                            <constraint firstAttribute="trailing" secondItem="1a1-ED-AdA" secondAttribute="trailing" id="IhM-z0-wrq"/>
+                            <constraint firstItem="1a1-ED-AdA" firstAttribute="top" secondItem="drM-56-A36" secondAttribute="bottom" constant="8" symbolic="YES" id="Uuq-cj-H18"/>
+                            <constraint firstItem="1a1-ED-AdA" firstAttribute="leading" secondItem="N9w-ot-Tfj" secondAttribute="leading" id="Ycg-xb-bC4"/>
+                            <constraint firstItem="drM-56-A36" firstAttribute="leading" secondItem="N9w-ot-Tfj" secondAttribute="leadingMargin" id="abW-5V-jfr"/>
+                            <constraint firstItem="1a1-ED-AdA" firstAttribute="leading" secondItem="IE6-QO-ybT" secondAttribute="leading" id="g7f-CC-Lv8"/>
+                            <constraint firstItem="1a1-ED-AdA" firstAttribute="top" secondItem="Pp3-9P-Yp6" secondAttribute="bottom" constant="8" symbolic="YES" id="q1c-Qx-TN4"/>
+                            <constraint firstItem="IE6-QO-ybT" firstAttribute="top" secondItem="N9w-ot-Tfj" secondAttribute="top" constant="225" id="rTe-R4-Daa"/>
+                            <constraint firstItem="IE6-QO-ybT" firstAttribute="top" secondItem="1a1-ED-AdA" secondAttribute="bottom" constant="8" symbolic="YES" id="tXz-TX-viI"/>
+                            <constraint firstItem="drM-56-A36" firstAttribute="top" secondItem="Pp3-9P-Yp6" secondAttribute="top" id="zyj-Em-JP1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2Ck-5X-D5J"/>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="Pp3-9P-Yp6" id="hPh-on-tri"/>
+                        <outlet property="tabBar" destination="1a1-ED-AdA" id="5OX-0c-Bx3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lOQ-uv-lb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2335" y="663"/>
+        </scene>
+        <!--Settings Collection View-->
+        <scene sceneID="jyQ-0r-0im">
+            <objects>
+                <collectionViewController id="iNh-Ii-2hd" customClass="SettingsCollectionView" customModule="MusichDemo" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="a1H-5S-8jU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="442"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZeZ-Z5-VSl">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" reuseIdentifier="cell" id="fQx-y5-8WM" customClass="MDCCollectionViewTextCell">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="iNh-Ii-2hd" id="Pu2-WA-jN7"/>
+                            <outlet property="delegate" destination="iNh-Ii-2hd" id="n2T-bz-Zes"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sQb-Ys-Yq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2335" y="1335"/>
         </scene>
     </scenes>
     <resources>

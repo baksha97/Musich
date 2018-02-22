@@ -61,7 +61,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     
     //DEVELOPMENT LOGIN
     func loginFunction(){
-        Auth.auth().signIn(withEmail: "travis@dev.com",
+        Auth.auth().signIn(withEmail: "tester4@dev.com",
                                password: "123456", completion: { user, error in
                                 
                                 if error != nil { //unsucessful
@@ -75,25 +75,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
                                 }
                                 else{
                                     print("logged in successfully!!!")
-//                                    self.dismiss(animated: true, completion: nil)
-//                                    self.performSegue(withIdentifier: "loginToTab", sender: nil)
-                                    self.fUser = Auth.auth().currentUser
-                                    //temp display name update
-                                    let changeRequest = self.fUser?.createProfileChangeRequest()
-                                    changeRequest?.displayName = "user_DisplayName"
-                                    changeRequest?.commitChanges { error in
-                                        if let _ = error {
-                                            // An error happened.
-                                        } else {
-                                            print(self.fUser?.displayName! ?? "DISPLAY NAME IS NIL!")
-                                        }
                                     }
-                                }
-        })
-        
+                                })
     }
-    
-    
 }
 
 
