@@ -87,6 +87,22 @@ class FIRFirebaseService{
         }
     }
     
+    func readDatedObjects<T: Decodable & Dated>(from collectionReference: FIRFirestoreReference, order decending: Bool, limited amount: Int, returning objectType: T.Type, completion: @escaping([T]) -> Void){
+        reference(to: collectionReference).order(by: "date", descending: decending).limit(to: amount).addSnapshotListener { (snapshot, _) in
+            guard let snapshot = snapshot else {return}
+            do{
+                var objects = [T]()
+                for document in snapshot.documents{
+                    let object = try document.decode(as: objectType.self)
+                    objects.append(object)
+                }
+                completion(objects)
+            } catch{
+                print(error)
+            }
+        }
+    }
+    
     func retrieveDocument<T: Decodable>(from collectionReference: FIRFirestoreReference, with id: String, returning objectType: T.Type, completion: @escaping(T) -> Void){
         reference(to: collectionReference).document(id).getDocument(completion: { (document, error) in
             guard let document = document else {return}

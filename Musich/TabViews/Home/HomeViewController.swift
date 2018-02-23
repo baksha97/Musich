@@ -12,6 +12,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 
     //MARK: UI Elements
     @IBOutlet weak var collectionView: UICollectionView!
+    let appBar = MDCAppBar()
     
     //feed items
     var feedItems: [FeedItem] = [FeedItem]()
@@ -20,7 +21,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         super.viewDidLoad()
         configureDateFormatter()
         collectionView.delegate = self
-        //configureAppBar()
+        configureAppBar()
         addFeedItems()
     }
     
@@ -34,17 +35,19 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 
 
-//    func configureAppBar(){
-//        addChildViewController(appBar.headerViewController)
-//        appBar.headerViewController.headerView.backgroundColor = UIColor(red: 1.0, green: 0.81, blue: 0.0, alpha: 1.0)
-//        appBar.addSubviewsToParent()
-//        title = "Musich Home"
-//        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Me", style: .plain, target: self, action: #selector(self.meDidTap))
-//        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Back", style: .plain, target: self, action: #selector(self.backDidTap))
-//
-//        appBar.navigationBar.tintColor = UIColor.black
-//
-//    }
+    func configureAppBar(){
+        addChildViewController(appBar.headerViewController)
+        appBar.headerViewController.headerView.backgroundColor = UIColor(red: 1.0, green: 0.76, blue: 0.03, alpha: 1.0)
+        
+        appBar.headerViewController.headerView.trackingScrollView = self.collectionView
+        appBar.addSubviewsToParent()
+        
+        title = "Music Feed"
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(self.meDidTap))
+        
+        appBar.navigationBar.tintColor = UIColor.black
+    }
 
     @objc func meDidTap(){
 
@@ -84,10 +87,14 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print(indexPath.row)
+    }
+    
     let formatter = DateFormatter()
     func configureDateFormatter(){
         self.formatter.dateStyle = .medium
-        self.formatter.timeStyle = .none
+        self.formatter.timeStyle = .medium
        // self.formatter.locale = Locale(identifier)
     }
 }
