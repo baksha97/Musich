@@ -24,8 +24,6 @@
 import UIKit
 import Photos
 import MaterialComponents.MaterialButtons
-import Firebase
-import FirebaseStorageUI
 import CoreLocation
 
 class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate,  UINavigationControllerDelegate, UIImagePickerControllerDelegate, CLLocationManagerDelegate {
@@ -111,7 +109,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
     }
     
     func composeMessage(type: MessageType, content: Any)  {
-        let message = Message.init(type: type, content: content, owner: .sender, timestamp: Int(Date().timeIntervalSince1970), fromID: Auth.auth().currentUser!.uid) //TODO ONLY TEMP TO GET WORKING...
+        let message = Message.init(type: type, content: content, owner: .sender, timestamp: Int(Date().timeIntervalSince1970), fromID: (ProfileServices.shared.currentFirebaseUser?.id)!) 
         Message.send(message: message, toChannelID: self.channelID, completion: {(_) in
         })
     }
@@ -183,7 +181,7 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
     
     @IBAction func sendMessage(_ sender: Any) {
         if let text = self.inputTextField.text {
-            if text.characters.count > 0 {
+            if text.count > 0 {
                 self.composeMessage(type: .text, content: self.inputTextField.text!)
                 self.inputTextField.text = ""
             }

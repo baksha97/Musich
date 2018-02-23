@@ -17,13 +17,27 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="ocn-iW-Vvk">
+                                <rect key="frame" x="74" y="229" width="227" height="209"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ocn-iW-Vvk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="74" id="16Z-T1-g1w"/>
+                            <constraint firstItem="ocn-iW-Vvk" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="209" id="4P9-cZ-O7f"/>
+                            <constraint firstItem="ocn-iW-Vvk" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="eZo-DY-b42"/>
+                            <constraint firstItem="ocn-iW-Vvk" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ufT-u5-v33"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="52" y="374.66266866566718"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo.png" width="250" height="250"/>
+    </resources>
 </document>

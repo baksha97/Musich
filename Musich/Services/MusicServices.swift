@@ -19,9 +19,10 @@ class MusicServices{
     //TODO MAKE NSMUSIC REQUEST BEFORE LOGIN OR ELSE APP BUTTON WONT WORK INITALLY ON FIRST RUN
     //TODO ADD -IF PAUSED, NO CURRENT SONG! Song should be playing to be able to enter a chat.
     private init(){
-        NotificationCenter.default.addObserver(self, selector: #selector(setNowPlayingInformation), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil)
-        player.beginGeneratingPlaybackNotifications()
-        //initalStartCheck()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2){ //added delay to avoid double addition to firebase
+            NotificationCenter.default.addObserver(self, selector: #selector(self.setNowPlayingInformation), name: NSNotification.Name.MPMusicPlayerControllerNowPlayingItemDidChange, object: nil)
+            self.player.beginGeneratingPlaybackNotifications()
+        }
     }
     
     static let shared = MusicServices()
@@ -50,18 +51,6 @@ class MusicServices{
            print("Song Information Empty - setNowPlaying.MusicServices")
         }
         reloadObservers()
-    }
-    
-    func initalStartCheck(){
-        if let mediaItem = self.player.nowPlayingItem {
-            currentTitle = mediaItem.value(forProperty: MPMediaItemPropertyTitle) as? String
-            artist = mediaItem.value(forProperty: MPMediaItemPropertyArtist) as? String ?? ""
-            albumTitle = mediaItem.value(forProperty: MPMediaItemPropertyAlbumTitle) as? String ?? ""
-            setChannelID()
-            publishItem()
-        }else{
-            print("Song Information Empty - initalStartCheck.MusicServices")
-        }
     }
     
     private func setChannelID(){

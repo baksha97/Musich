@@ -64,6 +64,7 @@ class ProfileServices{
             user.feedItems?.append(feedItem)
             print("publishing - nil append")
         }else{
+            
             user.feedItems!.append(feedItem)
             print("publishing - append")
         }

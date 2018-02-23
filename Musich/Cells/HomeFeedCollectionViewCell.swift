@@ -13,7 +13,15 @@ class HomeFeedCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var imageView: RoundedImageView!
     @IBOutlet weak var userLabel: UILabel!
-    @IBOutlet weak var listeningToLabel: UILabel!
+    
+    @IBOutlet weak var songLabel: UILabel!
+    @IBOutlet weak var artistLabel: UILabel!
+    @IBOutlet weak var albumLabel: UILabel!
+    
+    
+    
+    
+    
     @IBOutlet weak var dateLabel: UILabel!
     
     
