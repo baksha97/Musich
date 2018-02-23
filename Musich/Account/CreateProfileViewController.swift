@@ -57,7 +57,6 @@ class CreateProfileViewController: UIViewController,UIImagePickerControllerDeleg
     }
 
     @objc func doneDidTap(){
-        //TODO:
         if(displayNameField.text != "" && nameTextField.text != ""){
             UserRegistrationService.shared.registerUser(email: self.userEmail!, password: self.password!, name: nameTextField.text!, displayName: displayNameField.text!, pickedImage: profilePictureImageView.image!)
             performSegue(withIdentifier: unwindToLoginSegue, sender: self)

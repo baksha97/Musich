@@ -26,7 +26,7 @@ class FIRFirebaseService{
     }
     
     private func reference(to reference: FIRStorageReference) -> StorageReference{
-        return Storage.storage().reference().child(reference.description)///TODO ?
+        return Storage.storage().reference().child(reference.description)
     }
     
     func create<T: Encodable>(for encodableObject: T, in collectionReference: FIRFirestoreReference){

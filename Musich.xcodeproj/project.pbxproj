@@ -28,6 +28,7 @@
 		2E3C1507203E870500C7C2EB /* MusicServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3C1506203E870500C7C2EB /* MusicServices.swift */; };
 		2E4B6B96203D583200350DC8 /* UserRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4B6B95203D583200350DC8 /* UserRegistrationService.swift */; };
 		2E4E5460203FB7DE00C5FCD1 /* MDCAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E545F203FB7DE00C5FCD1 /* MDCAlertService.swift */; };
+		2E4E5468203FC24400C5FCD1 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E5467203FC24400C5FCD1 /* FeedItem.swift */; };
 		2E7186F420393D4A00730E0D /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7186F320393D4A00730E0D /* CreateAccountViewController.swift */; };
 		2E9A68E9202D5B4000783119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A68E8202D5B4000783119 /* AppDelegate.swift */; };
 		2E9A68EB202D5B4000783119 /* MaterialListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A68EA202D5B4000783119 /* MaterialListViewController.swift */; };
@@ -70,6 +71,7 @@
 		2E3C1506203E870500C7C2EB /* MusicServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicServices.swift; sourceTree = "<group>"; };
 		2E4B6B95203D583200350DC8 /* UserRegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationService.swift; sourceTree = "<group>"; };
 		2E4E545F203FB7DE00C5FCD1 /* MDCAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCAlertService.swift; sourceTree = "<group>"; };
+		2E4E5467203FC24400C5FCD1 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		2E7186F320393D4A00730E0D /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = Account/CreateAccountViewController.swift; sourceTree = "<group>"; };
 		2E9A68E5202D5B4000783119 /* Musich.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musich.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E9A68E8202D5B4000783119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -131,13 +133,13 @@
 			path = Musich/Images;
 			sourceTree = "<group>";
 		};
-		2E098813203BC1E7009D750E /* Model */ = {
+		2E098813203BC1E7009D750E /* Message Models */ = {
 			isa = PBXGroup;
 			children = (
 				2E098814203BC1E7009D750E /* Message.swift */,
 				2E098815203BC1E7009D750E /* User.swift */,
 			);
-			path = Model;
+			path = "Message Models";
 			sourceTree = "<group>";
 		};
 		2E098818203BC27F009D750E /* Helper files */ = {
@@ -145,23 +147,71 @@
 			children = (
 				2E098819203BC27F009D750E /* Helper Files.swift */,
 				2E09881A203BC27F009D750E /* BadgeSwift.swift */,
-				2E4B6B95203D583200350DC8 /* UserRegistrationService.swift */,
-				2E098823203BD5A9009D750E /* FIRFirebaseService.swift */,
-				2E09882D203BF6AE009D750E /* FirebaseUser.swift */,
-				2E09882F203BF6C7009D750E /* SnapshotExtensions.swift */,
-				2E098831203BF6E3009D750E /* EncodeableExtensions.swift */,
-				2EC7161F203E6C2800FD4309 /* ProfileServices.swift */,
-				2E3C1506203E870500C7C2EB /* MusicServices.swift */,
-				2E4E545F203FB7DE00C5FCD1 /* MDCAlertService.swift */,
 			);
 			path = "Helper files";
+			sourceTree = "<group>";
+		};
+		2E4E5461203FC10500C5FCD1 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				2E098823203BD5A9009D750E /* FIRFirebaseService.swift */,
+				2E3C1506203E870500C7C2EB /* MusicServices.swift */,
+				2EC7161F203E6C2800FD4309 /* ProfileServices.swift */,
+				2E4E545F203FB7DE00C5FCD1 /* MDCAlertService.swift */,
+				2E4B6B95203D583200350DC8 /* UserRegistrationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2E4E5462203FC18800C5FCD1 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				2EB341AC203A23C9003A2B4E /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		2E4E5463203FC18F00C5FCD1 /* Musich */ = {
+			isa = PBXGroup;
+			children = (
+				2E098821203BC392009D750E /* PlayerPickerViewController.swift */,
+				2E09881F203BC2EA009D750E /* ChatVC.swift */,
+			);
+			path = Musich;
+			sourceTree = "<group>";
+		};
+		2E4E5464203FC19D00C5FCD1 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				2EC7161B203E6A8F00FD4309 /* SettingsCollectionView.swift */,
+				2EC7161C203E6A9000FD4309 /* SettingsViewController.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		2E4E5465203FC1F000C5FCD1 /* Musich Models */ = {
+			isa = PBXGroup;
+			children = (
+				2E09882D203BF6AE009D750E /* FirebaseUser.swift */,
+				2E4E5467203FC24400C5FCD1 /* FeedItem.swift */,
+			);
+			path = "Musich Models";
+			sourceTree = "<group>";
+		};
+		2E4E5466203FC20B00C5FCD1 /* Firebase Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2E09882F203BF6C7009D750E /* SnapshotExtensions.swift */,
+				2E098831203BF6E3009D750E /* EncodeableExtensions.swift */,
+			);
+			path = "Firebase Extensions";
 			sourceTree = "<group>";
 		};
 		2E7186F220393D1700730E0D /* Account */ = {
 			isa = PBXGroup;
 			children = (
-				2EA6A1D0202E4EC10086CF99 /* LoginViewController.swift */,
 				2E7186F320393D4A00730E0D /* CreateAccountViewController.swift */,
+				2EA6A1D0202E4EC10086CF99 /* LoginViewController.swift */,
 				2E04AD5120394A9E00691FA6 /* CreateProfileViewController.swift */,
 			);
 			name = Account;
@@ -191,6 +241,7 @@
 			children = (
 				2E7186F220393D1700730E0D /* Account */,
 				2EB341AB203A230D003A2B4E /* TabViews */,
+				2EBE94F0203A376600AF3DFC /* Cells */,
 				2E04AD532039522300691FA6 /* BottomNavigationBarViewController.swift */,
 				2E9A68E8202D5B4000783119 /* AppDelegate.swift */,
 				2E9A68EC202D5B4000783119 /* Main.storyboard */,
@@ -199,7 +250,10 @@
 				2E098811203BB9AF009D750E /* GoogleService-Info.plist */,
 				2E9A68F7202D5B4000783119 /* Info.plist */,
 				2E9A68EF202D5B4000783119 /* Musich.xcdatamodeld */,
-				2E098813203BC1E7009D750E /* Model */,
+				2E4E5466203FC20B00C5FCD1 /* Firebase Extensions */,
+				2E4E5465203FC1F000C5FCD1 /* Musich Models */,
+				2E098813203BC1E7009D750E /* Message Models */,
+				2E4E5461203FC10500C5FCD1 /* Services */,
 				2E098818203BC27F009D750E /* Helper files */,
 				2E9A68FD202D706200783119 /* MusichUI */,
 			);
@@ -220,12 +274,9 @@
 		2EB341AB203A230D003A2B4E /* TabViews */ = {
 			isa = PBXGroup;
 			children = (
-				2EC7161B203E6A8F00FD4309 /* SettingsCollectionView.swift */,
-				2EC7161C203E6A9000FD4309 /* SettingsViewController.swift */,
-				2EB341AC203A23C9003A2B4E /* HomeViewController.swift */,
-				2E09881F203BC2EA009D750E /* ChatVC.swift */,
-				2E098821203BC392009D750E /* PlayerPickerViewController.swift */,
-				2EBE94F0203A376600AF3DFC /* Cells */,
+				2E4E5462203FC18800C5FCD1 /* Home */,
+				2E4E5463203FC18F00C5FCD1 /* Musich */,
+				2E4E5464203FC19D00C5FCD1 /* Settings */,
 			);
 			path = TabViews;
 			sourceTree = "<group>";
@@ -426,6 +477,7 @@
 				2E09881E203BC2C2009D750E /* VCCells.swift in Sources */,
 				2E4E5460203FB7DE00C5FCD1 /* MDCAlertService.swift in Sources */,
 				2E098832203BF6E3009D750E /* EncodeableExtensions.swift in Sources */,
+				2E4E5468203FC24400C5FCD1 /* FeedItem.swift in Sources */,
 				2EA6A1D1202E4EC10086CF99 /* LoginViewController.swift in Sources */,
 				2EC7161D203E6A9000FD4309 /* SettingsCollectionView.swift in Sources */,
 				2E9A68EB202D5B4000783119 /* MaterialListViewController.swift in Sources */,
