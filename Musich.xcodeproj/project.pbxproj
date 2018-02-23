@@ -27,6 +27,7 @@
 		2E098832203BF6E3009D750E /* EncodeableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E098831203BF6E3009D750E /* EncodeableExtensions.swift */; };
 		2E3C1507203E870500C7C2EB /* MusicServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3C1506203E870500C7C2EB /* MusicServices.swift */; };
 		2E4B6B96203D583200350DC8 /* UserRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4B6B95203D583200350DC8 /* UserRegistrationService.swift */; };
+		2E4E5460203FB7DE00C5FCD1 /* MDCAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E545F203FB7DE00C5FCD1 /* MDCAlertService.swift */; };
 		2E7186F420393D4A00730E0D /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E7186F320393D4A00730E0D /* CreateAccountViewController.swift */; };
 		2E9A68E9202D5B4000783119 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A68E8202D5B4000783119 /* AppDelegate.swift */; };
 		2E9A68EB202D5B4000783119 /* MaterialListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A68EA202D5B4000783119 /* MaterialListViewController.swift */; };
@@ -68,6 +69,7 @@
 		2E098831203BF6E3009D750E /* EncodeableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodeableExtensions.swift; sourceTree = "<group>"; };
 		2E3C1506203E870500C7C2EB /* MusicServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicServices.swift; sourceTree = "<group>"; };
 		2E4B6B95203D583200350DC8 /* UserRegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationService.swift; sourceTree = "<group>"; };
+		2E4E545F203FB7DE00C5FCD1 /* MDCAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCAlertService.swift; sourceTree = "<group>"; };
 		2E7186F320393D4A00730E0D /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = Account/CreateAccountViewController.swift; sourceTree = "<group>"; };
 		2E9A68E5202D5B4000783119 /* Musich.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Musich.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2E9A68E8202D5B4000783119 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -150,6 +152,7 @@
 				2E098831203BF6E3009D750E /* EncodeableExtensions.swift */,
 				2EC7161F203E6C2800FD4309 /* ProfileServices.swift */,
 				2E3C1506203E870500C7C2EB /* MusicServices.swift */,
+				2E4E545F203FB7DE00C5FCD1 /* MDCAlertService.swift */,
 			);
 			path = "Helper files";
 			sourceTree = "<group>";
@@ -335,6 +338,9 @@
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionAnimator/MotionAnimator.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionInterchange/MotionInterchange.framework",
+				"${BUILT_PRODUCTS_DIR}/MotionTransitioning/MotionTransitioning.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
@@ -352,6 +358,9 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionAnimator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionInterchange.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MotionTransitioning.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
@@ -415,6 +424,7 @@
 				2E4B6B96203D583200350DC8 /* UserRegistrationService.swift in Sources */,
 				2E7186F420393D4A00730E0D /* CreateAccountViewController.swift in Sources */,
 				2E09881E203BC2C2009D750E /* VCCells.swift in Sources */,
+				2E4E5460203FB7DE00C5FCD1 /* MDCAlertService.swift in Sources */,
 				2E098832203BF6E3009D750E /* EncodeableExtensions.swift in Sources */,
 				2EA6A1D1202E4EC10086CF99 /* LoginViewController.swift in Sources */,
 				2EC7161D203E6A9000FD4309 /* SettingsCollectionView.swift in Sources */,

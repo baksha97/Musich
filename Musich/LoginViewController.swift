@@ -24,25 +24,39 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     
     @IBAction func unwindToLoginViewController(segue: UIStoryboardSegue){}
     
-    
     var emailController: MDCTextInputControllerLegacyDefault?
     var passwordController: MDCTextInputControllerLegacyDefault?
-    //MARK: Development
-    var fUser = Auth.auth().currentUser
+    
+    let navigationBarSegue = "loginToNavigationBarSegue"
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureFields()
-        UserRegistrationService.shared.loginUser(withEmail: "travis@dev.com", password: "123456")
-        //loginFunction()
-//        let f1 = FeedItem(userID: (fUser?.uid)!, userName: "Travis", song: "Riding Shotgun", description: "Kygo", date: Date())
-//        let f2 = FeedItem(userID: (fUser?.uid)!, userName: "Travis", song: "Love Lies", description: "Khalid", date: Date())
-////        let f3 = FeedItem(userID: (fUser?.uid)!, userName: "Travis", song: "Don't Let Me Down", description: "The Chainsmokers", date: Date())
-//        f1.pushFeedItem()
-//        f2.pushFeedItem()
-////        f3.pushFeedItem()
+        
+        //MARK: Development login
+        emailField.text = "travis@dev.com"
+        passwordField.text = "123456"
     }
     
+    @IBAction func loginDidTap(_ sender: Any) {
+        //TEMP FOR DEV
+        if(emailField.text != nil && passwordField.text != nil){
+            UserRegistrationService.shared.loginUser(withEmail: emailField.text!, password: passwordField.text!, completion: { (completed, error) in
+                if(completed){
+                    //MDCAlertService.shared.okAlert(sender: self, title: "You're signed in", message: "Welcome")
+                    self.performSegue(withIdentifier: self.navigationBarSegue, sender: self)
+                } else{
+                    MDCAlertService.shared.okAlert(sender: self, title: "An error occured, please try again.", message: (error.debugDescription))
+                }
+            })
+        }
+        else{
+             MDCAlertService.shared.okAlert(sender: self, title: "An error occured, please try again.", message: "Enter an appropriate email and password.")
+        }
+    }
+    
+    
+    //MARK: Text Field Methods
     func configureFields(){
         emailField.delegate = self
         passwordField.delegate = self
@@ -59,26 +73,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.view.endEditing(true)
     }
-    
-    //DEVELOPMENT LOGIN
-//    func loginFunction(){
-//        Auth.auth().signIn(withEmail: "travis@dev.com",
-//                               password: "123456", completion: { user, error in
-//
-//                                if error != nil { //unsucessful
-//                                    let alert = UIAlertController(title: "Login Error...",
-//                                                                  message: "Please register for an account!",
-//                                                                  preferredStyle: .alert)
-//                                    let okAction = UIAlertAction(title: "Okay",
-//                                                                 style: .default)
-//                                    alert.addAction(okAction)
-//                                    self.present(alert, animated: true, completion: nil)
-//                                }
-//                                else{
-//                                    print("logged in successfully!!!")
-//                                    }
-//                                })
-//    }
 }
-
-
+    

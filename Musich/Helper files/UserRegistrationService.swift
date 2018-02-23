@@ -20,24 +20,24 @@ class UserRegistrationService{
     }
     
     //LOGIN
-    func loginUser(withEmail: String, password: String){
+    func loginUser(withEmail: String, password: String, completion: @escaping(Bool, Error?)-> Void){
         Auth.auth().signIn(withEmail: withEmail, password: password, completion: { (user, error) in
             if error == nil {
-                //TODO - CREATE AN ALERT SERVICE FOR THIS
                 //TODO - CONFIGURE USER DEFAULTS PROPERLY
                 // let userInfo = ["email": withEmail, "password": password]
                 //  UserDefaults.standard.set(userInfo, forKey: "userInformation")
-                print("logged in successfully")
                 FIRFirebaseService.shared.observeCurrentUser(completion: {(error) in
                     if error == nil{
                         print("observing user")
+                        completion(true, error)
                     }
                     else{
                         print("observing failed")
+                        completion(false, error)
                     }
                 })
             } else {
-                //TODO - CREATE AN ALERT SERVICE FOR THIS
+                completion(false, error)
                 print(error.debugDescription)
             }
         })

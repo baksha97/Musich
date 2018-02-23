@@ -58,7 +58,6 @@ class Message {
                         let message = Message.init(type: type, content: content, owner: .receiver, timestamp: timestamp, fromID: fromID)
                         completion(message)
                     } else {
-                        //TODO HERE IS WHERE I WOULD CONFIGURE THE PROPER PROFILE PHOTO IMAGE URL/ IMAGE...
                         let message = Message.init(type: type, content: content, owner: .sender, timestamp: timestamp, fromID: fromID)
                         completion(message)
                     }
@@ -137,7 +136,6 @@ class Message {
     }
     
     class func send(message: Message, toChannelID: String, completion: @escaping (Bool) -> Swift.Void)  {
-        ///TEMP TODO HELP ME IDK HOW
         if let currentUserID = Auth.auth().currentUser?.uid {
             switch message.type {
             case .location:
@@ -158,7 +156,6 @@ class Message {
                     }
                 })
             case .text:
-                ///TEMP TODO HELP ME IDK HOW TO SHOW PIC AND NOT APPEND NAME
                 let messageWithName = "\(String(describing: Auth.auth().currentUser!.email!)) - \(message.content as! String)"
                 let values = ["type": "text", "content": messageWithName, "fromID": currentUserID, "toChannelID": toChannelID, "timestamp": message.timestamp] as [String : Any] //as [String ANY] ?? idk if delete
                 Message.uploadMessage(withValues: values, toChannelID: toChannelID, completion: { (status) in

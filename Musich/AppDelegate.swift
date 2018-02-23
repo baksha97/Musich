@@ -23,9 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        //MusicServices.shared.start()
-        //TODO: ADD LOADING SCREEN FOR ONCE THIS HAS COMPLETED ONCE
-        //this needs to be added to userregistration services under a login method with loading...
+        
+        //todo: add it's own service
         configureTheme()
         return true
     }

@@ -82,7 +82,7 @@
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="wHx-rM-V5G" kind="show" id="9Xx-CE-YhK"/>
+                                    <action selector="loginDidTap:" destination="YrC-kv-K9e" eventType="touchUpInside" id="cor-M2-gvE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -109,11 +109,12 @@
                     <connections>
                         <outlet property="emailField" destination="n1Z-M8-9pi" id="yEq-dt-NH9"/>
                         <outlet property="passwordField" destination="FpJ-3w-Qyv" id="F5J-Fy-Cfd"/>
+                        <segue destination="wHx-rM-V5G" kind="show" identifier="loginToNavigationBarSegue" id="Wml-zd-a9m"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w5h-LJ-ku2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="40.799999999999997" y="-61.619190404797607"/>
+            <point key="canvasLocation" x="-42" y="-59"/>
         </scene>
         <!--Bottom Navigation Bar View Controller-->
         <scene sceneID="yDE-PP-0PL">

@@ -154,6 +154,19 @@ PODS:
     - MaterialComponents/ShadowElevations
     - MaterialComponents/ShadowLayer
     - MaterialComponents/Typography
+  - MaterialComponents/Dialogs (44.6.0):
+    - MaterialComponents/Buttons
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MDFInternationalization
+    - MotionAnimator (~> 2.5)
+    - MotionTransitioning (~> 5.0)
+  - MaterialComponents/Dialogs+Extensions (44.6.0):
+    - MaterialComponents/Dialogs+Extensions/ColorThemer (= 44.6.0)
+  - MaterialComponents/Dialogs+Extensions/ColorThemer (44.6.0):
+    - MaterialComponents/Dialogs
+    - MaterialComponents/Themes
   - MaterialComponents/FlexibleHeader (44.6.0):
     - MaterialComponents/private/Application
     - MaterialComponents/private/UIMetrics
@@ -189,6 +202,8 @@ PODS:
     - MaterialComponents/private/Icons/Base
   - MaterialComponents/private/Icons/ic_reorder (44.6.0):
     - MaterialComponents/private/Icons/Base
+  - MaterialComponents/private/KeyboardWatcher (44.6.0):
+    - MaterialComponents/private/Application
   - MaterialComponents/private/Math (44.6.0)
   - MaterialComponents/private/UIMetrics (44.6.0):
     - MaterialComponents/private/Application
@@ -224,6 +239,10 @@ PODS:
     - MaterialComponents/private/Application
   - MDFInternationalization (1.0.4)
   - MDFTextAccessibility (1.2.0)
+  - MotionAnimator (2.8.0):
+    - MotionInterchange (~> 1.6)
+  - MotionInterchange (1.6.0)
+  - MotionTransitioning (5.0.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -246,6 +265,7 @@ DEPENDENCIES:
   - MaterialComponents/BottomNavigation+Extensions
   - MaterialComponents/Buttons+Extensions
   - MaterialComponents/Collections
+  - MaterialComponents/Dialogs+Extensions
   - MaterialComponents/NavigationBar+Extensions
   - MaterialComponents/Tabs+Extensions
   - MaterialComponents/TextFields+Extensions
@@ -271,10 +291,13 @@ SPEC CHECKSUMS:
   MaterialComponents: 974b52899fb90f28da0284790be46b2ca82358f5
   MDFInternationalization: e355b0cebecf53d60233bd267084e49366c82513
   MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
+  MotionAnimator: 8af077dac084b7880a4d2ddae31a26171087bd87
+  MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
+  MotionTransitioning: 23d25edc2f4606efb922403cbac6d81af37aa33a
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
 
-PODFILE CHECKSUM: 67d0fece78c2de18dd1f5b04ee393ede654beffa
+PODFILE CHECKSUM: 277a9880d128bba2e76c8cf07f8b5a3991dedf5e
 
 COCOAPODS: 1.4.0
