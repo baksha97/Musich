@@ -43,7 +43,7 @@ class PlayerPickerViewController: UIViewController {
             performSegue(withIdentifier: chatViewSegue, sender: sender)
         }
         else{
-            print("channel id is nil - cannot perform segue")
+            MDCAlertService.shared.okAlert(sender: self, title: "Play a song!", message: "You need to be listening to a song to enter a channel.")
         }
     }
     

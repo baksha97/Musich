@@ -74,7 +74,10 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeFeedCell", for: indexPath)
 
         if let cell = cell as? HomeFeedCollectionViewCell {
-
+            //display
+            cell.layer.borderWidth = 2
+            cell.layer.borderColor = UIColor.black.cgColor
+            //data
             cell.userLabel.text = feedItems[indexPath.row].userName //"User_temp"
             cell.songLabel.text = feedItems[indexPath.row].song
             cell.artistLabel.text = feedItems[indexPath.row].artist
@@ -87,9 +90,17 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print(indexPath.row)
-    }
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        let cell = collectionView.cellForItem(at: indexPath)
+//        cell?.layer.borderWidth = 2.0
+//        cell?.layer.borderColor = UIColor.gray.cgColor
+//    }
+//
+//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+//        let cell = collectionView.cellForItem(at: indexPath)
+//        cell?.layer.borderWidth = 0
+//        cell?.layer.borderColor = UIColor.clear.cgColor
+//    }
     
     let formatter = DateFormatter()
     func configureDateFormatter(){
