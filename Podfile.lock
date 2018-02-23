@@ -83,8 +83,8 @@ PODS:
     - gRPC-RxLibrary (= 1.9.1)
   - GTMSessionFetcher/Core (1.1.13)
   - leveldb-library (1.20)
-  - MaterialComponents/AnimationTiming (44.6.0)
-  - MaterialComponents/AppBar (44.6.0):
+  - MaterialComponents/AnimationTiming (45.0.0)
+  - MaterialComponents/AppBar (45.0.0):
     - MaterialComponents/FlexibleHeader
     - MaterialComponents/HeaderStackView
     - MaterialComponents/NavigationBar
@@ -95,27 +95,27 @@ PODS:
     - MaterialComponents/ShadowLayer
     - MaterialComponents/Typography
     - MDFInternationalization
-  - MaterialComponents/AppBar+Extensions (44.6.0):
-    - MaterialComponents/AppBar+Extensions/ColorThemer (= 44.6.0)
-  - MaterialComponents/AppBar+Extensions/ColorThemer (44.6.0):
+  - MaterialComponents/AppBar+Extensions (45.0.0):
+    - MaterialComponents/AppBar+Extensions/ColorThemer (= 45.0.0)
+  - MaterialComponents/AppBar+Extensions/ColorThemer (45.0.0):
     - MaterialComponents/AppBar
     - MaterialComponents/Themes
-  - MaterialComponents/BottomNavigation (44.6.0):
+  - MaterialComponents/BottomNavigation (45.0.0):
     - MaterialComponents/Ink
     - MaterialComponents/private/Math
     - MaterialComponents/ShadowElevations
     - MaterialComponents/ShadowLayer
     - MaterialComponents/Typography
     - MDFInternationalization
-  - MaterialComponents/BottomNavigation+Extensions (44.6.0):
-    - MaterialComponents/BottomNavigation+Extensions/ColorThemer (= 44.6.0)
-  - MaterialComponents/BottomNavigation+Extensions/ColorThemer (44.6.0):
+  - MaterialComponents/BottomNavigation+Extensions (45.0.0):
+    - MaterialComponents/BottomNavigation+Extensions/ColorThemer (= 45.0.0)
+  - MaterialComponents/BottomNavigation+Extensions/ColorThemer (45.0.0):
     - MaterialComponents/BottomNavigation
     - MaterialComponents/Themes
-  - MaterialComponents/ButtonBar (44.6.0):
+  - MaterialComponents/ButtonBar (45.0.0):
     - MaterialComponents/Buttons
     - MDFInternationalization
-  - MaterialComponents/Buttons (44.6.0):
+  - MaterialComponents/Buttons (45.0.0):
     - MaterialComponents/Ink
     - MaterialComponents/private/Math
     - MaterialComponents/ShadowElevations
@@ -123,16 +123,16 @@ PODS:
     - MaterialComponents/Typography
     - MDFInternationalization
     - MDFTextAccessibility
-  - MaterialComponents/Buttons+Extensions (44.6.0):
-    - MaterialComponents/Buttons+Extensions/ColorThemer (= 44.6.0)
-    - MaterialComponents/Buttons+Extensions/TitleColorAccessibilityMutator (= 44.6.0)
-  - MaterialComponents/Buttons+Extensions/ColorThemer (44.6.0):
+  - MaterialComponents/Buttons+Extensions (45.0.0):
+    - MaterialComponents/Buttons+Extensions/ColorThemer (= 45.0.0)
+    - MaterialComponents/Buttons+Extensions/TitleColorAccessibilityMutator (= 45.0.0)
+  - MaterialComponents/Buttons+Extensions/ColorThemer (45.0.0):
     - MaterialComponents/Buttons
     - MaterialComponents/Themes
-  - MaterialComponents/Buttons+Extensions/TitleColorAccessibilityMutator (44.6.0):
+  - MaterialComponents/Buttons+Extensions/TitleColorAccessibilityMutator (45.0.0):
     - MaterialComponents/Buttons
     - MDFTextAccessibility
-  - MaterialComponents/CollectionCells (44.6.0):
+  - MaterialComponents/CollectionCells (45.0.0):
     - MaterialComponents/CollectionLayoutAttributes
     - MaterialComponents/Ink
     - MaterialComponents/Palettes
@@ -145,8 +145,8 @@ PODS:
     - MaterialComponents/private/Math
     - MaterialComponents/Typography
     - MDFInternationalization
-  - MaterialComponents/CollectionLayoutAttributes (44.6.0)
-  - MaterialComponents/Collections (44.6.0):
+  - MaterialComponents/CollectionLayoutAttributes (45.0.0)
+  - MaterialComponents/Collections (45.0.0):
     - MaterialComponents/CollectionCells
     - MaterialComponents/CollectionLayoutAttributes
     - MaterialComponents/Ink
@@ -154,63 +154,61 @@ PODS:
     - MaterialComponents/ShadowElevations
     - MaterialComponents/ShadowLayer
     - MaterialComponents/Typography
-  - MaterialComponents/Dialogs (44.6.0):
+  - MaterialComponents/Dialogs (45.0.0):
     - MaterialComponents/Buttons
     - MaterialComponents/private/KeyboardWatcher
     - MaterialComponents/ShadowElevations
     - MaterialComponents/ShadowLayer
     - MDFInternationalization
-    - MotionAnimator (~> 2.5)
-    - MotionTransitioning (~> 5.0)
-  - MaterialComponents/Dialogs+Extensions (44.6.0):
-    - MaterialComponents/Dialogs+Extensions/ColorThemer (= 44.6.0)
-  - MaterialComponents/Dialogs+Extensions/ColorThemer (44.6.0):
+  - MaterialComponents/Dialogs+Extensions (45.0.0):
+    - MaterialComponents/Dialogs+Extensions/ColorThemer (= 45.0.0)
+  - MaterialComponents/Dialogs+Extensions/ColorThemer (45.0.0):
     - MaterialComponents/Dialogs
     - MaterialComponents/Themes
-  - MaterialComponents/FlexibleHeader (44.6.0):
+  - MaterialComponents/FlexibleHeader (45.0.0):
     - MaterialComponents/private/Application
     - MaterialComponents/private/UIMetrics
     - MDFTextAccessibility
-  - MaterialComponents/HeaderStackView (44.6.0)
-  - MaterialComponents/Ink (44.6.0):
+  - MaterialComponents/HeaderStackView (45.0.0)
+  - MaterialComponents/Ink (45.0.0):
     - MaterialComponents/private/Math
-  - MaterialComponents/NavigationBar (44.6.0):
+  - MaterialComponents/NavigationBar (45.0.0):
     - MaterialComponents/ButtonBar
     - MaterialComponents/private/Math
     - MaterialComponents/Typography
     - MDFInternationalization
     - MDFTextAccessibility
-  - MaterialComponents/NavigationBar+Extensions (44.6.0):
-    - MaterialComponents/NavigationBar+Extensions/ColorThemer (= 44.6.0)
-  - MaterialComponents/NavigationBar+Extensions/ColorThemer (44.6.0):
+  - MaterialComponents/NavigationBar+Extensions (45.0.0):
+    - MaterialComponents/NavigationBar+Extensions/ColorThemer (= 45.0.0)
+  - MaterialComponents/NavigationBar+Extensions/ColorThemer (45.0.0):
     - MaterialComponents/NavigationBar
     - MaterialComponents/Themes
-  - MaterialComponents/Palettes (44.6.0)
-  - MaterialComponents/private/Application (44.6.0)
-  - MaterialComponents/private/Icons/Base (44.6.0)
-  - MaterialComponents/private/Icons/ic_arrow_back (44.6.0):
+  - MaterialComponents/Palettes (45.0.0)
+  - MaterialComponents/private/Application (45.0.0)
+  - MaterialComponents/private/Icons/Base (45.0.0)
+  - MaterialComponents/private/Icons/ic_arrow_back (45.0.0):
     - MaterialComponents/private/Icons/Base
-  - MaterialComponents/private/Icons/ic_check (44.6.0):
+  - MaterialComponents/private/Icons/ic_check (45.0.0):
     - MaterialComponents/private/Icons/Base
-  - MaterialComponents/private/Icons/ic_check_circle (44.6.0):
+  - MaterialComponents/private/Icons/ic_check_circle (45.0.0):
     - MaterialComponents/private/Icons/Base
-  - MaterialComponents/private/Icons/ic_chevron_right (44.6.0):
+  - MaterialComponents/private/Icons/ic_chevron_right (45.0.0):
     - MaterialComponents/private/Icons/Base
-  - MaterialComponents/private/Icons/ic_info (44.6.0):
+  - MaterialComponents/private/Icons/ic_info (45.0.0):
     - MaterialComponents/private/Icons/Base
-  - MaterialComponents/private/Icons/ic_radio_button_unchecked (44.6.0):
+  - MaterialComponents/private/Icons/ic_radio_button_unchecked (45.0.0):
     - MaterialComponents/private/Icons/Base
-  - MaterialComponents/private/Icons/ic_reorder (44.6.0):
+  - MaterialComponents/private/Icons/ic_reorder (45.0.0):
     - MaterialComponents/private/Icons/Base
-  - MaterialComponents/private/KeyboardWatcher (44.6.0):
+  - MaterialComponents/private/KeyboardWatcher (45.0.0):
     - MaterialComponents/private/Application
-  - MaterialComponents/private/Math (44.6.0)
-  - MaterialComponents/private/UIMetrics (44.6.0):
+  - MaterialComponents/private/Math (45.0.0)
+  - MaterialComponents/private/UIMetrics (45.0.0):
     - MaterialComponents/private/Application
-  - MaterialComponents/ShadowElevations (44.6.0)
-  - MaterialComponents/ShadowLayer (44.6.0):
+  - MaterialComponents/ShadowElevations (45.0.0)
+  - MaterialComponents/ShadowLayer (45.0.0):
     - MaterialComponents/ShadowElevations
-  - MaterialComponents/Tabs (44.6.0):
+  - MaterialComponents/Tabs (45.0.0):
     - MaterialComponents/AnimationTiming
     - MaterialComponents/Ink
     - MaterialComponents/private/Math
@@ -218,31 +216,27 @@ PODS:
     - MaterialComponents/ShadowLayer
     - MaterialComponents/Typography
     - MDFInternationalization
-  - MaterialComponents/Tabs+Extensions (44.6.0):
-    - MaterialComponents/Tabs+Extensions/ColorThemer (= 44.6.0)
-  - MaterialComponents/Tabs+Extensions/ColorThemer (44.6.0):
+  - MaterialComponents/Tabs+Extensions (45.0.0):
+    - MaterialComponents/Tabs+Extensions/ColorThemer (= 45.0.0)
+  - MaterialComponents/Tabs+Extensions/ColorThemer (45.0.0):
     - MaterialComponents/Tabs
     - MaterialComponents/Themes
-  - MaterialComponents/TextFields (44.6.0):
+  - MaterialComponents/TextFields (45.0.0):
     - MaterialComponents/AnimationTiming
     - MaterialComponents/Palettes
     - MaterialComponents/private/Math
     - MaterialComponents/Typography
     - MDFInternationalization
-  - MaterialComponents/TextFields+Extensions (44.6.0):
-    - MaterialComponents/TextFields+Extensions/ColorThemer (= 44.6.0)
-  - MaterialComponents/TextFields+Extensions/ColorThemer (44.6.0):
+  - MaterialComponents/TextFields+Extensions (45.0.0):
+    - MaterialComponents/TextFields+Extensions/ColorThemer (= 45.0.0)
+  - MaterialComponents/TextFields+Extensions/ColorThemer (45.0.0):
     - MaterialComponents/TextFields
     - MaterialComponents/Themes
-  - MaterialComponents/Themes (44.6.0)
-  - MaterialComponents/Typography (44.6.0):
+  - MaterialComponents/Themes (45.0.0)
+  - MaterialComponents/Typography (45.0.0):
     - MaterialComponents/private/Application
   - MDFInternationalization (1.0.4)
   - MDFTextAccessibility (1.2.0)
-  - MotionAnimator (2.8.0):
-    - MotionInterchange (~> 1.6)
-  - MotionInterchange (1.6.0)
-  - MotionTransitioning (5.0.0)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -288,12 +282,9 @@ SPEC CHECKSUMS:
   gRPC-RxLibrary: 8e0067bfe8a054022c7a81470baace4f2f633b48
   GTMSessionFetcher: 5bb1eae636127de695590f50e7d248483eb891e6
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
-  MaterialComponents: 974b52899fb90f28da0284790be46b2ca82358f5
+  MaterialComponents: 22793fbf99b6ae7e5067fbd794a6d3b7d6ee7d62
   MDFInternationalization: e355b0cebecf53d60233bd267084e49366c82513
   MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
-  MotionAnimator: 8af077dac084b7880a4d2ddae31a26171087bd87
-  MotionInterchange: ead0e3ae1f3a5fb539e289debbc7ae036160a10d
-  MotionTransitioning: 23d25edc2f4606efb922403cbac6d81af37aa33a
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825

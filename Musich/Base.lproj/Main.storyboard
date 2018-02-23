@@ -231,7 +231,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dc3-g8-QLP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1284" y="-242"/>
+            <point key="canvasLocation" x="1620" y="-238"/>
         </scene>
         <!--Create Account View Controller-->
         <scene sceneID="a9N-zI-EW3">
@@ -731,7 +731,7 @@
                     <viewLayoutGuide key="safeArea" id="zj6-0A-acj"/>
                 </view>
             </objects>
-            <point key="canvasLocation" x="1928" y="-241"/>
+            <point key="canvasLocation" x="2350" y="-238"/>
         </scene>
         <!--Settings View Controller-->
         <scene sceneID="cMr-fF-Tac">
