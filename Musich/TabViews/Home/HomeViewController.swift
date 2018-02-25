@@ -81,7 +81,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
 
     @objc func refDidTap(){
-        self.collectionView.reloadData()
+        self.feedItems = HomeFeedService.shared.feedItems
     }
 
     @objc func backDidTap(){
