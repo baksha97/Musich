@@ -70,10 +70,10 @@ class HomeFeedService{
                             self.feedItems.append(object)
                             print(self.feedItems.count)
                         }
+                        self.queryCompletions.append(true)
                     } catch{
                         print(error)
                     }
-                    self.queryCompletions.append(true)
                     
                     if self.queryCompletions.count == queries.count{
                         completion(true)
