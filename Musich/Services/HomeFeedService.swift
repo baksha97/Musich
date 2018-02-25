@@ -10,9 +10,7 @@ import Foundation
 import FirebaseFirestore
 
 class HomeFeedService{
-    private init(){
-     //   start()
-    }
+    private init(){}
     
     static let shared = HomeFeedService()
     
@@ -25,12 +23,6 @@ class HomeFeedService{
     }
     
     //TODO: Make clearer and dynamic----------
-    
-    //Home Feed Page
-//    func start(){
-//        //readFeedItems()
-//    }
-    
     
     func getCurrentUserFollowerQueries() -> [Query]?{
         
@@ -51,6 +43,7 @@ class HomeFeedService{
         }
     }
     
+//TRYING TO DEBUG WHY ITS PRINTING NIL FOR EXTRA SNAPSHOTS???
     func readFeedItems(completion: @escaping (Bool) -> Void) -> Void{
         //reset current items
         queryCompletions = [Bool]()
@@ -58,11 +51,16 @@ class HomeFeedService{
         //start
         if let queries = getCurrentUserFollowerQueries(){
             for (i, query) in queries.enumerated(){
-                //TODO: figure out if it's better to add a snapshot of this or add a refresh button.... seems like a very expensive operation operation if users are constantly listening...
+                //TODO: figure out if it's better/how to add a snapshot of this or add a refresh button.... seems like a very expensive operation operation if users are constantly listening...
                 query.addSnapshotListener { (snapshot, error) in
-                    print("Query ...\(i)")
-                    guard let snapshot = snapshot else{print("snapshot == nil"); return;}
-                    //^prints at times... not sure why... possiblity due to dummy data
+                    print("Query ...#\(i)");
+                    guard let snapshot = snapshot else{
+                        print("snapshot == nil"); //reprints for each query...
+                        return;
+                    }
+                    //^REprints queries runs... and is currently resetting the entire class instance... without reinit...
+                    
+                    
                     do{
                         for document in snapshot.documents{
                             let object = try document.decode(as: FeedItem.self)
@@ -73,6 +71,7 @@ class HomeFeedService{
                         print(error)
                     }
                     self.queryCompletions.append(true)
+                    
                     if self.queryCompletions.count == queries.count{
                         completion(true)
                     }

@@ -26,13 +26,6 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     private func addFeedItems(){
-//        FIRFirebaseService.shared.readDatedObjects(from: .publicFeedItems, order: true, returning: FeedItem.self, completion: {(items) in
-//            self.feedItems = items
-//            print(items.count)
-//            print()
-//            self.collectionView.reloadData()
-//        })
-        
 //        //TODO: CHANGE TO ONLY DISPLAY FEED ITEMS OF PEOPLE THAT YOU ARE FOLLOWING IN THE FIREBASEUSER.FOLLOWING STRING ARRAY OF UIDS.
 //            FIRFirebaseService.shared.readDatedObjects(from: .publicFeedItems, order: true, returning: FeedItem.self, completion: {(items) in
 //                self.feedItems = items
@@ -41,16 +34,8 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 //                self.collectionView.reloadData()
 //            })
         
-        
-        
-//        FIRFirebaseService.shared.readFeedItems(completion: {(items) in
-//                self.feedItems = items
-//                print(items.count)
-//                print()
-//                self.collectionView.reloadData()
-//            })
-        
 //       // TODO: UPDATE SERVICE TO WORK CORRECTLY...
+        
         HomeFeedService.shared.readFeedItems(completion: { (completed) in
             if completed{
                 self.feedItems = HomeFeedService.shared.feedItems
@@ -58,6 +43,7 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                         $0.date.compare($1.date) == .orderedDescending
                     })
                 self.collectionView.reloadData()
+                print("---------")
             }
             else{
                 print("an error has occured gathering your home feed")
