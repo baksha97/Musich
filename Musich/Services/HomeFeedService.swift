@@ -58,7 +58,10 @@ class HomeFeedService{
                         print("snapshot == nil"); //reprints for each query...
                         return;
                     }
-                    //^REprints queries runs... and is currently resetting the entire class instance... without reinit...
+                    //^REprints queries runs...
+                    //the class does NOT instantiate more than once
+                    //the loop does not run more than set
+                    //IT HAS TO be something within the listener method itself.
                     
                     
                     do{
