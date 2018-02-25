@@ -49,11 +49,13 @@ class BottomNavigationBarViewController: UIViewController, MDCBottomNavigationBa
         bottomNavigationBar.items = [
             UITabBarItem(title: "Home", image: UIImage(named: "homeIcon_25"), tag: 0),
             UITabBarItem(title: "Musich", image: UIImage(named: "messageIcon_30"), tag: 0),
-            UITabBarItem(title: "Settings", image: UIImage(named: "settingsIcon_25"), tag:0)
+            //TODO: find another icon for overview...
+            UITabBarItem(title: "Overview", image: UIImage(named: "settingsIcon_25"), tag:0)
         ]
         bottomNavigationBar.items[0].badgeColor = UIColor.cyan
         //bottomNavigationBar.items[0]//UIColor.white
-        bottomNavigationBar.backgroundColor = UIColor(red: 1.0, green: 0.81, blue: 0.0, alpha: 1.0)
+        bottomNavigationBar.backgroundColor = UIColor.black//UIColor(red: 1.0, green: 0.81, blue: 0.0, alpha: 1.0)
+        bottomNavigationBar.selectedItemTintColor = UIColor(red: 1.0, green: 0.81, blue: 0.0, alpha: 1.0)
         bottomNavigationBar.selectedItem = bottomNavigationBar.items.first
     }
     
@@ -72,13 +74,13 @@ class BottomNavigationBarViewController: UIViewController, MDCBottomNavigationBa
             musichView.isHidden = false
             settingsView.isHidden = true
         }
-        else if(item.title == "Settings"){
+        else if(item.title == "Overview"){
             homeView.isHidden = true
             musichView.isHidden = true
             settingsView.isHidden = false
         }
         else{
-            print("Something has gone terribly wrong.... \(String(describing: self.title))")
+            print("Something has gone terribly wrong getting bottom bar.... \(String(describing: self.title))")
         }
     }
 

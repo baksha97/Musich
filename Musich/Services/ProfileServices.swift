@@ -14,6 +14,7 @@ class ProfileServices{
         configureDateFormatter()
     }
     
+    
     static let shared = ProfileServices()
     let formatter = DateFormatter()
     var currentFirebaseUser: FirebaseUser?
@@ -72,6 +73,7 @@ class ProfileServices{
         FIRFirebaseService.shared.update(for: user, in: .users, merge: true)
     }
     
+    //TODO: add ability to manage a follwers array
     func followUser(with followerID: String){
         print("adding new follower...")
         var user = currentFirebaseUser!
@@ -86,13 +88,7 @@ class ProfileServices{
         print("updating w new follower")
         FIRFirebaseService.shared.update(for: user, in: .users, merge: true)
     }
-    
-    func observeCurrentUser(){
-        FIRFirebaseService.shared.observeCurrentUser(completion: {(error) in
-            print(error.debugDescription)
-            print("observed current user")
-        })
-    }
+
     
     private func configureDateFormatter(){
         self.formatter.dateStyle = .medium

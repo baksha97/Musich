@@ -14,6 +14,8 @@ class HomeFeedService{
     
     static let shared = HomeFeedService()
     
+    let feedItemHeightConstant = 110
+    
     var feedItems = [FeedItem]()
     
     var queryCompletions = [Bool]()

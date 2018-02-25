@@ -45,6 +45,7 @@ class UserRegistrationService{
     
     //REGISTRATION METHODS
     //step one
+    //TODO: ADD CHECK FOR DISPLAY NAME IN USE BEFORE CONTINUING REGISTRATION.
     func registerUser(email: String, password: String, name: String, displayName: String, pickedImage: UIImage){
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if error == nil{

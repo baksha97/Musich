@@ -68,13 +68,23 @@ class HomeCollectionViewController: MDCCollectionViewController {
         
         title = "Music Feed"
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Ref", style: .plain, target: self, action: #selector(self.refDidTap))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Follow user", style: .plain, target: self, action: #selector(self.refDidTap))
         
         appBar.navigationBar.tintColor = UIColor.black
     }
 
     @objc func refDidTap(){
-        self.feedItems = HomeFeedService.shared.feedItems
+        //self.feedItems = HomeFeedService.shared.feedItems
+        //TODO: add ability to follow users via display name
+        //TODO: add ability to manage a follwers array
+        AlertService.shared.requestNativeAlertInput(
+            sender: self, title: "Follow new user", message: "Enter their UID...",
+            completion: { (uid) in
+                ///TODO: complete
+                if let uid = uid{
+                    ProfileServices.shared.followUser(with: uid)
+                }
+            })
     }
 
     @objc func backDidTap(){
@@ -94,7 +104,8 @@ class HomeCollectionViewController: MDCCollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellHeightAt indexPath: IndexPath) -> CGFloat {
-        return 110 //gotten from storyboard interface
+        return CGFloat(HomeFeedService.shared.feedItemHeightConstant)
+        //gotten from storyboard interface
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -102,11 +113,8 @@ class HomeCollectionViewController: MDCCollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedCell", for: indexPath)
 
         if let cell = cell as? FeedCollectionViewCell {
-//            //display
-//            cell.layer.borderWidth = 2
-//            cell.layer.borderColor = UIColor.black.cgColor
             //data
-            cell.userLabel.text = feedItems[indexPath.row].userName //"User_temp"
+            cell.userLabel.text = feedItems[indexPath.row].userName 
             cell.songLabel.text = feedItems[indexPath.row].song
             cell.artistLabel.text = feedItems[indexPath.row].artist
             cell.albumLabel.text = feedItems[indexPath.row].album

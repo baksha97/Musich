@@ -11,10 +11,10 @@ import CoreData
 import UIKit
 import MaterialComponents.MaterialDialogs
 
-class MDCAlertService{
+class AlertService{
     private init(){}
     
-    static let shared = MDCAlertService()
+    static let shared = AlertService()
     //var dialogTransitionController: MDCDialogTransitionController
     var materialAlertController: MDCAlertController?
     //materialAlertController!.dismiss(animated: true, completion: nil)
@@ -24,6 +24,28 @@ class MDCAlertService{
         let action = MDCAlertAction(title:"OK") { (_) in print("OK") }
         materialAlertController!.addAction(action)
         sender.present(materialAlertController!, animated: true, completion: nil)
+    }
+    
+    func requestNativeAlertInput(sender: UIViewController,
+                                 title: String, message: String, completion: @escaping(String?)-> Void){
+       let alertVC = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertVC.addTextField { (textField) in
+            textField.placeholder = "Enter here"
+            textField.isSecureTextEntry = false
+        }
+        let submitAction = UIAlertAction(title: "Submit", style: .default, handler: {
+            (alert) -> Void in
+            
+            if let text = (alertVC.textFields![0] as UITextField).text{
+                completion(text)
+            }
+            else{
+                completion(nil)
+            }
+        })
+        alertVC.addAction(submitAction)
+        alertVC.view.tintColor = UIColor.black
+        sender.present(alertVC, animated: true)
     }
     
 //    func pendingCloseAlert(sender: UIViewController, title: String, message: String){

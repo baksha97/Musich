@@ -52,12 +52,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
                     //MDCAlertService.shared.okAlert(sender: self, title: "You're signed in", message: "Welcome")
                     self.performSegue(withIdentifier: self.navigationBarSegue, sender: self)
                 } else{
-                    MDCAlertService.shared.okAlert(sender: self, title: "An error occured, please try again.", message: (error.debugDescription))
+                    AlertService.shared.okAlert(sender: self, title: "An error occured, please try again.", message: (error.debugDescription))
                 }
             })
         }
         else{
-             MDCAlertService.shared.okAlert(sender: self, title: "An error occured, please try again.", message: "Enter an appropriate email and password.")
+             AlertService.shared.okAlert(sender: self, title: "An error occured, please try again.", message: "Enter an appropriate email and password.")
         }
     }
     
