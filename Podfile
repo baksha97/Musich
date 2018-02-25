@@ -24,6 +24,4 @@ target 'Musich' do
     pod ‘Firebase/Storage’
     pod ‘Firebase/Firestore’
     pod 'FirebaseUI/Storage'
-    pod "LFTwitterProfile"
-
 end
