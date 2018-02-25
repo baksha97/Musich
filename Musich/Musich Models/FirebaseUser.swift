@@ -21,15 +21,17 @@ struct FirebaseUser: Codable, Identifiable, Dated{
     var email: String
     var date: Date
     var profilePictureURL: String
+    var following: [String]?
     var feedItems: [FeedItem]?
     
-    init(id: String, name: String, displayName: String, email: String, date: Date, profilePictureURL: String, feedItems: [FeedItem]? ){
+    init(id: String, name: String, displayName: String, email: String, date: Date, profilePictureURL: String, following: [String]?, feedItems: [FeedItem]? ){
         self.id = id
         self.name = name
         self.displayName = displayName
         self.email = email
         self.date = date
         self.profilePictureURL = profilePictureURL
+        self.following = following
         self.feedItems = feedItems
     }
 }

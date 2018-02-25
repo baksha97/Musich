@@ -21,10 +21,21 @@ class BottomNavigationBarViewController: UIViewController, MDCBottomNavigationBa
     
     //MARK: UI Elements
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureBottomBar()
         configureViews()
+        if testCount.count == 0{
+            addFollowers()
+            testCount.count = testCount.count + 2
+        }
+    }
+    
+    //DEVELOPMENT:
+    func addFollowers(){
+        ProfileServices.shared.followUser(with: "ROTbPTSFcrYndb0Rb5agh7VNQ6f2")
+        ProfileServices.shared.followUser(with: "UPqHNLJZjZgnUQF4RupRyoHnqhP2")
     }
     
     func configureViews(){

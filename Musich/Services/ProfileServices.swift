@@ -72,6 +72,21 @@ class ProfileServices{
         FIRFirebaseService.shared.update(for: user, in: .users, merge: true)
     }
     
+    func followUser(with followerID: String){
+        print("adding new follower...")
+        var user = currentFirebaseUser!
+        if(user.following == nil){
+            user.following = [String]()
+            user.following?.append(followerID)
+            print("adding new follower - nil append")
+        }else{
+            user.following!.append(followerID)
+            print("adding new follower - append")
+        }
+        print("updating w new follower")
+        FIRFirebaseService.shared.update(for: user, in: .users, merge: true)
+    }
+    
     func observeCurrentUser(){
         FIRFirebaseService.shared.observeCurrentUser(completion: {(error) in
             print(error.debugDescription)

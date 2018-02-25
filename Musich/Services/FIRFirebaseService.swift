@@ -198,6 +198,8 @@ class FIRFirebaseService{
             }
         })
     }
+    
+    
     //Configuration
     func configure(){
         FirebaseApp.configure()
@@ -215,9 +217,9 @@ enum FIRFirestoreReference : CustomStringConvertible {
     
     var description : String {
         switch self {
-        case .users: return "users"
-        case .userProfilePhotoURLs: return "userProfilePhotoURLs"
-        case .publicFeedItems: return "publicFeedItems"
+            case .users: return "users"
+            case .userProfilePhotoURLs: return "userProfilePhotoURLs"
+            case .publicFeedItems: return "publicFeedItems"
         }
     }
 }

@@ -38,6 +38,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate{
         passwordField.text = "123456"
     }
     
+    
+    //DEVELOPMENT:
+    
+    
+    
+    
     @IBAction func loginDidTap(_ sender: Any) {
         //TEMP FOR DEV
         if(emailField.text != nil && passwordField.text != nil){

@@ -26,12 +26,20 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     }
     
     private func addFeedItems(){
-        FIRFirebaseService.shared.readDatedObjects(from: .publicFeedItems, order: true, returning: FeedItem.self, completion: {(items) in
-            self.feedItems = items
-            print(items.count)
-            print()
-            self.collectionView.reloadData()
-        })
+//        FIRFirebaseService.shared.readDatedObjects(from: .publicFeedItems, order: true, returning: FeedItem.self, completion: {(items) in
+//            self.feedItems = items
+//            print(items.count)
+//            print()
+//            self.collectionView.reloadData()
+//        })
+        
+        //TODO: CHANGE TO ONLY DISPLAY FEED ITEMS OF PEOPLE THAT YOU ARE FOLLOWING IN THE FIREBASEUSER.FOLLOWING STRING ARRAY OF UIDS. 
+            FIRFirebaseService.shared.readDatedObjects(from: .publicFeedItems, order: true, returning: FeedItem.self, completion: {(items) in
+                self.feedItems = items
+                print(items.count)
+                print()
+                self.collectionView.reloadData()
+            })
     }
 
 
