@@ -25,6 +25,7 @@
 		2E09882E203BF6AE009D750E /* FirebaseUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09882D203BF6AE009D750E /* FirebaseUser.swift */; };
 		2E098830203BF6C7009D750E /* SnapshotExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E09882F203BF6C7009D750E /* SnapshotExtensions.swift */; };
 		2E098832203BF6E3009D750E /* EncodeableExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E098831203BF6E3009D750E /* EncodeableExtensions.swift */; };
+		2E22682D2043319C000CA666 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E22682C2043319C000CA666 /* ProfileViewController.swift */; };
 		2E3C1507203E870500C7C2EB /* MusicServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E3C1506203E870500C7C2EB /* MusicServices.swift */; };
 		2E4B6B96203D583200350DC8 /* UserRegistrationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4B6B95203D583200350DC8 /* UserRegistrationService.swift */; };
 		2E4E5460203FB7DE00C5FCD1 /* MDCAlertService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E4E545F203FB7DE00C5FCD1 /* MDCAlertService.swift */; };
@@ -71,6 +72,7 @@
 		2E09882D203BF6AE009D750E /* FirebaseUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUser.swift; sourceTree = "<group>"; };
 		2E09882F203BF6C7009D750E /* SnapshotExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotExtensions.swift; sourceTree = "<group>"; };
 		2E098831203BF6E3009D750E /* EncodeableExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncodeableExtensions.swift; sourceTree = "<group>"; };
+		2E22682C2043319C000CA666 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		2E3C1506203E870500C7C2EB /* MusicServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicServices.swift; sourceTree = "<group>"; };
 		2E4B6B95203D583200350DC8 /* UserRegistrationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRegistrationService.swift; sourceTree = "<group>"; };
 		2E4E545F203FB7DE00C5FCD1 /* MDCAlertService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCAlertService.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 			children = (
 				2EC7161B203E6A8F00FD4309 /* SettingsCollectionView.swift */,
 				2EC7161C203E6A9000FD4309 /* SettingsViewController.swift */,
+				2E22682C2043319C000CA666 /* ProfileViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -395,11 +398,13 @@
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/LFTwitterProfile/LFTwitterProfile.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFInternationalization/MDFInternationalization.framework",
 				"${BUILT_PRODUCTS_DIR}/MDFTextAccessibility/MDFTextAccessibility.framework",
 				"${BUILT_PRODUCTS_DIR}/MaterialComponents/MaterialComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
@@ -412,11 +417,13 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LFTwitterProfile.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFInternationalization.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MDFTextAccessibility.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MaterialComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
@@ -496,6 +503,7 @@
 				2EC71620203E6C2800FD4309 /* ProfileServices.swift in Sources */,
 				2E3C1507203E870500C7C2EB /* MusicServices.swift in Sources */,
 				2E09881C203BC27F009D750E /* BadgeSwift.swift in Sources */,
+				2E22682D2043319C000CA666 /* ProfileViewController.swift in Sources */,
 				2E098816203BC1E7009D750E /* Message.swift in Sources */,
 				2E09882E203BF6AE009D750E /* FirebaseUser.swift in Sources */,
 				2E9A68E9202D5B4000783119 /* AppDelegate.swift in Sources */,

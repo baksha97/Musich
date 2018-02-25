@@ -83,6 +83,8 @@ PODS:
     - gRPC-RxLibrary (= 1.9.1)
   - GTMSessionFetcher/Core (1.1.13)
   - leveldb-library (1.20)
+  - LFTwitterProfile (0.1.1):
+    - SnapKit (~> 3.0)
   - MaterialComponents/AnimationTiming (45.0.0)
   - MaterialComponents/AppBar (45.0.0):
     - MaterialComponents/FlexibleHeader
@@ -246,6 +248,7 @@ PODS:
   - SDWebImage (4.3.0):
     - SDWebImage/Core (= 4.3.0)
   - SDWebImage/Core (4.3.0)
+  - SnapKit (3.2.0)
 
 DEPENDENCIES:
   - Firebase
@@ -255,6 +258,7 @@ DEPENDENCIES:
   - Firebase/Firestore
   - Firebase/Storage
   - FirebaseUI/Storage
+  - LFTwitterProfile
   - MaterialComponents/AppBar+Extensions
   - MaterialComponents/BottomNavigation+Extensions
   - MaterialComponents/Buttons+Extensions
@@ -282,13 +286,15 @@ SPEC CHECKSUMS:
   gRPC-RxLibrary: 8e0067bfe8a054022c7a81470baace4f2f633b48
   GTMSessionFetcher: 5bb1eae636127de695590f50e7d248483eb891e6
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  LFTwitterProfile: 57cc1c1602e3b4cf297b3d80b85dff16b5257ad4
   MaterialComponents: 22793fbf99b6ae7e5067fbd794a6d3b7d6ee7d62
   MDFInternationalization: e355b0cebecf53d60233bd267084e49366c82513
   MDFTextAccessibility: 94098925e0853551c5a311ce7c1ecefbe297cdb6
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
   SDWebImage: 6da6c8bca115addc4de8613362e1b15f66333825
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
 
-PODFILE CHECKSUM: 277a9880d128bba2e76c8cf07f8b5a3991dedf5e
+PODFILE CHECKSUM: 8e12eb1abdcf1cd1351ca7f08ebfc45057403408
 
 COCOAPODS: 1.4.0
