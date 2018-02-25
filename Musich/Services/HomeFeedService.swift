@@ -32,9 +32,11 @@ class HomeFeedService{
             let follwerQuery = reference(to: .publicFeedItems)
                // .order(by: "date", descending: false)
                // .limit(to: 5) //set amount to show on your feed per each person
-            
+            print("following count: \(following.count)")
             for (index, _) in following.enumerated(){
-                queries.append(follwerQuery.whereField("userID", isEqualTo: following[index]).order(by: "date", descending: true).limit(to: 5))
+                queries.append(follwerQuery.whereField("userID", isEqualTo: following[index]))
+                //.order(by: "date", descending: true).limit(to: 5))
+                //  FIRESTORE BUG - sometimes will work with .order when it's not supposed to if we're querying a seperate field... will have to sort out an optimization later for limiting
             }
             print("quer amount = \(queries.count)")
             return queries
