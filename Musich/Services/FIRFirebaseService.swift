@@ -156,7 +156,7 @@ class FIRFirebaseService{
             }
         }
     }
-    
+
     func createProfilePhotoURL(url: String, user id: String, in collectionReference: FIRFirestoreReference){
         reference(to: collectionReference).document(id).setData(["profilePhotoURL":url])
     }
@@ -199,38 +199,10 @@ class FIRFirebaseService{
         })
     }
     
-    
     //Configuration
     func configure(){
         FirebaseApp.configure()
     }
 }
 
-enum FIRRealTimeDatabaseReference: String{
-    case users
-}
-
-enum FIRFirestoreReference : CustomStringConvertible {
-    case users
-    case userProfilePhotoURLs
-    case publicFeedItems
-    
-    var description : String {
-        switch self {
-            case .users: return "users"
-            case .userProfilePhotoURLs: return "userProfilePhotoURLs"
-            case .publicFeedItems: return "publicFeedItems"
-        }
-    }
-}
-
-enum FIRStorageReference : CustomStringConvertible {
-    case usersProfilePictures
-    
-    var description : String {
-        switch self {
-        case .usersProfilePictures: return "usersProfilePictures"
-        }
-    }
-}
 

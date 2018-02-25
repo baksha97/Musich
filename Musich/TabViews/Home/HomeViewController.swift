@@ -33,13 +33,36 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
 //            self.collectionView.reloadData()
 //        })
         
-        //TODO: CHANGE TO ONLY DISPLAY FEED ITEMS OF PEOPLE THAT YOU ARE FOLLOWING IN THE FIREBASEUSER.FOLLOWING STRING ARRAY OF UIDS. 
-            FIRFirebaseService.shared.readDatedObjects(from: .publicFeedItems, order: true, returning: FeedItem.self, completion: {(items) in
-                self.feedItems = items
-                print(items.count)
-                print()
+//        //TODO: CHANGE TO ONLY DISPLAY FEED ITEMS OF PEOPLE THAT YOU ARE FOLLOWING IN THE FIREBASEUSER.FOLLOWING STRING ARRAY OF UIDS.
+//            FIRFirebaseService.shared.readDatedObjects(from: .publicFeedItems, order: true, returning: FeedItem.self, completion: {(items) in
+//                self.feedItems = items
+//                print(items.count)
+//                print()
+//                self.collectionView.reloadData()
+//            })
+        
+        
+        
+//        FIRFirebaseService.shared.readFeedItems(completion: {(items) in
+//                self.feedItems = items
+//                print(items.count)
+//                print()
+//                self.collectionView.reloadData()
+//            })
+        
+//       // TODO: UPDATE SERVICE TO WORK CORRECTLY...
+        HomeFeedService.shared.readFeedItems(completion: { (completed) in
+            if completed{
+                self.feedItems = HomeFeedService.shared.feedItems
+                self.feedItems = self.feedItems.sorted(by: {
+                        $0.date.compare($1.date) == .orderedDescending
+                    })
                 self.collectionView.reloadData()
-            })
+            }
+            else{
+                print("an error has occured gathering your home feed")
+            }
+        })//feedItems
     }
 
 
@@ -52,13 +75,13 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         
         title = "Music Feed"
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(self.meDidTap))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Ref", style: .plain, target: self, action: #selector(self.refDidTap))
         
         appBar.navigationBar.tintColor = UIColor.black
     }
 
-    @objc func meDidTap(){
-
+    @objc func refDidTap(){
+        self.collectionView.reloadData()
     }
 
     @objc func backDidTap(){

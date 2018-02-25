@@ -27,7 +27,7 @@ class BottomNavigationBarViewController: UIViewController, MDCBottomNavigationBa
         configureBottomBar()
         configureViews()
         if testCount.count == 0{
-            addFollowers()
+           // addFollowers()
             testCount.count = testCount.count + 2
         }
     }
@@ -35,7 +35,7 @@ class BottomNavigationBarViewController: UIViewController, MDCBottomNavigationBa
     //DEVELOPMENT:
     func addFollowers(){
         ProfileServices.shared.followUser(with: "ROTbPTSFcrYndb0Rb5agh7VNQ6f2")
-        ProfileServices.shared.followUser(with: "UPqHNLJZjZgnUQF4RupRyoHnqhP2")
+       // ProfileServices.shared.followUser(with: "UPqHNLJZjZgnUQF4RupRyoHnqhP2")
     }
     
     func configureViews(){
