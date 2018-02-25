@@ -99,9 +99,9 @@ class HomeCollectionViewController: MDCCollectionViewController {
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeFeedCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "FeedCell", for: indexPath)
 
-        if let cell = cell as? HomeFeedCollectionViewCell {
+        if let cell = cell as? FeedCollectionViewCell {
 //            //display
 //            cell.layer.borderWidth = 2
 //            cell.layer.borderColor = UIColor.black.cgColor

@@ -8,7 +8,7 @@
 
 import UIKit
 import MaterialComponents.MaterialCollectionCells
-class HomeFeedCollectionViewCell: MDCCollectionViewCell{
+class FeedCollectionViewCell: MDCCollectionViewCell{
    
     
     @IBOutlet weak var imageView: RoundedImageView!

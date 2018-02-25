@@ -42,13 +42,13 @@
 		2E9A68FF202D708E00783119 /* MDCTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E9A68FE202D708E00783119 /* MDCTextField.swift */; };
 		2EA6A1D1202E4EC10086CF99 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA6A1D0202E4EC10086CF99 /* LoginViewController.swift */; };
 		2EA6A1EA202E6FE60086CF99 /* UIElements.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA6A1E9202E6FE60086CF99 /* UIElements.swift */; };
+		2EA78CC42043455E002042EC /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EA78CC32043455E002042EC /* HomeCollectionViewController.swift */; };
 		2EB3419C203A0422003A2B4E /* TabBarIconSwiftExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB3419B203A0422003A2B4E /* TabBarIconSwiftExample.swift */; };
 		2EB341A4203A1C73003A2B4E /* homeIcon_25.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB341A3203A1C73003A2B4E /* homeIcon_25.png */; };
 		2EB341A6203A1CDD003A2B4E /* settingsIcon_25.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB341A5203A1CDD003A2B4E /* settingsIcon_25.png */; };
 		2EB341AA203A1E90003A2B4E /* messageIcon_30.png in Resources */ = {isa = PBXBuildFile; fileRef = 2EB341A9203A1E90003A2B4E /* messageIcon_30.png */; };
-		2EB341AD203A23C9003A2B4E /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EB341AC203A23C9003A2B4E /* HomeViewController.swift */; };
-		2EBE9505203A65A400AF3DFC /* HomeFeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE9504203A65A400AF3DFC /* HomeFeedCollectionViewCell.swift */; };
-		2EC7161D203E6A9000FD4309 /* SettingsCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC7161B203E6A8F00FD4309 /* SettingsCollectionView.swift */; };
+		2EBE9505203A65A400AF3DFC /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EBE9504203A65A400AF3DFC /* FeedCollectionViewCell.swift */; };
+		2EC7161D203E6A9000FD4309 /* ProfileCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC7161B203E6A8F00FD4309 /* ProfileCollectionView.swift */; };
 		2EC7161E203E6A9000FD4309 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC7161C203E6A9000FD4309 /* SettingsViewController.swift */; };
 		2EC71620203E6C2800FD4309 /* ProfileServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EC7161F203E6C2800FD4309 /* ProfileServices.swift */; };
 /* End PBXBuildFile section */
@@ -90,13 +90,13 @@
 		2E9A68FE202D708E00783119 /* MDCTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MDCTextField.swift; sourceTree = "<group>"; };
 		2EA6A1D0202E4EC10086CF99 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		2EA6A1E9202E6FE60086CF99 /* UIElements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIElements.swift; sourceTree = "<group>"; };
+		2EA78CC32043455E002042EC /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
 		2EB3419B203A0422003A2B4E /* TabBarIconSwiftExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarIconSwiftExample.swift; sourceTree = "<group>"; };
 		2EB341A3203A1C73003A2B4E /* homeIcon_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeIcon_25.png; sourceTree = "<group>"; };
 		2EB341A5203A1CDD003A2B4E /* settingsIcon_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = settingsIcon_25.png; sourceTree = "<group>"; };
 		2EB341A9203A1E90003A2B4E /* messageIcon_30.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = messageIcon_30.png; sourceTree = "<group>"; };
-		2EB341AC203A23C9003A2B4E /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		2EBE9504203A65A400AF3DFC /* HomeFeedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFeedCollectionViewCell.swift; sourceTree = "<group>"; };
-		2EC7161B203E6A8F00FD4309 /* SettingsCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsCollectionView.swift; sourceTree = "<group>"; };
+		2EBE9504203A65A400AF3DFC /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
+		2EC7161B203E6A8F00FD4309 /* ProfileCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileCollectionView.swift; sourceTree = "<group>"; };
 		2EC7161C203E6A9000FD4309 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2EC7161F203E6C2800FD4309 /* ProfileServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileServices.swift; sourceTree = "<group>"; };
 		300D075C3214D11B86F13E0F /* Pods-Musich.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Musich.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Musich/Pods-Musich.debug.xcconfig"; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 		2E4E5462203FC18800C5FCD1 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				2EB341AC203A23C9003A2B4E /* HomeViewController.swift */,
+				2EA78CC32043455E002042EC /* HomeCollectionViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -190,7 +190,7 @@
 		2E4E5464203FC19D00C5FCD1 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				2EC7161B203E6A8F00FD4309 /* SettingsCollectionView.swift */,
+				2EC7161B203E6A8F00FD4309 /* ProfileCollectionView.swift */,
 				2EC7161C203E6A9000FD4309 /* SettingsViewController.swift */,
 			);
 			path = Settings;
@@ -294,7 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				2E09881D203BC2C2009D750E /* VCCells.swift */,
-				2EBE9504203A65A400AF3DFC /* HomeFeedCollectionViewCell.swift */,
+				2EBE9504203A65A400AF3DFC /* FeedCollectionViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -475,6 +475,7 @@
 				2E098820203BC2EA009D750E /* ChatVC.swift in Sources */,
 				2E04AD5220394A9E00691FA6 /* CreateProfileViewController.swift in Sources */,
 				2E098824203BD5A9009D750E /* FIRFirebaseService.swift in Sources */,
+				2EA78CC42043455E002042EC /* HomeCollectionViewController.swift in Sources */,
 				2E4B6B96203D583200350DC8 /* UserRegistrationService.swift in Sources */,
 				2E7186F420393D4A00730E0D /* CreateAccountViewController.swift in Sources */,
 				2E09881E203BC2C2009D750E /* VCCells.swift in Sources */,
@@ -483,14 +484,13 @@
 				2E54582F204265C10034CF06 /* Test.swift in Sources */,
 				2E4E5468203FC24400C5FCD1 /* FeedItem.swift in Sources */,
 				2EA6A1D1202E4EC10086CF99 /* LoginViewController.swift in Sources */,
-				2EC7161D203E6A9000FD4309 /* SettingsCollectionView.swift in Sources */,
+				2EC7161D203E6A9000FD4309 /* ProfileCollectionView.swift in Sources */,
 				2E9A68EB202D5B4000783119 /* MaterialListViewController.swift in Sources */,
 				2E9A68F1202D5B4000783119 /* Musich.xcdatamodeld in Sources */,
 				2E9A68FF202D708E00783119 /* MDCTextField.swift in Sources */,
 				2E098817203BC1E7009D750E /* User.swift in Sources */,
 				2EA6A1EA202E6FE60086CF99 /* UIElements.swift in Sources */,
 				2E09881B203BC27F009D750E /* Helper Files.swift in Sources */,
-				2EB341AD203A23C9003A2B4E /* HomeViewController.swift in Sources */,
 				2EB3419C203A0422003A2B4E /* TabBarIconSwiftExample.swift in Sources */,
 				2E098822203BC392009D750E /* PlayerPickerViewController.swift in Sources */,
 				2EC71620203E6C2800FD4309 /* ProfileServices.swift in Sources */,
@@ -499,7 +499,7 @@
 				2E098816203BC1E7009D750E /* Message.swift in Sources */,
 				2E09882E203BF6AE009D750E /* FirebaseUser.swift in Sources */,
 				2E9A68E9202D5B4000783119 /* AppDelegate.swift in Sources */,
-				2EBE9505203A65A400AF3DFC /* HomeFeedCollectionViewCell.swift in Sources */,
+				2EBE9505203A65A400AF3DFC /* FeedCollectionViewCell.swift in Sources */,
 				2E54583320427AC00034CF06 /* FirebaseReferenceEnumerations.swift in Sources */,
 				2EC7161E203E6A9000FD4309 /* SettingsViewController.swift in Sources */,
 				2E04AD542039522300691FA6 /* BottomNavigationBarViewController.swift in Sources */,
