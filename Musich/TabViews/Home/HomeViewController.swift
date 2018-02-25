@@ -8,10 +8,10 @@
 
 import UIKit
 import MaterialComponents.MaterialAppBar
-class HomeViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class HomeViewController: MDCCollectionViewController {
 
     //MARK: UI Elements
-    @IBOutlet weak var collectionView: UICollectionView!
+  //  @IBOutlet weak var collectionView: UICollectionView!
     let appBar = MDCAppBar()
     
     //feed items
@@ -20,21 +20,29 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         super.viewDidLoad()
         configureDateFormatter()
-        collectionView.delegate = self
         configureAppBar()
         addFeedItems()
+        
+        // Set as list layout.
+        self.styler.cellLayoutType = .list
+
+        
+//        // Or set as grid layout.
+//        self.styler.cellLayoutType = .grid
+//        self.styler.gridPadding = 8
+//        self.styler.gridColumnCount = 2
     }
     
     private func addFeedItems(){
-//        //TODO: CHANGE TO ONLY DISPLAY FEED ITEMS OF PEOPLE THAT YOU ARE FOLLOWING IN THE FIREBASEUSER.FOLLOWING STRING ARRAY OF UIDS.
-//            FIRFirebaseService.shared.readDatedObjects(from: .publicFeedItems, order: true, returning: FeedItem.self, completion: {(items) in
-//                self.feedItems = items
-//                print(items.count)
-//                print()
-//                self.collectionView.reloadData()
-//            })
+                //        old way
+        //            FIRFirebaseService.shared.readDatedObjects(from: .publicFeedItems, order: true, returning: FeedItem.self, completion: {(items) in
+        //                self.feedItems = items
+        //                print(items.count)
+        //                print()
+        //                self.collectionView.reloadData()
+        //            })
         
-//       // TODO: UPDATE SERVICE TO WORK CORRECTLY...
+        //       // TODO: UPDATE SERVICE TO WORK EFFCIENTLY...
         
         HomeFeedService.shared.readFeedItems(completion: { (completed) in
             if completed{
@@ -42,13 +50,12 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
                 self.feedItems = self.feedItems.sorted(by: {
                         $0.date.compare($1.date) == .orderedDescending
                     })
-                self.collectionView.reloadData()
-                print("---------")
+                self.collectionView?.reloadData()
             }
             else{
                 print("an error has occured gathering your home feed")
             }
-        })//feedItems
+        })
     }
 
 
@@ -78,22 +85,26 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
     
     // MARK: UICollectionViewDataSource
 
-    func numberOfSections(in collectionView: UICollectionView) -> Int {
+    override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return feedItems.count
     }
+    
+    override func collectionView(_ collectionView: UICollectionView, cellHeightAt indexPath: IndexPath) -> CGFloat {
+        return 110 //gotten from storyboard interface
+    }
 
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HomeFeedCell", for: indexPath)
 
         if let cell = cell as? HomeFeedCollectionViewCell {
-            //display
-            cell.layer.borderWidth = 2
-            cell.layer.borderColor = UIColor.black.cgColor
+//            //display
+//            cell.layer.borderWidth = 2
+//            cell.layer.borderColor = UIColor.black.cgColor
             //data
             cell.userLabel.text = feedItems[indexPath.row].userName //"User_temp"
             cell.songLabel.text = feedItems[indexPath.row].song
@@ -107,17 +118,33 @@ class HomeViewController: UIViewController, UICollectionViewDelegate, UICollecti
         return cell
     }
     
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let cell = collectionView.cellForItem(at: indexPath)
-//        cell?.layer.borderWidth = 2.0
-//        cell?.layer.borderColor = UIColor.gray.cgColor
-//    }
-//
-//    func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-//        let cell = collectionView.cellForItem(at: indexPath)
-//        cell?.layer.borderWidth = 0
-//        cell?.layer.borderColor = UIColor.clear.cgColor
-//    }
+    // MARK: UIScrollViewDelegate
+    
+    override func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView == appBar.headerViewController.headerView.trackingScrollView {
+            appBar.headerViewController.headerView.trackingScrollDidScroll()
+        }
+    }
+    
+    override func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        if scrollView == appBar.headerViewController.headerView.trackingScrollView {
+            appBar.headerViewController.headerView.trackingScrollDidEndDecelerating()
+        }
+    }
+    
+    override func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+        if scrollView == appBar.headerViewController.headerView.trackingScrollView {
+            let headerView = appBar.headerViewController.headerView
+            headerView.trackingScrollDidEndDraggingWillDecelerate(decelerate)
+        }
+    }
+    
+    override func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        if scrollView == appBar.headerViewController.headerView.trackingScrollView {
+            let headerView = appBar.headerViewController.headerView
+            headerView.trackingScrollWillEndDragging(withVelocity: velocity, targetContentOffset: targetContentOffset)
+        }
+    }
     
     let formatter = DateFormatter()
     func configureDateFormatter(){

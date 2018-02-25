@@ -7,8 +7,8 @@
 //
 
 import UIKit
-
-class HomeFeedCollectionViewCell: UICollectionViewCell {
+import MaterialComponents.MaterialCollectionCells
+class HomeFeedCollectionViewCell: MDCCollectionViewCell{
    
     
     @IBOutlet weak var imageView: RoundedImageView!
@@ -17,8 +17,6 @@ class HomeFeedCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var songLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     @IBOutlet weak var albumLabel: UILabel!
-    
-    
     
     
     
