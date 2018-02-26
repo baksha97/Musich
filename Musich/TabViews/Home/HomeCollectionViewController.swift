@@ -38,14 +38,6 @@ class HomeCollectionViewController: MDCCollectionViewController {
     }
     
     private func addFeedItems(){
-                //        old way
-        //            FIRFirebaseService.shared.readDatedObjects(from: .publicFeedItems, order: true, returning: FeedItem.self, completion: {(items) in
-        //                self.feedItems = items
-        //                print(items.count)
-        //                print()
-        //                self.collectionView.reloadData()
-        //            })
-        
         //       // TODO: UPDATE SERVICE TO WORK EFFCIENTLY...
         
         HomeFeedService.shared.readFeedItems(completion: { (completed) in

@@ -15,6 +15,9 @@ class ProfileServices{
         configureDateFormatter()
     }
     
+    private func reference(to reference: FIRFirestoreReference) -> CollectionReference{
+        return Firestore.firestore().collection(reference.description)
+    }
     
     static let shared = ProfileServices()
     let formatter = DateFormatter()
@@ -77,7 +80,7 @@ class ProfileServices{
     //TODO: add ability to manage a follwers array
     func followUser(with id: String){
         appendFollowing(with: id)
-        addToFollowerRoot(currentUser: (currentFirebaseUser?.id)!, followedUser: id)
+        addToFollowerRoot(to: id, by: (currentFirebaseUser?.id)!)
     }
     //1:
     func appendFollowing(with id: String){
@@ -95,10 +98,8 @@ class ProfileServices{
         FIRFirebaseService.shared.update(for: user, in: .users, merge: true)
     }
     //2:
-    func addToFollowerRoot(currentUser followerID: String, followedUser followedID: String){
-        //reference(to: .followed).document(followedUserID).setData(["followedBy": userID])
-        FIRFirebaseService.shared.createDocument(for: Following(id: followedID, followerId: followerID),
-                                                 in: .followed)
+    func addToFollowerRoot(to userID: String, by followerID: String){
+        reference(to: .followed).document(userID).setData([followerID: true])
     }
 
     
