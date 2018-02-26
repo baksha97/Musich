@@ -142,17 +142,17 @@ class FIRFirebaseService{
     
     //Exclusive Unique Methods
     
-    func observeCurrentUser(completion: @escaping(Error?) -> Void) -> Void{
+    func observeCurrentUser(completion: @escaping(Bool, Error?) -> Void) -> Void{
         ///PULLING AUTH CURRENT USER
         reference(to: .users).document((Auth.auth().currentUser?.uid)!).addSnapshotListener{ (document, error) in
             guard let document = document else {return}
             do{
                 let user = try document.decode(as: FirebaseUser.self)
                 ProfileServices.shared.setCurrentUser(user: user)
-                completion(error)
+                completion(true, error)
             } catch{
                 print("error observing user")
-                completion(error)
+                completion(false, error)
             }
         }
     }

@@ -27,15 +27,18 @@ class ProfileCollectionView: MDCCollectionViewController {
     
     private func addFeedItems(){
         //Observing...
-        FIRFirebaseService.shared.observeCurrentUser(completion:{ (error) in
-            if let feed = ProfileServices.shared.currentFirebaseUser?.feedItems {
-                self.feedItems = feed
-                self.feedItems = self.feedItems.sorted(by: {
-                    $0.date.compare($1.date) == .orderedDescending
-                })
-                self.collectionView?.reloadData()
+        FIRFirebaseService.shared.observeCurrentUser(completion:{ (completed, error) in
+            if completed{
+                if let feed = ProfileServices.shared.currentFirebaseUser?.feedItems {
+                    self.feedItems = feed
+                    self.feedItems = self.feedItems.sorted(by: {
+                        $0.date.compare($1.date) == .orderedDescending
+                    })
+                    self.collectionView?.reloadData()
+                }
+            }else{
+                print(error.debugDescription)
             }
-            print(error.debugDescription)
         })
     }
     

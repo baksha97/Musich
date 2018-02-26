@@ -26,11 +26,15 @@ class HomeCollectionViewController: MDCCollectionViewController {
         // Set as list layout.
         self.styler.cellLayoutType = .list
 
+        //observe for changes:{
+        FIRFirebaseService.shared.observeCurrentUser(completion:{ (bool, err) in
+            if bool {
+                self.addFeedItems()
+            }else{
+                print(err.debugDescription)
+            }
+        })
         
-//        // Or set as grid layout.
-//        self.styler.cellLayoutType = .grid
-//        self.styler.gridPadding = 8
-//        self.styler.gridColumnCount = 2
     }
     
     private func addFeedItems(){
