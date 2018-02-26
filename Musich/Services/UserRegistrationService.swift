@@ -26,7 +26,7 @@ class UserRegistrationService{
                 //TODO - CONFIGURE USER DEFAULTS PROPERLY
                 // let userInfo = ["email": withEmail, "password": password]
                 //  UserDefaults.standard.set(userInfo, forKey: "userInformation")
-                FIRFirebaseService.shared.observeCurrentUser(completion: {(error) in
+                FIRFirebaseService.shared.observeCurrentUser(completion: {(_, error) in
                     if error == nil{
                         print("observing user")
                         completion(true, error)
@@ -41,6 +41,16 @@ class UserRegistrationService{
                 print(error.debugDescription)
             }
         })
+    }
+    
+    func signOut(){
+        do{
+            try Auth.auth().signOut()
+            print("Signed out")
+            print(authCurrentUser() == nil)
+        }catch{
+            print("Error while signing out!")
+        }
     }
     
     //REGISTRATION METHODS

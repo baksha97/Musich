@@ -72,9 +72,14 @@ class HomeCollectionViewController: MDCCollectionViewController {
         
         title = "Music Feed"
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Follow user", style: .plain, target: self, action: #selector(self.refDidTap))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Follow", style: .plain, target: self, action: #selector(self.refDidTap))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Log out", style: .plain, target: self, action: #selector(self.signOut))
         
         appBar.navigationBar.tintColor = UIColor.black
+    }
+    
+    @objc func signOut(){
+        UserRegistrationService.shared.signOut()
     }
 
     @objc func refDidTap(){
