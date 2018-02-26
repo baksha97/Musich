@@ -26,10 +26,6 @@ class BottomNavigationBarViewController: UIViewController, MDCBottomNavigationBa
         super.viewDidLoad()
         configureBottomBar()
         configureViews()
-        if testCount.count == 0{
-           // addFollowers()
-            testCount.count = testCount.count + 2
-        }
     }
     
     //DEVELOPMENT:

@@ -142,7 +142,7 @@ class FIRFirebaseService{
     
     //Exclusive Unique Methods
     
-    func observeCurrentUser(completion: @escaping(Error?) -> Void){
+    func observeCurrentUser(completion: @escaping(Error?) -> Void) -> Void{
         ///PULLING AUTH CURRENT USER
         reference(to: .users).document((Auth.auth().currentUser?.uid)!).addSnapshotListener{ (document, error) in
             guard let document = document else {return}

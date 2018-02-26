@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import FirebaseFirestore
 
 class ProfileServices{
     
@@ -74,19 +75,30 @@ class ProfileServices{
     }
     
     //TODO: add ability to manage a follwers array
-    func followUser(with followerID: String){
+    func followUser(with id: String){
+        appendFollowing(with: id)
+        addToFollowerRoot(currentUser: (currentFirebaseUser?.id)!, followedUser: id)
+    }
+    //1:
+    func appendFollowing(with id: String){
         print("adding new follower...")
         var user = currentFirebaseUser!
         if(user.following == nil){
             user.following = [String]()
-            user.following?.append(followerID)
+            user.following?.append(id)
             print("adding new follower - nil append")
         }else{
-            user.following!.append(followerID)
+            user.following!.append(id)
             print("adding new follower - append")
         }
         print("updating w new follower")
         FIRFirebaseService.shared.update(for: user, in: .users, merge: true)
+    }
+    //2:
+    func addToFollowerRoot(currentUser followerID: String, followedUser followedID: String){
+        //reference(to: .followed).document(followedUserID).setData(["followedBy": userID])
+        FIRFirebaseService.shared.createDocument(for: Following(id: followedID, followerId: followerID),
+                                                 in: .followed)
     }
 
     
@@ -95,4 +107,9 @@ class ProfileServices{
         self.formatter.timeStyle = .none
         // self.formatter.locale = Locale(identifier)
     }
+}
+
+struct Following: Codable, Identifiable{
+    var id: String? //following id
+    var followerId: String?
 }

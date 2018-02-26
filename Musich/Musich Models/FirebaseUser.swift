@@ -7,12 +7,6 @@
 //
 
 import Foundation
-protocol Identifiable{
-    var id: String? { get set }
-}
-protocol Dated {
-    var date: Date {get set}
-}
 
 struct FirebaseUser: Codable, Identifiable, Dated{
     var id: String?

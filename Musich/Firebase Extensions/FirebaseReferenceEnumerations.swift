@@ -16,12 +16,14 @@ enum FIRFirestoreReference : CustomStringConvertible {
     case users
     case userProfilePhotoURLs
     case publicFeedItems
+    case followed
     
     var description : String {
         switch self {
-        case .users: return "users"
-        case .userProfilePhotoURLs: return "userProfilePhotoURLs"
-        case .publicFeedItems: return "publicFeedItems"
+            case .users: return "users"
+            case .userProfilePhotoURLs: return "userProfilePhotoURLs"
+            case .publicFeedItems: return "publicFeedItems"
+            case .followed: return "followed"
         }
     }
 }
