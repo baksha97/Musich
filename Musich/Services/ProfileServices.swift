@@ -99,7 +99,17 @@ class ProfileServices{
     }
     //2:
     func addToFollowerRoot(to userID: String, by followerID: String){
-        reference(to: .followed).document(userID).setData([followerID: true])
+       // reference(to: .followed).document(userID).setData([followerID: true])
+        reference(to: .followed).document(userID)
+            .collection("followers").document(followerID)
+            .setData(["id": "followerID", "displayName": "dn"])
+    }
+    
+    func getFollowers(for userID: String){
+        reference(to: .followed).document(userID)
+        .collection("followers").getDocuments(completion: {(snap, err) in
+            
+        })//.whereField(<#T##field: String##String#>, isEqualTo: <#T##Any#>)
     }
 
     

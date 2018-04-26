@@ -88,9 +88,10 @@ class ChatVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UITe
     
     //Downloads messages
     func fetchData() {
-        Message.downloadAllMessages(forID: channelID, completion: {[weak weakSelf = self] (message) in
-            weakSelf?.items.append(message)
-            weakSelf?.items.sort{ $0.timestamp < $1.timestamp }
+        Message.downloadAllMessages(forID: channelID, completion: {[weak weakSelf = self] (messages) in
+            
+
+            weakSelf?.items = messages.sorted{ $0.timestamp < $1.timestamp }
             DispatchQueue.main.async {
                 if let state = weakSelf?.items.isEmpty, state == false {
                     weakSelf?.tableView.reloadData()

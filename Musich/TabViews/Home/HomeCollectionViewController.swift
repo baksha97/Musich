@@ -71,7 +71,7 @@ class HomeCollectionViewController: MDCCollectionViewController {
     }
     
     @objc func signOut(){
-        UserRegistrationService.shared.signOut()
+       // UserRegistrationService.shared.signOut()
     }
 
     @objc func refDidTap(){

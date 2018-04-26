@@ -37,33 +37,64 @@ class Message {
     var fromID: String?
     
     //MARK: Methods
-    class func downloadAllMessages(forID channelID: String, completion: @escaping (Message) -> Swift.Void) {
+    class func downloadAllMessages(forID channelID: String, completion: @escaping ([Message]) -> Swift.Void) {
         if let currentUserID = Auth.auth().currentUser?.uid {
-            Database.database().reference().child("channels").child(channelID).observe(.childAdded, with: { (snap) in
-                if snap.exists() {
-                    let receivedMessage = snap.value as! [String: Any]
-                    let messageType = receivedMessage["type"] as! String
-                    var type = MessageType.text
-                    switch messageType {
-                    case "photo":
-                        type = .photo
-                    case "location":
-                        type = .location
-                    default: break
-                    }
-                    let content = receivedMessage["content"] as! String
-                    let fromID = receivedMessage["fromID"] as! String
-                    let timestamp = receivedMessage["timestamp"] as! Int
-                    if fromID == currentUserID {
-                        let message = Message.init(type: type, content: content, owner: .receiver, timestamp: timestamp, fromID: fromID)
-                        completion(message)
-                    } else {
-                        let message = Message.init(type: type, content: content, owner: .sender, timestamp: timestamp, fromID: fromID)
-                        completion(message)
+            Database.database().reference().child("channels").child(channelID).observe(.value, with: { (snaps) in
+                
+                var messages = [Message]()
+                for snap in snaps.children.allObjects as! [DataSnapshot]{
+                    if snap.exists() {
+                        let receivedMessage = snap.value as! [String: Any]
+                        let messageType = receivedMessage["type"] as! String
+                        var type = MessageType.text
+                        switch messageType {
+                        case "photo":
+                            type = .photo
+                        case "location":
+                            type = .location
+                        default: break
+                        }
+                        let content = receivedMessage["content"] as! String
+                        let fromID = receivedMessage["fromID"] as! String
+                        let timestamp = receivedMessage["timestamp"] as! Int
+                        if fromID == currentUserID {
+                            let message = Message.init(type: type, content: content, owner: .receiver, timestamp: timestamp, fromID: fromID)
+                            messages.append(message)
+                        } else {
+                            let message = Message.init(type: type, content: content, owner: .sender, timestamp: timestamp, fromID: fromID)
+                            messages.append(message)
+                        }
                     }
                 }
+                completion(messages)
             })
         }
+//        if let currentUserID = Auth.auth().currentUser?.uid {
+//            Database.database().reference().child("channels").child(channelID).observe(.childChanged, with: { (snap) in
+//                if snap.exists() {
+//                    let receivedMessage = snap.value as! [String: Any]
+//                    let messageType = receivedMessage["type"] as! String
+//                    var type = MessageType.text
+//                    switch messageType {
+//                    case "photo":
+//                        type = .photo
+//                    case "location":
+//                        type = .location
+//                    default: break
+//                    }
+//                    let content = receivedMessage["content"] as! String
+//                    let fromID = receivedMessage["fromID"] as! String
+//                    let timestamp = receivedMessage["timestamp"] as! Int
+//                    if fromID == currentUserID {
+//                        let message = Message.init(type: type, content: content, owner: .receiver, timestamp: timestamp, fromID: fromID)
+//                        completion(message)
+//                    } else {
+//                        let message = Message.init(type: type, content: content, owner: .sender, timestamp: timestamp, fromID: fromID)
+//                        completion(message)
+//                    }
+//                }
+//            })
+//        }
     }
     
     func downloadImage(indexpathRow: Int, completion: @escaping (Bool, Int) -> Swift.Void)  {

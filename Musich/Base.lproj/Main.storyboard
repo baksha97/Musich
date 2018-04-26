@@ -371,7 +371,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Poh-GE-VEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="GhC-xi-RY6" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="555" y="663"/>
+            <point key="canvasLocation" x="673" y="663"/>
         </scene>
         <!--Home Collection View Controller-->
         <scene sceneID="SCu-7P-z1C">
@@ -457,7 +457,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1m1-rs-mN8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1284" y="-933.73313343328346"/>
+            <point key="canvasLocation" x="2732" y="444"/>
         </scene>
         <!--Chat-->
         <scene sceneID="kK8-fP-S6P">
@@ -802,7 +802,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lOQ-uv-lb5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1284" y="566.71664167916049"/>
+            <point key="canvasLocation" x="1346" y="567"/>
         </scene>
         <!--Settings Collection View Controller-->
         <scene sceneID="jyQ-0r-0im">
@@ -836,7 +836,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sQb-Ys-Yq8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1284" y="1296"/>
+            <point key="canvasLocation" x="2102" y="813"/>
         </scene>
         <!--Profile Collection View-->
         <scene sceneID="5Fa-7L-KCF">
@@ -922,7 +922,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BRR-St-Phd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1966" y="1296"/>
+            <point key="canvasLocation" x="2103" y="370"/>
         </scene>
     </scenes>
     <resources>
