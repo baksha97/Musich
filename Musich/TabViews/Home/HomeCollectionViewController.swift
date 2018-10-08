@@ -83,7 +83,7 @@ class HomeCollectionViewController: MDCCollectionViewController {
             completion: { (uid) in
                 ///TODO: complete
                 if let uid = uid{
-//                    if uid == "" {return}
+                    if uid == "" { return }
                     ProfileServices.shared.followUser(with: uid)
                 }
             })
