@@ -37,10 +37,8 @@ class AlertService{
             (alert) -> Void in
             
             if let text = (alertVC.textFields![0] as UITextField).text{
+                if text == "" {completion(nil)}
                 completion(text)
-            }
-            else{
-                completion(nil)
             }
         })
         alertVC.addAction(submitAction)
