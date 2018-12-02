@@ -5,6 +5,6 @@ I have combined a music tracking application with a chatting application to give
 
 Musich[at]
 
->Project Discontinued
+>Project will recieve updates in the upcoming weeks.
 
 You can view my project presentation [here.](https://prezi.com/view/ME56yQ7ZNpOIVjuz6fQC/)
